@@ -8,8 +8,8 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="BookLayout">
 
-    <StackPanel Background="#FF939393">
-        <StackPanel Background="#FF494444">
+    <DockPanel Background="#FF939393">
+        <StackPanel DockPanel.Dock="Top" Background="#FF494444">
             <TextBlock Name="bookTitle" Text="Book Title" FontWeight="Bold" FontSize="20" Margin="10,5,0,0"/>
             <StackPanel Margin="10,0,0,5" Orientation="Horizontal">
                 <TextBlock Name="textBlock1" Text="Ecrit par " FontWeight="Bold" FontSize="13"/>
@@ -17,7 +17,7 @@
             </StackPanel>
         </StackPanel>
 
-        <DockPanel LastChildFill="True">
+        <DockPanel DockPanel.Dock="Top" LastChildFill="True">
             <Rectangle DockPanel.Dock="Left" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Fill="#FF52C0D0" Margin="10,10,10,5"/>
             <StackPanel Margin="10,10,10,10">
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,0,5">
@@ -55,12 +55,25 @@
                 </StackPanel>
             </StackPanel>
         </DockPanel>
-        <TextBlock Text="Résumé : " FontSize="13" Margin="10,0,0,0"/>
-        <RichTextBox Margin="15,5,15,5">
+
+        <TextBlock DockPanel.Dock="Top" Text="Résumé : " FontSize="13" Margin="10,0,0,0"/>
+
+        <RichTextBox DockPanel.Dock="Top" Margin="15,5,15,5">
             <FlowDocument>
                 <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="13" Foreground="#FF939393">COUCOU</Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <TextBlock Text="Commentaires : " FontSize="13" Margin="10,0,0,0"/>
-    </StackPanel>
+
+        <TextBlock DockPanel.Dock="Top" Text="Commentaires : " FontSize="13" Margin="10,0,0,0"/>
+
+        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,5,0,20">
+            <Button Margin="0,0,20,0" Name="retour" Content="Retour livre"/>
+            <Button Name="delete" Content="Supprimer"/>
+        </StackPanel>
+
+        <Canvas>
+
+        </Canvas>
+
+    </DockPanel>
 </Page>
