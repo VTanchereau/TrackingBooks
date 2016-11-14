@@ -1,0 +1,34 @@
+﻿<Page x:Class="GestionnaireBibliotheque.Pret"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GestionnaireBibliotheque"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Pret">
+
+    <StackPanel Background="White">
+        <TextBlock HorizontalAlignment="Center" Text="Prêt de livre" FontSize="20"/>
+
+        <Border BorderThickness="1" BorderBrush="Black">
+            <StackPanel >
+                <TextBlock Text="A qui ?" FontSize="13" Margin="5,0,0,0"/>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <TextBlock Text="Nom :" Margin="40,0,0,0" FontSize="13"/>
+
+                        <TextBlock Text="Adresse mail :" Margin="40,0,0,0" FontSize="13"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBox Name="nomPret" MinWidth="100" Margin="10,0,40,0" FontSize="13"/>
+
+                        <TextBox Name="mailPret" MinWidth="100" Margin="10,0,40,0" FontSize="13"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+    </StackPanel>
+    
+</Page>
