@@ -40,10 +40,21 @@
             </ToolBarTray>
 
         </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="0.7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0">
+                <Frame Source="BookLayout.xaml"/>
+            </Grid>
 
-        <Frame Source="Pret.xaml" Width="400" Height="700"/>
-        
-        <Rectangle/>
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Frame Source="Liste.xaml"/>
+            </Grid>
+        </Grid>
 
 
 
