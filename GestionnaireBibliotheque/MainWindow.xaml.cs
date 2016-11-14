@@ -22,6 +22,7 @@ namespace GestionnaireBibliotheque
     {
         public MainWindow()
         {
+            this.WindowState = WindowState.Maximized;
             InitializeComponent();
         }
     }

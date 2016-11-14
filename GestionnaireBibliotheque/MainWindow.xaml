@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionnaireBibliotheque"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+        Title="Tracking Books" Height="350" Width="525">
+
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top">
+            <Menu>
+                <MenuItem Header="_Fichier">
+                    <MenuItem Header="_Nouveau" />
+                    <MenuItem Header="_Ouvrir" />
+                    <MenuItem Header="_Sauvegarder" />
+                    <Separator />
+                    <MenuItem Header="_Quitter" />
+                </MenuItem>
+
+                <MenuItem Header="_Edition">
+                    <MenuItem Header="Ajouter un livre"/>
+                </MenuItem>
+                
+                <MenuItem Header="_Paramètres">
+                    <MenuItem Header="Paramètres"/>
+                </MenuItem>
+
+                <MenuItem Header="_Aide">
+                    <MenuItem Header="Aide"/>
+                </MenuItem>
+            </Menu>
+            
+        </StackPanel>
         
-    </Grid>
+    </DockPanel>
+
 </Window>
