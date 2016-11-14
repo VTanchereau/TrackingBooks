@@ -40,7 +40,13 @@
             </ToolBarTray>
 
         </StackPanel>
+
+        <Frame DockPanel.Dock="Left" Source="BookLayout.xaml" Width="300"/>
         
+        <Rectangle/>
+
+
+
     </DockPanel>
 
 </Window>

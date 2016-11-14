@@ -8,28 +8,59 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="BookLayout">
 
-    <Grid>
-
-        <StackPanel>
-            <StackPanel Background="#FF656565">
-                    <TextBlock Name="bookTitle" Text="Book Title" FontWeight="Bold" FontSize="12" Margin="10,5,0,0"/>
-                    <StackPanel Margin="10,0,0,5" Orientation="Horizontal">
-                        <TextBlock Name="textBlock1" Text="Ecrit par " FontWeight="Bold" FontSize="7"/>
-                        <TextBlock Name="bookAuthor" Text="Author" FontWeight="Bold" FontSize="7"/>
-                    </StackPanel>
-            </StackPanel>
-
-            <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#FFC8C5C5">
-                <StackPanel Orientation="Horizontal">
-                    <Rectangle Fill="#FFED0B0B" Height="60" Width="60" Margin="10,10,0,0"/>
-                    <StackPanel>
-                        <StackPanel HorizontalAlignment="Right" Margin="10,10,0,10" Orientation="Horizontal">
-                            <TextBlock Text="Ajouté le " FontSize="7"/>
-                        </StackPanel>
-                    </StackPanel>
-
-                </StackPanel>
+    <StackPanel Background="#FF939393">
+        <StackPanel Background="#FF494444">
+            <TextBlock Name="bookTitle" Text="Book Title" FontWeight="Bold" FontSize="20" Margin="10,5,0,0"/>
+            <StackPanel Margin="10,0,0,5" Orientation="Horizontal">
+                <TextBlock Name="textBlock1" Text="Ecrit par " FontWeight="Bold" FontSize="13"/>
+                <TextBlock Name="bookAuthor" Text="Author" FontWeight="Bold" FontSize="13"/>
             </StackPanel>
         </StackPanel>
-    </Grid>
+
+        <DockPanel LastChildFill="True">
+            <Rectangle DockPanel.Dock="Left" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Fill="#FF52C0D0" Margin="10,10,10,5"/>
+            <StackPanel Margin="10,10,10,10">
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,0,5">
+                    <TextBlock Text="Ajouté le " FontSize="13"/>
+                    <TextBlock Name="addedDay" FontSize="13"/>
+                    <TextBlock Text="/" FontSize="13"/>
+                    <TextBlock Name="addedMonth" FontSize="13"/>
+                    <TextBlock Text="/" FontSize="13"/>
+                    <TextBlock Name="addedyear" FontSize="13"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Tome " FontSize="13"/>
+                    <TextBlock Name="tomeNumber" FontSize="13"/>
+                    <TextBlock Text=" de la saga " FontSize="13"/>
+                    <TextBlock Name="sagaName" FontSize="13"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Edité par " FontSize="13"/>
+                    <TextBlock Name="editeur" FontSize="13"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ISBN : " FontSize="13"/>
+                    <TextBlock Name="ISBNnumber" FontSize="13"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="isPret" FontSize="13"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Retour prévu le " FontSize="13"/>
+                    <TextBlock Name="retourDay" FontSize="13"/>
+                    <TextBlock Text="/" FontSize="13"/>
+                    <TextBlock Name="retourMonth" FontSize="13"/>
+                    <TextBlock Text="/" FontSize="13"/>
+                    <TextBlock Name="retourYear" FontSize="13"/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+        <TextBlock Text="Résumé : " FontSize="13" Margin="10,0,0,0"/>
+        <RichTextBox Margin="15,5,15,5">
+            <FlowDocument>
+                <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="13" Foreground="#FF939393">COUCOU</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <TextBlock Text="Commentaires : " FontSize="13" Margin="10,0,0,0"/>
+    </StackPanel>
 </Page>
