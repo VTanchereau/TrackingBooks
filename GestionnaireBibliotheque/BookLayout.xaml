@@ -58,17 +58,13 @@
 
         <TextBlock DockPanel.Dock="Top" Text="Résumé : " FontSize="13" Margin="10,0,0,0"/>
 
-        <RichTextBox DockPanel.Dock="Top" Margin="15,5,15,5">
-            <FlowDocument>
-                <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="13" Foreground="#FF939393">COUCOU</Paragraph>
-            </FlowDocument>
-        </RichTextBox>
+        <TextBlock DockPanel.Dock="Top" Name="bookResume" Margin="15,5,15,5" FontStyle="Italic" TextAlignment="Left" FontSize="13" Text="COUCOU" Background="White" Padding="5,5,5,5" Foreground="#FF939393"/>
 
         <TextBlock DockPanel.Dock="Top" Text="Commentaires : " FontSize="13" Margin="10,0,0,0"/>
 
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,5,0,20">
-            <Button Margin="0,0,20,0" Name="retour" Content="Retour livre"/>
-            <Button Name="delete" Content="Supprimer"/>
+            <Button Padding="5,0,5,0" Margin="0,0,20,0" Name="retour" Content="Retour livre"/>
+            <Button Padding="5,0,5,0" Name="delete" Content="Supprimer"/>
         </StackPanel>
 
         <Canvas>
