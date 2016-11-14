@@ -21,7 +21,7 @@
                 <MenuItem Header="_Edition">
                     <MenuItem Header="Ajouter un livre"/>
                 </MenuItem>
-                
+
                 <MenuItem Header="_Paramètres">
                     <MenuItem Header="Paramètres"/>
                 </MenuItem>
@@ -30,7 +30,15 @@
                     <MenuItem Header="Aide"/>
                 </MenuItem>
             </Menu>
-            
+
+            <ToolBarTray>
+                <ToolBar>
+                    <Button Name="AddBook" Content="Ajouter"/>
+                    <Button Name="lendBook" Content="Prêter"/>
+                    <Button Name="getBackBook" Content="Retour"/>
+                </ToolBar>
+            </ToolBarTray>
+
         </StackPanel>
         
     </DockPanel>
