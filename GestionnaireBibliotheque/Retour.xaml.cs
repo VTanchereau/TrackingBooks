@@ -16,16 +16,18 @@ using System.Windows.Shapes;
 namespace GestionnaireBibliotheque
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour Retour.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Retour : Page
     {
-        public MainWindow()
+        public Retour()
         {
-            this.WindowState = WindowState.Maximized;
             InitializeComponent();
         }
 
-        
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

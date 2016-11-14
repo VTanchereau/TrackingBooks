@@ -24,5 +24,14 @@ namespace GestionnaireBibliotheque
         {
             InitializeComponent();
         }
+
+        public void retour_Click(object sender, RoutedEventArgs e)
+        {
+            Window Windows_retour = new Window();
+            Retour r = new Retour();
+
+            Windows_retour.Content = r;
+            Windows_retour.ShowDialog();
+        }
     }
 }
