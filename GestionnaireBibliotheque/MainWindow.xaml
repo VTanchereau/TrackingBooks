@@ -41,7 +41,7 @@
 
         </StackPanel>
 
-        <Frame DockPanel.Dock="Left" Source="BookLayout.xaml" Width="300"/>
+        <Frame Source="Pret.xaml" Width="400" Height="700"/>
         
         <Rectangle/>
 
