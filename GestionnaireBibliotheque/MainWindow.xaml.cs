@@ -25,5 +25,20 @@ namespace GestionnaireBibliotheque
             this.WindowState = WindowState.Maximized;
             InitializeComponent();
         }
+
+        private void lendBook_Click(object sender, RoutedEventArgs e)
+        {
+            Pret p = new Pret();
+            Window w = new Window();
+
+            w.Content = p;
+            w.Title = "Prêter un livre";
+            w.SizeToContent = SizeToContent.WidthAndHeight;
+            w.ResizeMode = System.Windows.ResizeMode.NoResize;
+
+            w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+            w.ShowDialog();
+        }
     }
 }

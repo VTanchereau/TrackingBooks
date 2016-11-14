@@ -4,27 +4,45 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GestionnaireBibliotheque"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Pret">
 
-    <StackPanel Background="White">
-        <TextBlock HorizontalAlignment="Center" Text="Prêt de livre" FontSize="20"/>
-
-        <Border BorderThickness="1" BorderBrush="Black">
-            <StackPanel >
-                <TextBlock Text="A qui ?" FontSize="13" Margin="5,0,0,0"/>
+    <StackPanel Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border Name="border1" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="30,5,30,5" Margin="50,10,50,10">
+            <StackPanel HorizontalAlignment="Center" Margin="5,0,5,10">
+                <TextBlock Text="A qui ?" FontSize="13"/>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel>
-                        <TextBlock Text="Nom :" Margin="40,0,0,0" FontSize="13"/>
-
+                        <TextBlock Text="Nom :" Margin="40,0,0,5" FontSize="13"/>
+                        <TextBlock Text="Prénom :" Margin="40,0,0,5" FontSize="13"/>
+                        <TextBlock Text="N° de téléphone :" Margin="40,0,0,5" FontSize="13"/>
+                        <TextBlock Text="Adresse :" Margin="40,0,0,5" FontSize="13"/>
                         <TextBlock Text="Adresse mail :" Margin="40,0,0,0" FontSize="13"/>
                     </StackPanel>
                     <StackPanel>
-                        <TextBox Name="nomPret" MinWidth="100" Margin="10,0,40,0" FontSize="13"/>
-
+                        <TextBox Name="nomPret" MinWidth="100" Margin="10,0,40,5" FontSize="13"/>
+                        <TextBox Name="prenomPret" MinWidth="100" Margin="10,0,40,5" FontSize="13"/>
+                        <TextBox Name="telPret" MinWidth="100" Margin="10,0,40,5" FontSize="13"/>
+                        <TextBox Name="adressePret" MinWidth="100" Margin="10,0,40,5" FontSize="13"/>
                         <TextBox Name="mailPret" MinWidth="100" Margin="10,0,40,0" FontSize="13"/>
                     </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Border BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="30,5,30,5" Margin="50,10,50,10">
+            <StackPanel HorizontalAlignment="Center" Margin="5,0,5,10">
+                <TextBlock Text="Combien de temps ?" FontSize="13"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Me le rappeler dans :" Margin="40,0,0,5" FontSize="13"/>
+                    <ComboBox Name="dureePret" Margin="10,0,0,0"/>
+                    <ComboBox Margin="10,0,0,0">
+                        <ComboBoxItem IsSelected="True">Jours</ComboBoxItem>
+                        <ComboBoxItem>Semaines</ComboBoxItem>
+                        <ComboBoxItem>Mois</ComboBoxItem>
+                    </ComboBox>
+
                 </StackPanel>
             </StackPanel>
         </Border>

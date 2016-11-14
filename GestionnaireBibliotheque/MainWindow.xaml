@@ -34,7 +34,7 @@
             <ToolBarTray>
                 <ToolBar>
                     <Button Name="AddBook" Content="Ajouter"/>
-                    <Button Name="lendBook" Content="Prêter"/>
+                    <Button Name="lendBook" Content="Prêter" Click="lendBook_Click"/>
                     <Button Name="getBackBook" Content="Retour"/>
                 </ToolBar>
             </ToolBarTray>
@@ -55,9 +55,5 @@
                 <Frame Source="Liste.xaml"/>
             </Grid>
         </Grid>
-
-
-
     </DockPanel>
-
 </Window>
