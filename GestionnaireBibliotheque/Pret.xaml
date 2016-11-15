@@ -5,39 +5,61 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GestionnaireBibliotheque"
       mc:Ignorable="d"
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="1000" d:DesignWidth="1000"
       Title="Pret">
 
-    <StackPanel Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Border Name="border1" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="30,5,30,5" Margin="50,10,50,10">
-            <StackPanel HorizontalAlignment="Center" Margin="5,0,5,10">
-                <TextBlock Text="A qui ?" FontSize="13"/>
-                <StackPanel Orientation="Horizontal">
+    <StackPanel Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+            <Rectangle DockPanel.Dock="Left" Width="70" Height="70" Fill="#FF52C0D0" Margin="0,0,5,0"/>
+            <StackPanel Margin="5,0,0,0">
+                <TextBlock Name="bookTitle" Text="Titre" FontSize="13"/>
+                <TextBlock Name="bookSaga" Text="Saga" FontSize="13"/>
+                <TextBlock Name="bookAuthor" Text="Autheur" FontSize="13"/>
+                <TextBlock Name="bookCondition" Text="Etat" FontSize="13"/>
+            </StackPanel>
+        </StackPanel>
+        <Border Name="border1" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="10,10,10,10" Margin="0,0,0,20">
+            <StackPanel HorizontalAlignment="Center">
+                <DockPanel Margin="0,0,0,20">
+                    <TextBlock DockPanel.Dock="Left" Text="A qui ?" FontSize="13"/>
                     <StackPanel>
-                        <TextBlock Text="Nom :" Margin="40,0,0,5" FontSize="13"/>
-                        <TextBlock Text="Prénom :" Margin="40,0,0,5" FontSize="13"/>
-                        <TextBlock Text="N° de téléphone :" Margin="40,0,0,5" FontSize="13"/>
-                        <TextBlock Text="Adresse :" Margin="40,0,0,5" FontSize="13"/>
-                        <TextBlock Text="Adresse mail :" Margin="40,0,0,0" FontSize="13"/>
+                        <TextBlock HorizontalAlignment="Right" Text="Choisir une personne :" FontSize="13" />
+                        <ComboBox Height="20" HorizontalAlignment="Right" Name="comboBoxContacts"></ComboBox>
                     </StackPanel>
-                    <StackPanel>
-                        <TextBox Name="nomPret" MinWidth="100" Margin="10,0,40,5" FontSize="13"/>
-                        <TextBox Name="prenomPret" MinWidth="100" Margin="10,0,40,5" FontSize="13"/>
-                        <TextBox Name="telPret" MinWidth="100" Margin="10,0,40,5" FontSize="13"/>
-                        <TextBox Name="adressePret" MinWidth="100" Margin="10,0,40,5" FontSize="13"/>
-                        <TextBox Name="mailPret" MinWidth="100" Margin="10,0,40,0" FontSize="13"/>
-                    </StackPanel>
+                </DockPanel>
+                <StackPanel>
+                    <DockPanel Margin="10,0,0,5">
+                        <TextBlock DockPanel.Dock="Left" Text="Nom :" FontSize="13"/>
+                        <TextBox HorizontalAlignment="Right" Name="nomPret" MinWidth="100" FontSize="13"/>
+                    </DockPanel>
+                    <DockPanel Margin="10,0,0,5">
+                        <TextBlock DockPanel.Dock="Left" Text="Prénom :" FontSize="13"/>
+                        <TextBox HorizontalAlignment="Right" Name="prenomPret" MinWidth="100" FontSize="13"/>
+                    </DockPanel>
+                    <DockPanel Margin="10,0,0,5">
+                        <TextBlock DockPanel.Dock="Left" Text="N° de téléphone :" FontSize="13"/>
+                        <TextBox HorizontalAlignment="Right" Name="telPret" MinWidth="100" FontSize="13"/>
+                    </DockPanel>
+                    <DockPanel Margin="10,0,0,5">
+                        <TextBlock DockPanel.Dock="Left" Text="Adresse :" FontSize="13"/>
+                        <TextBox HorizontalAlignment="Right" Name="adressePret" MinWidth="100" FontSize="13"/>
+                    </DockPanel>
+                    <DockPanel Margin="10,0,0,5">
+                        <TextBlock DockPanel.Dock="Left" Text="Adresse mail :" FontSize="13"/>
+                        <TextBox HorizontalAlignment="Right" Name="mailPret" MinWidth="100" FontSize="13"/>
+                    </DockPanel>
                 </StackPanel>
+                
             </StackPanel>
         </Border>
 
-        <Border BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="30,5,30,5" Margin="50,10,50,10">
-            <StackPanel HorizontalAlignment="Center" Margin="5,0,5,10">
+        <Border BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="10,10,10,10">
+            <StackPanel HorizontalAlignment="Center">
                 <TextBlock Text="Combien de temps ?" FontSize="13"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Me le rappeler dans :" Margin="40,0,0,5" FontSize="13"/>
-                    <ComboBox Name="dureePret" Margin="10,0,0,0"/>
-                    <ComboBox Margin="10,0,0,0">
+                    <TextBlock VerticalAlignment="Center" Text="Me le rappeler dans :" Margin="40,10,0,5" FontSize="13"/>
+                    <ComboBox Name="dureePret" Height="20" Margin="10,0,0,0"/>
+                    <ComboBox Height="20" Margin="10,0,0,0">
                         <ComboBoxItem IsSelected="True">Jours</ComboBoxItem>
                         <ComboBoxItem>Semaines</ComboBoxItem>
                         <ComboBoxItem>Mois</ComboBoxItem>
@@ -46,6 +68,11 @@
                 </StackPanel>
             </StackPanel>
         </Border>
+
+        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10,0,0">
+            <Button Padding="5,0,5,0" Margin="0,0,10,0" Name="quitter" Content="Annuler"/>
+            <Button Padding="5,0,5,0" Margin="10,0,0,0" Name="valider" Content="Valider"/>
+        </StackPanel>
 
     </StackPanel>
     
