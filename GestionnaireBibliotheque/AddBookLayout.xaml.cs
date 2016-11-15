@@ -28,6 +28,10 @@ namespace GestionnaireBibliotheque
                 "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum \n" +
                 "quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut \n" +
                 "labore et dolore magnam aliquam quaerat voluptatem.";
+            tb_authorName.Text = "Nom de l'auteur";
+            tb_editorBook.Text = "Nom de l'éditeur";
+            tb_sagaName.Text = "Nom de la saga";
+            tb_titleBook.Text = "Titre du livre";
 
         }
 
