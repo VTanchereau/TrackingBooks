@@ -12,10 +12,10 @@
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
             <Rectangle DockPanel.Dock="Left" Width="70" Height="70" Fill="#FF52C0D0" Margin="0,0,5,0"/>
             <StackPanel Margin="5,0,0,0">
-                <TextBlock Name="bookTitle" Text="Titre" FontSize="13"/>
-                <TextBlock Name="bookSaga" Text="Saga" FontSize="13"/>
-                <TextBlock Name="bookAuthor" Text="Autheur" FontSize="13"/>
-                <TextBlock Name="bookCondition" Text="Etat" FontSize="13"/>
+                <TextBlock Name="tbk_bookTitle" Text="Titre" FontSize="13"/>
+                <TextBlock Name="tbk_bookSaga" Text="Saga" FontSize="13"/>
+                <TextBlock Name="tbk_bookAuthor" Text="Autheur" FontSize="13"/>
+                <TextBlock Name="tbk_bookCondition" Text="Etat" FontSize="13"/>
             </StackPanel>
         </StackPanel>
         <Border Name="border1" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="10" Margin="0,0,0,20">
@@ -24,29 +24,29 @@
                     <TextBlock DockPanel.Dock="Left" Text="A qui ?" FontSize="13"/>
                     <StackPanel>
                         <TextBlock HorizontalAlignment="Right" Text="Choisir une personne :" FontSize="13" />
-                        <ComboBox Height="20" HorizontalAlignment="Right" Name="comboBoxContacts"></ComboBox>
+                        <ComboBox Name="cb_listeLecteurs" Height="20" HorizontalAlignment="Right"></ComboBox>
                     </StackPanel>
                 </DockPanel>
                 <StackPanel>
                     <DockPanel Margin="10,0,0,5">
                         <TextBlock DockPanel.Dock="Left" Text="Nom :" FontSize="13"/>
-                        <TextBox HorizontalAlignment="Right" Name="nomPret" MinWidth="100" FontSize="13"/>
+                        <TextBox Name="tb_nomLecteur" HorizontalAlignment="Right" MinWidth="100" FontSize="13"/>
                     </DockPanel>
                     <DockPanel Margin="10,0,0,5">
                         <TextBlock DockPanel.Dock="Left" Text="Prénom :" FontSize="13"/>
-                        <TextBox HorizontalAlignment="Right" Name="prenomPret" MinWidth="100" FontSize="13"/>
+                        <TextBox HorizontalAlignment="Right" Name="tb_prenomLecteur" MinWidth="100" FontSize="13"/>
                     </DockPanel>
                     <DockPanel Margin="10,0,0,5">
                         <TextBlock DockPanel.Dock="Left" Text="N° de téléphone :" FontSize="13"/>
-                        <TextBox HorizontalAlignment="Right" Name="telPret" MinWidth="100" FontSize="13"/>
+                        <TextBox HorizontalAlignment="Right" Name="tb_telLecteur" MinWidth="100" FontSize="13"/>
                     </DockPanel>
                     <DockPanel Margin="10,0,0,5">
                         <TextBlock DockPanel.Dock="Left" Text="Adresse :" FontSize="13"/>
-                        <TextBox HorizontalAlignment="Right" Name="adressePret" MinWidth="100" FontSize="13"/>
+                        <TextBox HorizontalAlignment="Right" Name="tb_adresseLecteur" MinWidth="100" FontSize="13"/>
                     </DockPanel>
                     <DockPanel Margin="10,0,0,5">
                         <TextBlock DockPanel.Dock="Left" Text="Adresse mail :" FontSize="13"/>
-                        <TextBox HorizontalAlignment="Right" Name="mailPret" MinWidth="100" FontSize="13"/>
+                        <TextBox HorizontalAlignment="Right" Name="tb_mailLecteur" MinWidth="100" FontSize="13"/>
                     </DockPanel>
                 </StackPanel>
                 
@@ -58,8 +58,8 @@
                 <TextBlock Text="Combien de temps ?" FontSize="13"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="Me le rappeler dans :" Margin="40,10,0,5" FontSize="13"/>
-                    <ComboBox Name="dureePret" Height="20" Margin="10,0,0,0"/>
-                    <ComboBox Height="20" Margin="10,0,0,0">
+                    <ComboBox Name="cb_dureePret" Height="20" Margin="10,0,0,0"/>
+                    <ComboBox Name="cb_uniteDureePret" Height="20" Margin="10,0,0,0">
                         <ComboBoxItem IsSelected="True">Jours</ComboBoxItem>
                         <ComboBoxItem>Semaines</ComboBoxItem>
                         <ComboBoxItem>Mois</ComboBoxItem>
@@ -70,8 +70,8 @@
         </Border>
 
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10,0,0">
-            <Button Padding="5,0,5,0" Margin="0,0,10,0" Name="quitter" Content="Annuler"/>
-            <Button Padding="5,0,5,0" Margin="10,0,0,0" Name="valider" Content="Valider"/>
+            <Button Padding="5,0,5,0" Margin="0,0,10,0" Name="btn_quitter" Content="Annuler"/>
+            <Button Padding="5,0,5,0" Margin="10,0,0,0" Name="btn_valider" Content="Valider"/>
         </StackPanel>
 
     </StackPanel>
