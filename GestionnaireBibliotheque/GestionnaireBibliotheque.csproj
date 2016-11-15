@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="TextInputToVisibilityConverter.cs" />
     <Compile Include="Confirm_pret.xaml.cs">
       <DependentUpon>Confirm_pret.xaml</DependentUpon>
     </Compile>
