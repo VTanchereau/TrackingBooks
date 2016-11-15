@@ -16,22 +16,13 @@ using System.Windows.Shapes;
 namespace GestionnaireBibliotheque
 {
     /// <summary>
-    /// Interaction logic for BookLayout.xaml
+    /// Interaction logic for PretGeneral.xaml
     /// </summary>
-    public partial class BookLayout : Page
+    public partial class PretGeneral : Page
     {
-        Retour r = new Retour();
-        static Window Windows_retour = new Window();
-
-        public BookLayout()
+        public PretGeneral()
         {
             InitializeComponent();
-        }
-
-        public void retour_Click(object sender, RoutedEventArgs e)
-        {
-            Windows_retour.Content = r;
-            Windows_retour.ShowDialog();
         }
     }
 }
