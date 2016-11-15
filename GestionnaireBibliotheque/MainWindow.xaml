@@ -47,8 +47,16 @@
                             </ComboBoxItem>
                         </ComboBox>
                         <ComboBox Name="comboBoxTri">
+                            <ComboBoxItem IsSelected="True">Trier par Auteur</ComboBoxItem>
+                            <ComboBoxItem>Trier par Titre</ComboBoxItem>
+                            <ComboBoxItem>Trier par Editeur</ComboBoxItem>
+                            <ComboBoxItem>Trier par Genre</ComboBoxItem>
+                            <ComboBoxItem>Trier par Date d'ajout</ComboBoxItem>
                         </ComboBox>
                         <ComboBox Name="comboBoxPreterDispo">
+                            <ComboBoxItem IsSelected="True">Tous les livres</ComboBoxItem>
+                            <ComboBoxItem>Livres prêtés</ComboBoxItem>
+                            <ComboBoxItem>Livres disponibles</ComboBoxItem>
                         </ComboBox>
                         <TextBox Width="200">Que cherchez-vous ?</TextBox>
                     </ToolBar>
