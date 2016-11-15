@@ -55,15 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-	<Page Include="AddBookLayout.xaml">
+    <Page Include="AddBookLayout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="confirm_pret.xaml.cs">
-      <DependentUpon>confirm_pret.xaml</DependentUpon>
+    <Compile Include="Confirm_pret.xaml.cs">
+      <DependentUpon>Confirm_pret.xaml</DependentUpon>
     </Compile>
-    <Compile Include="help.xaml.cs">
-      <DependentUpon>help.xaml</DependentUpon>
+    <Compile Include="Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
     </Compile>
     <Compile Include="Retour.xaml.cs">
       <DependentUpon>Retour.xaml</DependentUpon>
@@ -72,14 +72,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-	<Compile Include="AddBookLayout.xaml.cs">
+    <Compile Include="AddBookLayout.xaml.cs">
       <DependentUpon>AddBookLayout.xaml</DependentUpon>
     </Compile>
-    <Page Include="confirm_pret.xaml">
+    <Page Include="Confirm_pret.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="help.xaml">
+    <Page Include="Help.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,7 +109,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-	<Page Include="Pret.xaml">
+    <Page Include="Pret.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,7 +119,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Pret.xaml.cs">
+    <Compile Include="Pret.xaml.cs">
       <DependentUpon>Pret.xaml</DependentUpon>
     </Compile>
     <Compile Include="PretGeneral.xaml.cs">

@@ -23,7 +23,7 @@
                 <TextBlock Background="Gainsboro" Name="subTitle" Width="400" Height="150" Margin="-5,0,0,0"></TextBlock>
                 <StackPanel Orientation="Horizontal" Margin="100,20,0,0">
                     <TextBox Width="200" Margin="10,25,10,5" Text="Numéro ISBN"></TextBox>
-                    <Button  Width="20" Height="20" Margin="10,10,10,5">?</Button>
+                    <Button  Width="20" Height="20" Margin="10,10,10,5" Name="isbnButton" Click="isbnButton_Click">?</Button>
                 </StackPanel>
             </StackPanel >
         </DockPanel>
@@ -32,19 +32,19 @@
             <StackPanel Height="310" Orientation="Vertical" Margin="10,20,0,0">
                 <StackPanel Orientation="Horizontal">
                     <TextBox Name="tb_titleBook"  Width="300" Margin="10,10,10,5"></TextBox>
-                    <Button Width="20" Margin="10,10,10,5">?</Button>
+                    <Button Width="20" Margin="10,10,10,5" Name="titleButton" Click="titleButton_Click">?</Button>
                     <TextBox Name="tb_authorName" Width="300" Margin="50,10,10,5"></TextBox>
-                    <Button Width="20" Margin="10,10,10,5">?</Button>
+                    <Button Width="20" Margin="10,10,10,5" Name="authorButton" Click="authorButton_Click">?</Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <TextBox Name="tb_editorBook" Width="300" Margin="10,10,10,5"></TextBox>
-                    <Button Width="20" Margin="10,10,10,5">?</Button>
+                    <Button Width="20" Margin="10,10,10,5" Name="editorButton" Click="editorButton_Click">?</Button>
                     <TextBox Name="tb_sagaName" Width="300" Margin="50,10,10,5"></TextBox>
-                    <Button Width="20" Margin="10,10,10,5">?</Button>
+                    <Button Width="20" Margin="10,10,10,5" Name="sagaButton" Click="sagaButton_Click">?</Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBox Height="150" Width="700" Margin="10,30,10,5"/>
-                    <Button Width="20" Height="20" Margin="10,10,10,5" Content="?"/>
+                    <Button Width="20" Height="20" Margin="10,10,10,5" Name="commButton" Content="?" Click="commButton_Click"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Height="70">
                     <Button Width="100" Height="20" Margin="490,10,10,5" Content="Annuler"/>

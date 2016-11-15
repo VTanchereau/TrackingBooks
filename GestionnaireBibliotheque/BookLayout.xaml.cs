@@ -33,5 +33,16 @@ namespace GestionnaireBibliotheque
             Windows_retour.Content = r;
             Windows_retour.ShowDialog();
         }
+
+        private void pret_Click(object sender, RoutedEventArgs e)
+        {
+            Pret pret = new Pret();
+            Window win = new Window();
+            win.Content = pret;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
+        }
     }
 }

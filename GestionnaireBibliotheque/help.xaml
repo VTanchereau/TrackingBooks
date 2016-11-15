@@ -9,8 +9,8 @@
       Title="help">
 
     <StackPanel>
-        <TextBlock FontSize="15" FontWeight="Bold" >L'élément pour être aidé</TextBlock>
-        <TextBlock Width="200" Height="200" TextWrapping="WrapWithOverflow" TextAlignment="Justify" Margin="10">
+        <TextBlock FontSize="15" FontWeight="Bold" Name="titleHelp" />
+        <TextBlock Width="200" Height="200" TextWrapping="WrapWithOverflow" TextAlignment="Justify" Name="contentHelp"  Margin="10">
             Hinc ille commotus ut iniusta perferens et indigna praefecti custodiam protectoribus mandaverat fidis. quo conperto Montius tunc quaestor acer quidem sed ad lenitatem propensior, consulens in commune advocatos palatinarum primos scholarum adlocutus est mollius docens nec decere haec fieri nec prodesse addensque vocis obiurgatorio sonu quod si id placeret, post statuas Constantii deiectas super adimenda vita praefecto conveniet securius cogitari.
         </TextBlock>
         <Button Content="Fermer" Width="100" HorizontalAlignment="Right" Margin="0,10,5,5"></Button>

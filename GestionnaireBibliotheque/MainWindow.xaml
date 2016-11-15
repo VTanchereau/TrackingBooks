@@ -33,9 +33,9 @@
             <DockPanel LastChildFill="True">
                 <ToolBarTray DockPanel.Dock="Left">
                     <ToolBar>
-                        <Button Name="AddBook" Content="Ajouter"/>
-                        <Button Name="lendBook" Content="Prêter"/>
-                        <Button Name="getBackBook" Content="Retour"/>
+                        <Button Name="AddBook" Content="Ajouter" VerticalAlignment="Top" Click="AddBook_Click"/>
+                        <Button Name="lendBook" Content="Prêter" Click="lendBook_Click"/>
+                        <Button Name="getBackBook" Content="Retour" VerticalAlignment="Top" Height="22" Click="getBackBook_Click"/>
                     </ToolBar>
                 </ToolBarTray>
                 <ToolBarTray DockPanel.Dock="Right">
@@ -56,7 +56,7 @@
                 <StackPanel>
                 </StackPanel>
             </DockPanel>
-                
+
 
         </StackPanel>
         <Grid>
@@ -67,7 +67,11 @@
             <Grid.RowDefinitions>
             </Grid.RowDefinitions>
             <Grid Grid.Column="0">
-                <Frame Source="BookLayout.xaml"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="73*"/>
+                    <ColumnDefinition Width="83*"/>
+                </Grid.ColumnDefinitions>
+                <Frame Source="BookLayout.xaml" Grid.ColumnSpan="2"/>
             </Grid>
 
             <Grid Grid.Column="1" Grid.Row="0">

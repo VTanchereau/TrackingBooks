@@ -42,11 +42,26 @@ namespace GestionnaireBibliotheque
 
         private void lendBook_Click(object sender, RoutedEventArgs e)
         {
-            Pret p = new Pret();
+            PretGeneral p = new PretGeneral();
             Window w = new Window();
 
             w.Content = p;
             w.Title = "Prêter un livre";
+            w.SizeToContent = SizeToContent.WidthAndHeight;
+            w.ResizeMode = System.Windows.ResizeMode.NoResize;
+
+            w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+            w.ShowDialog();
+        }
+
+        private void getBackBook_Click(object sender, RoutedEventArgs e)
+        {
+            PretGeneral p = new PretGeneral();
+            Window w = new Window();
+
+            w.Content = p;
+            w.Title = "Retour d'un livre";
             w.SizeToContent = SizeToContent.WidthAndHeight;
             w.ResizeMode = System.Windows.ResizeMode.NoResize;
 

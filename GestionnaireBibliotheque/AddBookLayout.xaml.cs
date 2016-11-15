@@ -35,6 +35,76 @@ namespace GestionnaireBibliotheque
 
         }
 
+        private void isbnButton_Click(object sender, RoutedEventArgs e)
+        {
+            help aide = new help();
+            Window win = new Window();
+            aide.titleHelp.Text = "Numéro ISBN";
+            win.Content = aide;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
+        }
 
+        private void titleButton_Click(object sender, RoutedEventArgs e)
+        {
+            help aide = new help();
+            Window win = new Window();
+            aide.titleHelp.Text = "Titre du livre";
+            win.Content = aide;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
+        }
+
+        private void authorButton_Click(object sender, RoutedEventArgs e)
+        {
+            help aide = new help();
+            Window win = new Window();
+            aide.titleHelp.Text = "Auteur du livre";
+            win.Content = aide;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
+        }
+
+        private void sagaButton_Click(object sender, RoutedEventArgs e)
+        {
+            help aide = new help();
+            Window win = new Window();
+            aide.titleHelp.Text = "Saga";
+            win.Content = aide;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
+        }
+
+        private void commButton_Click(object sender, RoutedEventArgs e)
+        {
+            help aide = new help();
+            Window win = new Window();
+            aide.titleHelp.Text = "Commentaire";
+            win.Content = aide;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
+        }
+
+        private void editorButton_Click(object sender, RoutedEventArgs e)
+        {
+            help aide = new help();
+            Window win = new Window();
+            aide.titleHelp.Text = "Editeur";
+            win.Content = aide;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
+        }
     }
 }
