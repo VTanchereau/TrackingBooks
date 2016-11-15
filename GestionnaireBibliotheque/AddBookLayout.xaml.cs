@@ -23,7 +23,7 @@ namespace GestionnaireBibliotheque
         public AddBookLayout()
         {
             InitializeComponent();
-            subTitle.Text = "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \n" +
+            tb_ResumeLivre.Text = "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \n" +
                 "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur \n" +
                 "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum \n" +
                 "quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut \n" +
@@ -39,7 +39,7 @@ namespace GestionnaireBibliotheque
         {
             help aide = new help();
             Window win = new Window();
-            aide.titleHelp.Text = "Numéro ISBN";
+            aide.tbk_helpTitle.Text = "Numéro ISBN";
             win.Content = aide;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -51,7 +51,7 @@ namespace GestionnaireBibliotheque
         {
             help aide = new help();
             Window win = new Window();
-            aide.titleHelp.Text = "Titre du livre";
+            aide.tbk_helpTitle.Text = "Titre du livre";
             win.Content = aide;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -63,7 +63,7 @@ namespace GestionnaireBibliotheque
         {
             help aide = new help();
             Window win = new Window();
-            aide.titleHelp.Text = "Auteur du livre";
+            aide.tbk_helpTitle.Text = "Auteur du livre";
             win.Content = aide;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -75,7 +75,7 @@ namespace GestionnaireBibliotheque
         {
             help aide = new help();
             Window win = new Window();
-            aide.titleHelp.Text = "Saga";
+            aide.tbk_helpTitle.Text = "Saga";
             win.Content = aide;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -87,7 +87,7 @@ namespace GestionnaireBibliotheque
         {
             help aide = new help();
             Window win = new Window();
-            aide.titleHelp.Text = "Commentaire";
+            aide.tbk_helpTitle.Text = "Commentaire";
             win.Content = aide;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -99,7 +99,7 @@ namespace GestionnaireBibliotheque
         {
             help aide = new help();
             Window win = new Window();
-            aide.titleHelp.Text = "Editeur";
+            aide.tbk_helpTitle.Text = "Editeur";
             win.Content = aide;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;

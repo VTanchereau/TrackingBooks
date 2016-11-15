@@ -32,9 +32,9 @@ namespace GestionnaireBibliotheque
             {
                 lstNumbers.Add(i + 1);
             }
-            dureePret.ItemsSource = lstNumbers;
+            cb_dureePret.ItemsSource = lstNumbers;
 
-            dureePret.SelectedItem = 1;
+            cb_dureePret.SelectedItem = 1;
         }
     }
 }
