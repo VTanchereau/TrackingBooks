@@ -18,7 +18,7 @@
                 <TextBlock Name="bookCondition" Text="Etat" FontSize="13"/>
             </StackPanel>
         </StackPanel>
-        <Border Name="border1" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="10,10,10,10" Margin="0,0,0,20">
+        <Border Name="border1" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="10" Margin="0,0,0,20">
             <StackPanel HorizontalAlignment="Center">
                 <DockPanel Margin="0,0,0,20">
                     <TextBlock DockPanel.Dock="Left" Text="A qui ?" FontSize="13"/>
