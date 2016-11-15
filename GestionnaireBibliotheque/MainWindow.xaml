@@ -6,6 +6,18 @@
         xmlns:local="clr-namespace:GestionnaireBibliotheque"
         mc:Ignorable="d"
         Title="Tracking Books" Height="350" Width="525">
+    <Window.Resources>
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <local:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConverter" />
+        <Style x:Key="EntryFieldStyle" TargetType="Grid" >
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20,0" />
+        </Style>
+    </Window.Resources>
 
     <DockPanel LastChildFill="True">
         <StackPanel DockPanel.Dock="Top">
@@ -58,7 +70,19 @@
                             <ComboBoxItem>Livres prêtés</ComboBoxItem>
                             <ComboBoxItem>Livres disponibles</ComboBoxItem>
                         </ComboBox>
-                        <TextBox Width="200">Que cherchez-vous ?</TextBox>
+                        <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+                            <!-- overlay with hint text -->
+                            <TextBlock Margin="5,2" MinWidth="50" Text="Que cherchez-vous ?" Foreground="LightSteelBlue">
+                                <TextBlock.Visibility>
+                                    <MultiBinding Converter="{StaticResource TextInputToVisibilityConverter}">
+                                        <Binding ElementName="txtSearchBox" Path="Text.IsEmpty" />
+                                        <Binding ElementName="txtSearchBox" Path="IsFocused" />
+                                    </MultiBinding>
+                                </TextBlock.Visibility>
+                            </TextBlock>
+                            <!-- enter term here -->
+                            <TextBox MinWidth="50" Name="txtSearchBox" Background="Transparent" />
+                        </Grid>
                     </ToolBar>
                 </ToolBarTray>
                 <StackPanel>
