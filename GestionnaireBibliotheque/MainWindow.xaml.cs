@@ -26,6 +26,33 @@ namespace GestionnaireBibliotheque
             InitializeComponent();
         }
 
+        private void AddBook_Click(object sender, RoutedEventArgs e)
+        {
+
+            AddBookLayout addBookWindow = new AddBookLayout();
+            Window win = new Window();
+            win.Content = addBookWindow;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
         
+         
+        }
+
+        private void lendBook_Click(object sender, RoutedEventArgs e)
+        {
+            Pret p = new Pret();
+            Window w = new Window();
+
+            w.Content = p;
+            w.Title = "Prêter un livre";
+            w.SizeToContent = SizeToContent.WidthAndHeight;
+            w.ResizeMode = System.Windows.ResizeMode.NoResize;
+
+            w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+            w.ShowDialog();
+        }
     }
 }
