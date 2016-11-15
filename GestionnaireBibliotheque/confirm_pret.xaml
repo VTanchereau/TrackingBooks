@@ -13,10 +13,10 @@
             <TextBlock>Le prêt du livre à bien été enregistré</TextBlock>
         </StackPanel>
         <StackPanel Margin="10">
-            <Button Content="Annuler" Width="100"></Button>
+            <Button Name="btn_annuler" Content="Annuler" Width="100"></Button>
         </StackPanel>
         <StackPanel Margin="10">
-            <ProgressBar Height="10" Value="80"></ProgressBar>
+            <ProgressBar Name="pgb_confirmPret" Height="10" Value="80"></ProgressBar>
         </StackPanel>
     </StackPanel>
 </Page>
