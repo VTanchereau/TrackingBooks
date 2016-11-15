@@ -33,7 +33,7 @@
 
             <ToolBarTray>
                 <ToolBar>
-                    <Button Name="AddBook" Content="Ajouter"/>
+                    <Button Name="AddBook" Content="Ajouter" Click="AddBook_Click"/>
                     <Button Name="lendBook" Content="Prêter"/>
                     <Button Name="getBackBook" Content="Retour"/>
                 </ToolBar>

@@ -25,5 +25,17 @@ namespace GestionnaireBibliotheque
             this.WindowState = WindowState.Maximized;
             InitializeComponent();
         }
+
+        private void AddBook_Click(object sender, RoutedEventArgs e)
+        {
+
+            AddBookLayout addBookWindow = new AddBookLayout();
+            Window win = new Window();
+            win.Content = addBookWindow;
+            win.SizeToContent = 
+            win.ShowDialog();
+        
+         
+        }
     }
 }
