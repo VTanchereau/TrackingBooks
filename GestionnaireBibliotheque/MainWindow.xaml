@@ -81,7 +81,7 @@
                                 </TextBlock.Visibility>
                             </TextBlock>
                             <!-- enter term here -->
-                            <TextBox MinWidth="50" Name="txtSearchBox" Background="Transparent" />
+                            <TextBox MinWidth="200" Name="txtSearchBox" Background="Transparent" />
                         </Grid>
                     </ToolBar>
                 </ToolBarTray>
