@@ -33,27 +33,27 @@
             <DockPanel LastChildFill="True">
                 <ToolBarTray DockPanel.Dock="Left">
                     <ToolBar>
-                        <Button Name="AddBook" Content="Ajouter" VerticalAlignment="Top" Click="AddBook_Click"/>
-                        <Button Name="lendBook" Content="Prêter" Click="lendBook_Click"/>
-                        <Button Name="getBackBook" Content="Retour" VerticalAlignment="Top" Height="22" Click="getBackBook_Click"/>
+                        <Button Name="btn_addBook" Content="Ajouter" VerticalAlignment="Top" Click="AddBook_Click"/>
+                        <Button Name="btn_lendBook" Content="Prêter" Click="lendBook_Click"/>
+                        <Button Name="btn_getBackBook" Content="Retour" VerticalAlignment="Top" Height="22" Click="getBackBook_Click"/>
                     </ToolBar>
                 </ToolBarTray>
                 <ToolBarTray DockPanel.Dock="Right">
                     <ToolBar>
-                        <ComboBox Name="comboBoxCalendar">
+                        <ComboBox Name="cb_Calendar">
                             <ComboBoxItem IsSelected="True">Date</ComboBoxItem>
                             <ComboBoxItem>
                                 <Calendar></Calendar>
                             </ComboBoxItem>
                         </ComboBox>
-                        <ComboBox Name="comboBoxTri">
+                        <ComboBox Name="cb_Tri">
                             <ComboBoxItem IsSelected="True">Trier par Auteur</ComboBoxItem>
                             <ComboBoxItem>Trier par Titre</ComboBoxItem>
                             <ComboBoxItem>Trier par Editeur</ComboBoxItem>
                             <ComboBoxItem>Trier par Genre</ComboBoxItem>
                             <ComboBoxItem>Trier par Date d'ajout</ComboBoxItem>
                         </ComboBox>
-                        <ComboBox Name="comboBoxPreterDispo">
+                        <ComboBox Name="bc_PreterDispo">
                             <ComboBoxItem IsSelected="True">Tous les livres</ComboBoxItem>
                             <ComboBoxItem>Livres prêtés</ComboBoxItem>
                             <ComboBoxItem>Livres disponibles</ComboBoxItem>
