@@ -33,9 +33,22 @@
 
             <ToolBarTray>
                 <ToolBar>
-                    <Button Name="AddBook" Content="Ajouter"/>
-                    <Button Name="lendBook" Content="Prêter"/>
-                    <Button Name="getBackBook" Content="Retour"/>
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                            <Button Name="AddBook" Content="Ajouter"/>
+                            <Button Name="lendBook" Content="Prêter"/>
+                            <Button Name="getBackBook" Content="Retour"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                            <ComboBox>
+                                
+                            </ComboBox>
+                            <ComboBox>
+
+                            </ComboBox>
+                            <TextBox>Que cherchez vous ?</TextBox>
+                        </StackPanel>
+                    </DockPanel>
                 </ToolBar>
             </ToolBarTray>
 
