@@ -32,7 +32,9 @@ namespace GestionnaireBibliotheque
             AddBookLayout addBookWindow = new AddBookLayout();
             Window win = new Window();
             win.Content = addBookWindow;
-            win.SizeToContent = 
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             win.ShowDialog();
         
          

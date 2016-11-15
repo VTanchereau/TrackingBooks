@@ -8,50 +8,51 @@
     d:DesignHeight="600" d:DesignWidth="800"
     Title="AddBookLayout">
 
-    <DockPanel Background="White">
+    <DockPanel>
+        <DockPanel Background="White">
 
-        <StackPanel Orientation="Vertical" DockPanel.Dock="Left" Height="300" Margin="0,-300,0,0">
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Left" Height="250" Margin="0,-330,0,0">
 
-            <Rectangle Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Height="200" Fill="#FF52C0D0" Margin="20,10,10,5"></Rectangle>
-            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-                <Button Height="20" Margin="10,10,10,5">Prendre une photo</Button>
-                <Button Height="20" Margin="10,10,10,5">Choisir une photo</Button>
+                <Rectangle Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Height="200" Fill="#FF52C0D0" Margin="20,10,10,5"></Rectangle>
+                <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                    <Button Height="20" Margin="10,10,10,5">Prendre une photo</Button>
+                    <Button Height="20" Margin="10,10,10,5">Choisir une photo</Button>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-        <StackPanel Width="700" DockPanel.Dock="Top">
-            <TextBlock Margin="50,10,10,5" FontSize="20" FontWeight="Bold">Bienvenu sur l'assistant d'ajout d'un livre</TextBlock>
-            <TextBlock Background="Gainsboro" Name="subTitle" Width="400" Height="150" Margin="-210,0,0,0"></TextBlock>
-            <StackPanel Orientation="Horizontal" Margin="100,20,0,0">
-                <TextBox Width="200" Margin="10,10,10,5" Text="Numéro ISBN"></TextBox>
-                <Button  Width="20" Height="20" Margin="10,10,10,5">?</Button>
-            </StackPanel>
-        </StackPanel >
-        <StackPanel Height="500" Orientation="Vertical" Margin="-240,20,0,0">
-            <StackPanel Orientation="Horizontal">
-                <TextBox Width="300" Margin="10,10,10,5"></TextBox>
-                <Button Width="20" Margin="10,10,10,5">?</Button>
-                <TextBox Width="300" Margin="50,10,10,5"></TextBox>
-                <Button Width="20" Margin="10,10,10,5">?</Button>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" >
-                <TextBox Width="300" Margin="10,10,10,5"></TextBox>
-                <Button Width="20" Margin="10,10,10,5">?</Button>
-                <TextBox Width="300" Margin="50,10,10,5"></TextBox>
-                <Button Width="20" Margin="10,10,10,5">?</Button>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBox Height="150" Width="700" Margin="10,30,10,5"/>
-                <Button Width="20" Height="20" Margin="10,10,10,5" Content="?"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="100">
-                <Button Width="100" Height="20" Margin="500,10,10,5" Content="Annuler"/>
-                <Button Width="100" Height="20" Margin="10,10,10,5" Content="Ajouter"/>
-            </StackPanel>
+            <StackPanel Width="700" DockPanel.Dock="Top">
+                <TextBlock Margin="50,10,10,5" FontSize="20" FontWeight="Bold">Bienvenu sur l'assistant d'ajout d'un livre</TextBlock>
+                <TextBlock Background="Gainsboro" Name="subTitle" Width="400" Height="150" Margin="-210,0,0,0"></TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="100,20,0,0">
+                    <TextBox Width="200" Margin="10,10,10,5" Text="Numéro ISBN"></TextBox>
+                    <Button  Width="20" Height="20" Margin="10,10,10,5">?</Button>
+                </StackPanel>
+            </StackPanel >
+        </DockPanel>
 
-
-        </StackPanel>
-
-
-
+        <DockPanel DockPanel.Dock="Bottom" >
+            <StackPanel Height="500" Orientation="Vertical" Margin="-240,20,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Width="300" Margin="10,10,10,5"></TextBox>
+                    <Button Width="20" Margin="10,10,10,5">?</Button>
+                    <TextBox Width="300" Margin="50,10,10,5"></TextBox>
+                    <Button Width="20" Margin="10,10,10,5">?</Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBox Width="300" Margin="10,10,10,5"></TextBox>
+                    <Button Width="20" Margin="10,10,10,5">?</Button>
+                    <TextBox Width="300" Margin="50,10,10,5"></TextBox>
+                    <Button Width="20" Margin="10,10,10,5">?</Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Height="150" Width="700" Margin="10,30,10,5"/>
+                    <Button Width="20" Height="20" Margin="10,10,10,5" Content="?"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="100">
+                    <Button Width="100" Height="20" Margin="500,10,10,5" Content="Annuler"/>
+                    <Button Width="100" Height="20" Margin="10,10,10,5" Content="Ajouter"/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
     </DockPanel>
+   
 </Page>
