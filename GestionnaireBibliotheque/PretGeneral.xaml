@@ -12,14 +12,14 @@
             <DockPanel LastChildFill="True">
                 <TextBlock DockPanel.Dock="Top" Text="Prêter un livre" FontSize="13" TextDecorations="Underline"/>
                 <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
-                    <Button Padding="5,0,5,0" Margin="0,0,10,0" Name="quitter" Content="Annuler"/>
-                    <Button Padding="5,0,5,0" Margin="10,0,0,0" Name="valider" Content="Valider"/>
+                    <Button Padding="5,0,5,0" Margin="0,0,10,0" Name="btn_quitter" Content="Annuler"/>
+                    <Button Padding="5,0,5,0" Margin="10,0,0,0" Name="btn_valider" Content="Valider"/>
                 </StackPanel>
                 <StackPanel Margin="20,20,20,10">
                     <TextBox HorizontalAlignment="Center" Text="Rechercher un livre" Margin="0,0,0,20"/>
-                    <ListBoxItem Name="resultatsRecherche" Width="250" Height="300" BorderBrush="Black" Background="White">
+                    <ListBox Name="lb_resultatsRecherche" Width="250" Height="300" BorderBrush="Black" Background="White">
                         
-                    </ListBoxItem>
+                    </ListBox>
                 </StackPanel>
             </DockPanel>
         </Border>
