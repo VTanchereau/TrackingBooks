@@ -10,10 +10,10 @@
 
     <DockPanel Background="#FF939393">
         <StackPanel DockPanel.Dock="Top" Background="#FF494444">
-            <TextBlock Name="bookTitle" Text="Book Title" FontWeight="Bold" FontSize="20" Margin="10,5,0,0"/>
+            <TextBlock Name="tbk_titleBook" Text="Book Title" FontWeight="Bold" FontSize="20" Margin="10,5,0,0"/>
             <StackPanel Margin="10,0,0,5" Orientation="Horizontal">
-                <TextBlock Name="textBlock1" Text="Ecrit par " FontWeight="Bold" FontSize="13"/>
-                <TextBlock Name="bookAuthor" Text="Author" FontWeight="Bold" FontSize="13"/>
+                <TextBlock Text="Ecrit par " FontWeight="Bold" FontSize="13"/>
+                <TextBlock Name="tbk_AuthorTitle" Text="Author" FontWeight="Bold" FontSize="13"/>
             </StackPanel>
         </StackPanel>
 
@@ -22,50 +22,50 @@
             <StackPanel Margin="10,10,10,10">
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,0,5">
                     <TextBlock Text="Ajouté le " FontSize="13"/>
-                    <TextBlock Name="addedDay" FontSize="13"/>
+                    <TextBlock Name="tbk_addedDay" FontSize="13"/>
                     <TextBlock Text="/" FontSize="13"/>
-                    <TextBlock Name="addedMonth" FontSize="13"/>
+                    <TextBlock Name="tbk_addedMonth" FontSize="13"/>
                     <TextBlock Text="/" FontSize="13"/>
-                    <TextBlock Name="addedyear" FontSize="13"/>
+                    <TextBlock Name="tbk_addedyear" FontSize="13"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Tome " FontSize="13"/>
-                    <TextBlock Name="tomeNumber" FontSize="13"/>
+                    <TextBlock Name="tbk_tomeNumber" FontSize="13"/>
                     <TextBlock Text=" de la saga " FontSize="13"/>
-                    <TextBlock Name="sagaName" FontSize="13"/>
+                    <TextBlock Name="tbk_sagaName" FontSize="13"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Edité par " FontSize="13"/>
-                    <TextBlock Name="editeur" FontSize="13"/>
+                    <TextBlock Name="tbk_editeur" FontSize="13"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="ISBN : " FontSize="13"/>
-                    <TextBlock Name="ISBNnumber" FontSize="13"/>
+                    <TextBlock Name="tbk_ISBNnumber" FontSize="13"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Name="isPret" FontSize="13"/>
+                    <TextBlock Name="tbk_isPret" FontSize="13"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Retour prévu le " FontSize="13"/>
-                    <TextBlock Name="retourDay" FontSize="13"/>
+                    <TextBlock Name="tbk_retourDay" FontSize="13"/>
                     <TextBlock Text="/" FontSize="13"/>
-                    <TextBlock Name="retourMonth" FontSize="13"/>
+                    <TextBlock Name="tbk_retourMonth" FontSize="13"/>
                     <TextBlock Text="/" FontSize="13"/>
-                    <TextBlock Name="retourYear" FontSize="13"/>
+                    <TextBlock Name="tbk_retourYear" FontSize="13"/>
                 </StackPanel>
             </StackPanel>
         </DockPanel>
 
         <TextBlock DockPanel.Dock="Top" Text="Résumé : " FontSize="13" Margin="10,0,0,0"/>
 
-        <TextBlock DockPanel.Dock="Top" Name="bookResume" Margin="15,5,15,5" FontStyle="Italic" TextAlignment="Left" FontSize="13" Text="COUCOU" Background="White" Padding="5,5,5,5" Foreground="#FF939393"/>
+        <TextBlock DockPanel.Dock="Top" Name="tbk_bookResume" Margin="15,5,15,5" FontStyle="Italic" TextAlignment="Left" FontSize="13" Text="COUCOU" Background="White" Padding="5,5,5,5" Foreground="#FF939393"/>
 
         <TextBlock DockPanel.Dock="Top" Text="Commentaires : " FontSize="13" Margin="10,0,0,0"/>
 
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,5,0,20">
-            <Button Padding="5,0,5,0" Margin="0,0,20,0" Name="retour" Content="Retour livre" Click="retour_Click"/>
-            <Button Padding="5,0,5,0" Margin ="0,0,20,0" Name="pret" Content="Prêter" Click="pret_Click"/>
-            <Button Padding="5,0,5,0" Name="delete" Content="Supprimer"/>
+            <Button Padding="5,0,5,0" Margin="0,0,20,0" Name="btn_retour" Content="Retour livre" Click="retour_Click"/>
+            <Button Padding="5,0,5,0" Margin ="0,0,20,0" Name="btn_pret" Content="Prêter" Click="pret_Click"/>
+            <Button Padding="5,0,5,0" Name="btn_delete" Content="Supprimer"/>
         </StackPanel>
 
         <Canvas>
