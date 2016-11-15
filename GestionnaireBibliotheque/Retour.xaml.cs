@@ -27,7 +27,7 @@ namespace GestionnaireBibliotheque
 
         private void close_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
