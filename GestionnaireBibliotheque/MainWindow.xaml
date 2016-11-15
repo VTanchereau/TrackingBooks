@@ -30,27 +30,33 @@
                     <MenuItem Header="Aide"/>
                 </MenuItem>
             </Menu>
-
-            <ToolBarTray>
-                <ToolBar>
-                    <DockPanel>
-                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                            <Button Name="AddBook" Content="Ajouter"/>
-                            <Button Name="lendBook" Content="Prêter"/>
-                            <Button Name="getBackBook" Content="Retour"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
-                            <ComboBox>
-                                
-                            </ComboBox>
-                            <ComboBox>
-
-                            </ComboBox>
-                            <TextBox>Que cherchez vous ?</TextBox>
-                        </StackPanel>
-                    </DockPanel>
-                </ToolBar>
-            </ToolBarTray>
+            <DockPanel LastChildFill="True">
+                <ToolBarTray DockPanel.Dock="Left">
+                    <ToolBar>
+                        <Button Name="AddBook" Content="Ajouter"/>
+                        <Button Name="lendBook" Content="Prêter"/>
+                        <Button Name="getBackBook" Content="Retour"/>
+                    </ToolBar>
+                </ToolBarTray>
+                <ToolBarTray DockPanel.Dock="Right">
+                    <ToolBar>
+                        <ComboBox>
+                            <ComboBoxItem IsSelected="True">Date</ComboBoxItem>
+                            <ComboBoxItem>
+                                <Calendar></Calendar>
+                            </ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox>
+                        </ComboBox>
+                        <ComboBox>
+                        </ComboBox>
+                        <TextBox Width="200">Que cherchez-vous ?</TextBox>
+                    </ToolBar>
+                </ToolBarTray>
+                <StackPanel>
+                </StackPanel>
+            </DockPanel>
+                
 
         </StackPanel>
         <Grid>
