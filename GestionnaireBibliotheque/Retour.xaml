@@ -11,22 +11,22 @@
     <StackPanel Orientation="Vertical">
         <StackPanel DockPanel.Dock="top" Orientation="Vertical" Margin="10">
             <Rectangle Width="150" Fill="#FF52C0D0" Height="150" Margin="10,10,10,5" />
-            <TextBlock HorizontalAlignment="center" Name="title">Harry POTTER</TextBlock>
-            <TextBlock HorizontalAlignment="center" Name="tome">La chambre des secrets</TextBlock>
+            <TextBlock HorizontalAlignment="center" Name="tbk_sagaBook">Harry POTTER</TextBlock>
+            <TextBlock HorizontalAlignment="center" Name="tbk_titleBook">La chambre des secrets</TextBlock>
         </StackPanel>
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Etat du livre :</Label>
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton GroupName="etat" Content="Bon" IsChecked="true" Margin="10,7"/>
-                    <RadioButton GroupName="etat" Content="Mauvais" Margin="10,7"/>
+                    <RadioButton Name="rb_etatBon" GroupName="etat" Content="Bon" IsChecked="true" Margin="10,7"/>
+                    <RadioButton Name="rb_etatMauvais" GroupName="etat" Content="Mauvais" Margin="10,7"/>
                 </StackPanel>
             </StackPanel>
-            <TextBox Width="500" Height="150" Margin="10">Commentaire</TextBox>
+            <TextBox Name="tb_commBook" Width="500" Height="150" Margin="10">Commentaire</TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Name="close" Content="Fermer" Margin="10" Click="close_Click"/>
-            <Button Name="save" Content="Enregistrer" Margin="10"/>
+            <Button Name="btn_close" Content="Fermer" Margin="10" Click="close_Click"/>
+            <Button Name="btn_save" Content="Enregistrer" Margin="10"/>
         </StackPanel>
     </StackPanel>
 
