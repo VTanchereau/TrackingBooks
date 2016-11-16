@@ -59,13 +59,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="TextInputToVisibilityConverter.cs" />
-    <Compile Include="Confirm_pret.xaml.cs">
-      <DependentUpon>Confirm_pret.xaml</DependentUpon>
+    <Compile Include="confirm_pret.xaml.cs">
+      <DependentUpon>confirm_pret.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Help.xaml.cs">
-      <DependentUpon>Help.xaml</DependentUpon>
+    <Compile Include="help.xaml.cs">
+      <DependentUpon>help.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modèle\Auteur.cs" />
+    <Compile Include="Modèle\Commentaire.cs" />
+    <Compile Include="Modèle\Editeur.cs" />
+    <Compile Include="Modèle\Exemplaire.cs" />
+    <Compile Include="Modèle\Genre.cs" />
+    <Compile Include="Modèle\Lecteur.cs" />
+    <Compile Include="Modèle\MoyenContact.cs" />
+    <Compile Include="Modèle\Oeuvre.cs" />
+    <Compile Include="Modèle\Pret.cs" />
     <Compile Include="Retour.xaml.cs">
       <DependentUpon>Retour.xaml</DependentUpon>
     </Compile>
@@ -76,11 +84,11 @@
     <Compile Include="AddBookLayout.xaml.cs">
       <DependentUpon>AddBookLayout.xaml</DependentUpon>
     </Compile>
-    <Page Include="Confirm_pret.xaml">
+    <Page Include="confirm_pret.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Help.xaml">
+    <Page Include="help.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
