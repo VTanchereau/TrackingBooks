@@ -8,11 +8,11 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class Lecteur
     {
-        private MoyenContact _moyenContact;
-        public MoyenContact MoyenContact
+        private List<MoyenContact> _listeMoyenContacts;
+        public List<MoyenContact> ListeMoyenContacts
         {
-            get { return _moyenContact; }
-            set { _moyenContact = value; }
+            get { return _listeMoyenContacts; }
+            set { _listeMoyenContacts = value; }
         }
 
         private String _nom;

@@ -8,8 +8,14 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class Editeur
     {
-        private String _nom;
+        private List<Exemplaire> _listeExemplaires;
+        public List<Exemplaire> ListeExemplaires
+        {
+            get { return _listeExemplaires; }
+            set { _listeExemplaires = value; }
+        }
 
+        private String _nom;
         public String Nom
         {
             get { return _nom; }
@@ -20,5 +26,6 @@ namespace GestionnaireBibliotheque.Modèle
         {
             this._nom = nom;
         }
+        
     }
 }

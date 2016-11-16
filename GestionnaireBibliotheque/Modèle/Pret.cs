@@ -8,12 +8,12 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class Pret
     {
-        /*private Exemplaire myVar;
-        public Exemplaire MyProperty
+        private Exemplaire _exemplaire;
+        public Exemplaire Exemplaire
         {
-            get { return myVar; }
-            set { myVar = value; }
-        }*/
+            get { return _exemplaire; }
+            set { _exemplaire = value; }
+        }       
 
         private Commentaire _commentaire;
         public Commentaire Commentaire

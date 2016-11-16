@@ -8,6 +8,13 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class Auteur
     {
+        private List<Oeuvre> _listeOeuvres;
+        public List<Oeuvre> ListeOeuvres
+        {
+            get { return _listeOeuvres; }
+            set { _listeOeuvres = value; }
+        }
+        
         private String _nom;
         public String Nom
         {

@@ -8,8 +8,14 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class MoyenContact
     {
-        private String _type;
+        private Lecteur _lecteur;
+        public Lecteur Lecteur
+        {
+            get { return _lecteur; }
+            set { _lecteur = value; }
+        }
 
+        private String _type;
         public String Type
         {
             get { return _type; }

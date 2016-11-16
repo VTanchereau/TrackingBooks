@@ -8,11 +8,11 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class Exemplaire
     {
-        private List<Pret> _listeDePret;
-        public List<Pret> ListeDePret
+        private List<Pret> _listeDePrets;
+        public List<Pret> ListeDePrets
         {
-            get { return _listeDePret; }
-            set { _listeDePret = value; }
+            get { return _listeDePrets; }
+            set { _listeDePrets = value; }
         }
 
         private Oeuvre _oeuvre;
@@ -65,7 +65,7 @@ namespace GestionnaireBibliotheque.Modèle
             this._editeur = editeur;
         }
 
-        public Exemplaire(DateTime dateAjout, string etat, Boolean disponibilite, string photo, Editeur editeur)
+        public Exemplaire(DateTime dateAjout, string etat, string photo, Boolean disponibilite, Editeur editeur)
         {
             this._dateAjout = dateAjout;
             this._etat = etat;
@@ -74,7 +74,7 @@ namespace GestionnaireBibliotheque.Modèle
             this._editeur = editeur;
         }
 
-
+        
 
 
     }

@@ -8,6 +8,13 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class Genre
     {
+        private List<Oeuvre> _listeOeuvres;
+        public List<Oeuvre> ListeOeuvres
+        {
+            get { return _listeOeuvres; }
+            set { _listeOeuvres = value; }
+        }
+
         private String _nom;
         public String Nom
         {
@@ -20,5 +27,6 @@ namespace GestionnaireBibliotheque.Modèle
             this._nom = nom;
         }
 
+       
     }
 }

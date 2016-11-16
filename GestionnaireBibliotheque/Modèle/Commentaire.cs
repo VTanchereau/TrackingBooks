@@ -8,8 +8,14 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class Commentaire
     {
-        private String _titre;
+        private Pret _pret;
+        public Pret Pret
+        {
+            get { return _pret; }
+            set { _pret = value; }
+        }
 
+        private String _titre;
         public String Titre
         {
             get { return _titre; }
@@ -17,11 +23,17 @@ namespace GestionnaireBibliotheque.Modèle
         }
 
         private String _contenu;
-
         public String Contenu
         {
             get { return _contenu; }
             set { _contenu = value; }
+        }
+
+        public Commentaire(string titre, string contenu, Pret pret)
+        {
+            this._titre = titre;
+            this._contenu = contenu;
+            this._pret = pret;
         }
         
     }

@@ -8,6 +8,13 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class Oeuvre
     {
+        private List<Exemplaire> _listeExemplaires;
+        public List<Exemplaire> ListeExemplaires
+        {
+            get { return _listeExemplaires; }
+            set { _listeExemplaires = value; }
+        }
+
         private Genre _genre;
         public Genre Genre
         {
