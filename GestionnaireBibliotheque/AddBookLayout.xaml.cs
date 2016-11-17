@@ -117,5 +117,11 @@ namespace GestionnaireBibliotheque
         {
 
         }
+
+        private void btn_Annuler_Click(object sender, RoutedEventArgs e)
+        {
+            Window win = new Window();
+            win.Close();
+        }
     }
 }
