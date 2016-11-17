@@ -20,14 +20,16 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class Retour : Page
     {
-        public Retour()
+        private Window win;
+        public Retour(Window w)
         {
             InitializeComponent();
+            this.win = w;
         }
 
         private void close_Click(object sender, RoutedEventArgs e)
         {
-            
+            this.win.Close();
         }
     }
 }
