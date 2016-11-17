@@ -29,12 +29,6 @@
                     <TextBlock Name="tbk_addedyear" FontSize="13"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Tome " FontSize="13"/>
-                    <TextBlock Name="tbk_tomeNumber" FontSize="13"/>
-                    <TextBlock Text=" de la saga " FontSize="13"/>
-                    <TextBlock Name="tbk_sagaName" FontSize="13"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Edité par " FontSize="13"/>
                     <TextBlock Name="tbk_editeur" FontSize="13"/>
                 </StackPanel>
@@ -62,10 +56,13 @@
 
         <TextBlock DockPanel.Dock="Top" Text="Commentaires : " FontSize="13" Margin="10,0,0,0"/>
 
+        <ListView DockPanel.Dock="Top">
+            <TextBlock Name="tbkcommBook" Margin="15,5,15,5" FontStyle="Italic" TextAlignment="Justify" Background="White" Padding="5,5,5,5" Foreground="#FF939393" MinHeight="100" />
+        </ListView>
+
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,5,0,20">
             <Button Padding="5,0,5,0" Margin="0,0,20,0" Name="btn_retour" Content="Retour livre" Click="retour_Click"/>
             <Button Padding="5,0,5,0" Margin ="0,0,20,0" Name="btn_pret" Content="Prêter" Click="pret_Click"/>
-            <Button Padding="5,0,5,0" Name="btn_delete" Content="Supprimer"/>
         </StackPanel>
 
         <Canvas>

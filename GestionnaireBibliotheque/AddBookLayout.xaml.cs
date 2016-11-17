@@ -39,7 +39,7 @@ namespace GestionnaireBibliotheque
             tbk_genreName.Text = "Genre du livre";
             tbk_titleBook.Text = "Titre du livre";
             this.Gestionnaire = _gestionnaire;
-
+            tbk_ISBNBook.Text = "Numéro ISBN du livre";
         }
 
         private void isbnButton_Click(object sender, RoutedEventArgs e)
@@ -116,7 +116,7 @@ namespace GestionnaireBibliotheque
 
         private void btn_Valider_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void btn_aideAuthor_Click(object sender, RoutedEventArgs e)
@@ -175,7 +175,7 @@ namespace GestionnaireBibliotheque
                         }
                     }
                 }
-                
+
                 Modele.Auteur author = new Modele.Auteur(nomAuteur, prenomAuteur);
 
                 lstAuthors.Add(author);

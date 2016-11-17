@@ -31,7 +31,8 @@
             </StackPanel>
             <DockPanel LastChildFill="True" DockPanel.Dock="Right">
                 <StackPanel Height="310" Orientation="Vertical" DockPanel.Dock="Right">
-                    <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="20" Margin="0, 20, 10, 10">Bienvenue sur l'assisstant d'ajout d'un livre</TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
                         <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
                             <!-- overlay with hint text -->
                             <TextBlock Margin="5,2" Width="300" Foreground="LightSteelBlue" Name="tbk_titleBook">
@@ -45,9 +46,9 @@
                             <!-- enter term here -->
                             <TextBox Width="300" Name="tb_titleBook" Background="Transparent" />
                         </Grid>
-                        <Button Width="20" Margin="10,10,10,5" Name="btn_aideTitle" Click="titleButton_Click">?</Button>
+                        <Button Width="20" Margin="10,0,10,5" Name="btn_aideTitle" Click="titleButton_Click">?</Button>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
                         <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
                             <!-- overlay with hint text -->
                             <TextBlock Margin="5,2" Width="300" Foreground="LightSteelBlue" Name="tbk_authorName">
@@ -61,9 +62,9 @@
                             <!-- enter term here -->
                             <TextBox Width="300" Name="tb_authorName" Background="Transparent" />
                         </Grid>
-                        <Button Width="20" Margin="10,10,10,5" Name="btn_aideAuthor" Click="authorButton_Click">?</Button>
+                        <Button Width="20" Margin="10,0,10,5" Name="btn_aideAuthor" Click="authorButton_Click">?</Button>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
                         <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
                             <!-- overlay with hint text -->
                             <TextBlock Margin="5,2" Width="300" Foreground="LightSteelBlue" Name="tbk_editorName">
@@ -77,9 +78,9 @@
                             <!-- enter term here -->
                             <TextBox Width="300" Name="tb_editorName" Background="Transparent" />
                         </Grid>
-                        <Button Width="20" Margin="10,10,10,5" x:Name="btn_aideEditor" Click="editorButton_Click" Content="?"/>
+                        <Button Width="20" Margin="10,0,10,5" x:Name="btn_aideEditor" Click="editorButton_Click" Content="?"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
                         <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
                             <!-- overlay with hint text -->
                             <TextBlock Margin="5,2" Width="300" Foreground="LightSteelBlue" Name="tbk_genreName">
@@ -93,9 +94,24 @@
                             <!-- enter term here -->
                             <TextBox Width="300" Name="tb_genreName" Background="Transparent" />
                         </Grid>
-                        <Button Width="20" Margin="10,10,10,5" Name="btn_aideGenre" Click="genreButton_Click">?</Button>
+                        <Button Width="20" Margin="10,0,10,5" Name="btn_aideGenre" Click="genreButton_Click">?</Button>
                     </StackPanel>
-
+                    <StackPanel Orientation="Horizontal" Margin="0,5">
+                        <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+                            <!-- overlay with hint text -->
+                            <TextBlock Margin="5,2" Width="300" Foreground="LightSteelBlue" Name="tbk_ISBNBook">
+                                <TextBlock.Visibility>
+                                    <MultiBinding Converter="{StaticResource TextInputToVisibilityConverter}">
+                                        <Binding ElementName="tb_ISBNBook" Path="Text.IsEmpty" />
+                                        <Binding ElementName="tb_ISBNBook" Path="IsFocused" />
+                                    </MultiBinding>
+                                </TextBlock.Visibility>
+                            </TextBlock>
+                            <!-- enter term here -->
+                            <TextBox Width="300" Name="tb_ISBNBook" Background="Transparent" />
+                        </Grid>
+                        <Button Width="20" Margin="10,0,10,5" Name="btn_aideISBN" Click="isbnButton_Click">?</Button>
+                    </StackPanel>
                 </StackPanel>
             </DockPanel>
             <StackPanel></StackPanel>
@@ -107,11 +123,21 @@
         </StackPanel>
         <StackPanel HorizontalAlignment="Center">
             <Label>Résumé :</Label>
-            <Border>
-                <TextBlock Height="150" Width="400" Name="tbk_resumeLivre">
-
+            <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+                <!-- overlay with hint text -->
+                <TextBlock Margin="5,2" Width="300" Foreground="LightSteelBlue" Name="tbk_resumeLivre">
+                    <TextBlock.Visibility>
+                        <MultiBinding Converter="{StaticResource TextInputToVisibilityConverter}">
+                            <Binding ElementName="tb_resumeLivre" Path="Text.IsEmpty" />
+                            <Binding ElementName="tb_resumeLivre" Path="IsFocused" />
+                        </MultiBinding>
+                    </TextBlock.Visibility>
                 </TextBlock>
-            </Border>
+                <!-- enter term here -->
+                <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+                    <TextBox Height="150" Width="400" Name="tb_resumeLivre" />
+                </Border>
+            </Grid>
         </StackPanel>
     </DockPanel>
    
