@@ -57,13 +57,28 @@ namespace GestionnaireBibliotheque.Modele
             get { return _ISBN13; }
             set { _ISBN13 = value; }
         }
-        
-        public Oeuvre(string titre, string resume, int numero_ISBN10, int numero_ISBN13, Genre genre, List<Auteur> lstauteur )
+
+        public Oeuvre(string titre, string resume, int typeISBN, int numero_ISBN, Genre genre, List<Auteur> lstauteur)
         {
             this.Titre = titre;
             this.Resume = resume;
-            this.ISBN10 = numero_ISBN10;
-            this.ISBN13 = numero_ISBN13;
+            if (typeISBN == 13)
+            {
+                this.ISBN13 = numero_ISBN;
+            }
+            else
+            {
+                this.ISBN10 = numero_ISBN;
+
+            }
+            this.Genre = genre;
+            this.LstAuteur = lstauteur;
+        }
+
+        public Oeuvre(string titre, string resume, Genre genre, List<Auteur> lstauteur)
+        {
+            this.Titre = titre;
+            this.Resume = resume;
             this.Genre = genre;
             this.LstAuteur = lstauteur;
         }

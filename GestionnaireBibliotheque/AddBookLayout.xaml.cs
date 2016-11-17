@@ -20,7 +20,8 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class AddBookLayout : Page
     {
-        public AddBookLayout()
+        private Modele.Gestionnaire gestionnaire;
+        public AddBookLayout(Modele.Gestionnaire _gestionnaire)
         {
             InitializeComponent();
             tbk_resumeLivre.Text = "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \n" +
@@ -32,6 +33,7 @@ namespace GestionnaireBibliotheque
             tbk_editorName.Text = "Nom de l'éditeur";
             tbk_genreName.Text = "Genre du livre";
             tbk_titleBook.Text = "Titre du livre";
+            this.gestionnaire = _gestionnaire;
 
         }
 
@@ -115,6 +117,52 @@ namespace GestionnaireBibliotheque
         private void btn_aideAuthor_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btn_Valider_Click_1(object sender, RoutedEventArgs e)
+        {
+            String bookTitle = tb_titleBook.Text;
+            String bookAuthor = tb_authorName.Text;
+            String bookEditor = tb_editorName.Text;
+            String bookGenre = tb_genreName.Text;
+            String bookResume = tbk_resumeLivre.Text;
+
+            List<String> authorNames = new List<String>(bookAuthor.Split(','));
+            String nomAuteur = authorNames[0];
+            String prenomAuteur = authorNames[1];
+            if (authorNames.Count > 1)
+            {
+                for (int i = 2; i < authorNames.Count; i++)
+                {
+                    prenomAuteur += " " + authorNames[i];
+                }
+            }
+            Modele.Auteur author = new Modele.Auteur(nomAuteur, prenomAuteur);
+
+        }
+
+        private List<Modele.Auteur> getAuthors(String bookAuthor)
+        {
+            List<String> authors = new List<String>(bookAuthor.Split(','));
+            List<Modele.Auteur> lstAuthors = new List<Modele.Auteur>();
+
+            for (int i = 0; i < authors.Count; i++)
+            {
+                List<String> authorNames = new List<String>(bookAuthor.Split(','));
+                String nomAuteur = authorNames[0];
+                String prenomAuteur = authorNames[1];
+                if (authorNames.Count > 1)
+                {
+                    for (int i = 2; i < authorNames.Count; i++)
+                    {
+                        prenomAuteur += " " + authorNames[i];
+                    }
+                }
+                Modele.Auteur author = new Modele.Auteur(nomAuteur, prenomAuteur);
+
+                lstAuthors.Add(author);
+            }
+            return lstAuthors;
         }
     }
 }
