@@ -40,6 +40,7 @@ namespace GestionnaireBibliotheque
         {
             Pret pret = new Pret();
             Window win = new Window();
+            win.Title = "Prêter un livre";
             win.Content = pret;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;

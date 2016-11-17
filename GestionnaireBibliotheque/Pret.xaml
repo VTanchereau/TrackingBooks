@@ -7,13 +7,26 @@
       mc:Ignorable="d"
       d:DesignHeight="1000" d:DesignWidth="1000"
       Title="Pret">
+    <Page.Resources>
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <local:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConverter" />
+        <Style x:Key="EntryFieldStyle" TargetType="Grid" >
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20,0" />
+        </Style>
+    </Page.Resources>
+
 
     <StackPanel Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
             <Rectangle DockPanel.Dock="Left" Width="70" Height="70" Fill="#FF52C0D0" Margin="0,0,5,0"/>
             <StackPanel Margin="5,0,0,0">
                 <TextBlock Name="tbk_bookTitle" Text="Titre" FontSize="13"/>
-                <TextBlock Name="tbk_bookSaga" Text="Saga" FontSize="13"/>
+                <TextBlock Name="tbk_bookGenre" Text="Genre" FontSize="13"/>
                 <TextBlock Name="tbk_bookAuthor" Text="Autheur" FontSize="13"/>
                 <TextBlock Name="tbk_bookCondition" Text="Etat" FontSize="13"/>
             </StackPanel>
@@ -28,26 +41,50 @@
                     </StackPanel>
                 </DockPanel>
                 <StackPanel>
-                    <DockPanel Margin="10,0,0,5">
-                        <TextBlock DockPanel.Dock="Left" Text="Nom :" FontSize="13"/>
-                        <TextBox Name="tb_nomLecteur" HorizontalAlignment="Right" MinWidth="100" FontSize="13"/>
-                    </DockPanel>
-                    <DockPanel Margin="10,0,0,5">
-                        <TextBlock DockPanel.Dock="Left" Text="Prénom :" FontSize="13"/>
-                        <TextBox HorizontalAlignment="Right" Name="tb_prenomLecteur" MinWidth="100" FontSize="13"/>
-                    </DockPanel>
-                    <DockPanel Margin="10,0,0,5">
-                        <TextBlock DockPanel.Dock="Left" Text="N° de téléphone :" FontSize="13"/>
-                        <TextBox HorizontalAlignment="Right" Name="tb_telLecteur" MinWidth="100" FontSize="13"/>
-                    </DockPanel>
-                    <DockPanel Margin="10,0,0,5">
-                        <TextBlock DockPanel.Dock="Left" Text="Adresse :" FontSize="13"/>
-                        <TextBox HorizontalAlignment="Right" Name="tb_adresseLecteur" MinWidth="100" FontSize="13"/>
-                    </DockPanel>
-                    <DockPanel Margin="10,0,0,5">
-                        <TextBlock DockPanel.Dock="Left" Text="Adresse mail :" FontSize="13"/>
-                        <TextBox HorizontalAlignment="Right" Name="tb_mailLecteur" MinWidth="100" FontSize="13"/>
-                    </DockPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <DockPanel Margin="0,0,0,5">
+                            <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+                                <!-- overlay with hint text -->
+                                <TextBlock Width="100" Foreground="LightSteelBlue" Name="tbk_nomLecteur">
+                                    <TextBlock.Visibility>
+                                        <MultiBinding Converter="{StaticResource TextInputToVisibilityConverter}">
+                                            <Binding ElementName="tb_nomLecteur" Path="Text.IsEmpty" />
+                                            <Binding ElementName="tb_nomLecteur" Path="IsFocused" />
+                                        </MultiBinding>
+                                    </TextBlock.Visibility>
+                                </TextBlock>
+                                <!-- enter term here -->
+                                <TextBox HorizontalAlignment="Right" Width="100" Name="tb_nomLecteur" FontSize="13"/>
+                            </Grid>
+                        </DockPanel>
+                        <DockPanel Margin="10,0,0,5">
+                            <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+                                <!-- overlay with hint text -->
+                                <TextBlock Width="100" Foreground="LightSteelBlue" Name="tbk_prenomLecteur">
+                                    <TextBlock.Visibility>
+                                        <MultiBinding Converter="{StaticResource TextInputToVisibilityConverter}">
+                                            <Binding ElementName="tb_prenomLecteur" Path="Text.IsEmpty" />
+                                            <Binding ElementName="tb_prenomLecteur" Path="IsFocused" />
+                                        </MultiBinding>
+                                    </TextBlock.Visibility>
+                                </TextBlock>
+                                <!-- enter term here -->
+                                <TextBox HorizontalAlignment="Right" Width="100" Name="tb_prenomLecteur" FontSize="13"/>
+                            </Grid>
+                        </DockPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock>Moyen de contact :</TextBlock>
+                        <ListView MinHeight="100" Name="lv_moyenContact">
+
+                        </ListView>
+                        <DockPanel LastChildFill="True">
+                            <TextBox DockPanel.Dock="Left" MinWidth="80" Margin="5,5,5,5" Name="tb_moyenContact"/>
+                            <Button DockPanel.Dock="Right" Margin="5,5,5,5" Name="btn_addMoyenContact" Content="+" Width="20" Height="20" />
+                            <TextBox Margin="5,5,5,5" Name="tb_valueMoyenContact"></TextBox>
+                        </DockPanel>
+
+                    </StackPanel>
                 </StackPanel>
                 
             </StackPanel>

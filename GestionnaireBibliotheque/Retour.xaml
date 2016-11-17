@@ -9,11 +9,18 @@
       Title="Retour">
 
     <StackPanel Orientation="Vertical">
-        <StackPanel DockPanel.Dock="top" Orientation="Vertical" Margin="10">
-            <Rectangle Width="150" Fill="#FF52C0D0" Height="150" Margin="10,10,10,5" />
-            <TextBlock HorizontalAlignment="center" Name="tbk_sagaBook">Harry POTTER</TextBlock>
-            <TextBlock HorizontalAlignment="center" Name="tbk_titleBook">La chambre des secrets</TextBlock>
-        </StackPanel>
+        <DockPanel DockPanel.Dock="top">
+            <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Margin="10">
+                <Rectangle Width="150" Fill="#FF52C0D0" Height="150" Margin="10,10,10,5" />
+                <TextBlock HorizontalAlignment="center" Name="tbk_titleBook">Harry POTTER</TextBlock>
+                <TextBlock HorizontalAlignment="center" Name="tbk_authorName">La chambre des secrets</TextBlock>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right">
+                <TextBlock Name="tbk_lecteurName" />
+                <TextBlock Name="tbk_dateToDay" />
+            </StackPanel>
+        </DockPanel>
+        
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Etat du livre :</Label>

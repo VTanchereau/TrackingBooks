@@ -32,6 +32,7 @@ namespace GestionnaireBibliotheque
             tbk_editorName.Text = "Nom de l'éditeur";
             tbk_genreName.Text = "Genre du livre";
             tbk_titleBook.Text = "Titre du livre";
+            tbk_ISBNBook.Text = "Numéro ISBN du livre";
 
         }
 
