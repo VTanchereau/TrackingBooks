@@ -19,11 +19,13 @@ namespace GestionnaireBibliotheque.Modele
             get { return _listeMoyenContacts; }
             set { _listeMoyenContacts = value; }
         }
+
         public String Nom
         {
             get { return _nom; }
             set { _nom = value; }
         }
+
         public String Prenom
         {
             get { return _prenom; }

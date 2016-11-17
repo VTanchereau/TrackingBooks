@@ -8,27 +8,31 @@ namespace GestionnaireBibliotheque.Modele
 {
     class Auteur
     {
+        //variables privées
         private List<Oeuvre> _listeOeuvres;
+        private String _nom;
+        private String _prenom;
+
+        //variables publiques
         public List<Oeuvre> ListeOeuvres
         {
             get { return _listeOeuvres; }
             set { _listeOeuvres = value; }
         }
-        
-        private String _nom;
+
         public String Nom
         {
             get { return _nom; }
             set { _nom = value; }
         }
 
-        private String _prenom;
         public String Prenom
         {
             get { return _prenom; }
             set { _prenom = value; }
         }
 
+        //constructeur de l'objet Auteur
         public Auteur(string nom, string prenom)
         {
             this.Nom = nom;

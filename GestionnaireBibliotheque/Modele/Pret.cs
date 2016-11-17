@@ -22,26 +22,31 @@ namespace GestionnaireBibliotheque.Modele
             get { return _exemplaire; }
             set { _exemplaire = value; }
         }       
+
         public Commentaire Commentaire
         {
             get { return _commentaire; }
             set { _commentaire = value; }
         }
+
         public Lecteur Lecteur
         {
             get { return _lecteur; }
             set { _lecteur = value; }
         }
+
         public DateTime DateDebut
         {
             get { return _dateDebut; }
             set { _dateDebut = value; }
         }
+
         public DateTime DateRetour
         {
             get { return _dateRetour; }
             set { _dateRetour = value; }
         }
+
         public DateTime DateRappel
         {
             get { return _dateRappel; }

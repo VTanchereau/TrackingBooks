@@ -20,16 +20,19 @@ namespace GestionnaireBibliotheque.Modele
             get { return _lecteur; }
             set { _lecteur = value; }
         }
+
         public String Type
         {
             get { return _type; }
             set { _type = value; }
         }
+
         public String Valeur
         {
             get { return _valeur; }
             set { _valeur = value; }
         }
+
         public int Ordre
         {
             get { return _ordre; }
