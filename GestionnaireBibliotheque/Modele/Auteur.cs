@@ -4,29 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionnaireBibliotheque.Modèle
+namespace GestionnaireBibliotheque.Modele
 {
-    class Genre
+    class Auteur
     {
+        //variables privées
         private List<Oeuvre> _listeOeuvres;
+        private String _nom;
+        private String _prenom;
+
+        //variables publiques
         public List<Oeuvre> ListeOeuvres
         {
             get { return _listeOeuvres; }
             set { _listeOeuvres = value; }
         }
 
-        private String _nom;
         public String Nom
         {
             get { return _nom; }
             set { _nom = value; }
         }
 
-        public Genre(string nom)
+        public String Prenom
         {
-            this.Nom = nom;
+            get { return _prenom; }
+            set { _prenom = value; }
         }
 
-       
+        //constructeur de l'objet Auteur
+        public Auteur(string nom, string prenom)
+        {
+            this.Nom = nom;
+            this.Prenom = prenom;
+        }
+
     }
 }
