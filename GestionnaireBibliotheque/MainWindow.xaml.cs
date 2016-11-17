@@ -20,9 +20,17 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Modele.Gestionnaire _Gestionnaire;
+        public Modele.Gestionnaire Gestionnaire
+        {
+            get { return this._Gestionnaire; }
+            set { this._Gestionnaire = value; }
+        }
+
         public MainWindow()
         {
             this.WindowState = WindowState.Maximized;
+            this.Gestionnaire = new Modele.Gestionnaire();
             InitializeComponent();
             ListeRetourAttente lra = new ListeRetourAttente();
             Window win = new Window();
@@ -36,8 +44,7 @@ namespace GestionnaireBibliotheque
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
-
-            AddBookLayout addBookWindow = new AddBookLayout();
+            AddBookLayout addBookWindow = new AddBookLayout(this.Gestionnaire);
             Window win = new Window();
             win.Content = addBookWindow;
             win.Title = "Ajouter un livre";

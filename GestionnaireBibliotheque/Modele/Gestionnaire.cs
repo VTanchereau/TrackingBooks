@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele
 {
-    class Gestionnaire
+    public class Gestionnaire
     {
         private CustomListes.ListeExemplaires _lstExemplaires;
         private CustomListes.ListeOeuvres _lstOeuvres;
@@ -15,6 +15,17 @@ namespace GestionnaireBibliotheque.Modele
         private CustomListes.ListeAuteurs _lstAuteurs;
         private CustomListes.ListeLecteurs _lstLecteurs;
         private CustomListes.ListePrets _lstPrets;
+
+        public Gestionnaire()
+        {
+            ListeExemplaires = new CustomListes.ListeExemplaires(new List<Exemplaire>());
+            ListeOeuvres = new CustomListes.ListeOeuvres(new List<Oeuvre>());
+            ListeGenres = new CustomListes.ListeGenres(new List<Genre>());
+            ListeEditeurs = new CustomListes.ListeEditeurs(new List<Editeur>());
+            ListeAuteurs = new CustomListes.ListeAuteurs(new List<Auteur>());
+            ListeLecteurs = new CustomListes.ListeLecteurs(new List<Lecteur>());
+            ListePret = new CustomListes.ListePrets(new List<Pret>());
+        }
 
         public CustomListes.ListeExemplaires ListeExemplaires
         {

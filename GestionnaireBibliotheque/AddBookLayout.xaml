@@ -119,7 +119,7 @@
         
         <StackPanel Orientation="Horizontal" Height="70"  DockPanel.Dock="Bottom" HorizontalAlignment="Center">
             <Button Name="btn_Annuler" Width="100" Height="20"  Content="Annuler" Margin="5,5"/>
-            <Button Name="btn_Valider" Width="100" Height="20"  Content="Valider"/>
+            <Button Name="btn_Valider" Width="100" Height="20"  Content="Valider" Click="btn_Valider_Click_1"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center">
             <Label>Résumé :</Label>
