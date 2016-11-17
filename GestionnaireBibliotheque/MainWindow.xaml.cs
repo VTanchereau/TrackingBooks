@@ -36,8 +36,6 @@ namespace GestionnaireBibliotheque
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
             win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             win.ShowDialog();
-        
-         
         }
 
         private void lendBook_Click(object sender, RoutedEventArgs e)

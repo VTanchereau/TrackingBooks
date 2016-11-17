@@ -7,6 +7,18 @@
     mc:Ignorable="d" 
     d:DesignHeight="600" d:DesignWidth="800"
     Title="AddBookLayout">
+    <Page.Resources>
+        <SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+        <SolidColorBrush x:Key="brushWatermarkForeground" Color="LightSteelBlue" />
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <local:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConverter" />
+        <Style x:Key="EntryFieldStyle" TargetType="Grid" >
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20,0" />
+        </Style>
+    </Page.Resources>
 
     <DockPanel>
         <DockPanel Background="White" DockPanel.Dock="top">
@@ -37,10 +49,34 @@
                     <Button Width="20" Margin="10,10,10,5" Name="btn_aideAuthor" Click="authorButton_Click">?</Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
-                    <TextBox Name="tb_editorBook" Width="300" Margin="10,10,10,5"></TextBox>
+                    <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+                        <!-- overlay with hint text -->
+                        <TextBlock Margin="5,2" Width="300" Foreground="LightSteelBlue" Name="tbk_editorName">
+                            <TextBlock.Visibility>
+                                <MultiBinding Converter="{StaticResource TextInputToVisibilityConverter}">
+                                    <Binding ElementName="tb_editorName" Path="Text.IsEmpty" />
+                                    <Binding ElementName="tb_editorName" Path="IsFocused" />
+                                </MultiBinding>
+                            </TextBlock.Visibility>
+                        </TextBlock>
+                        <!-- enter term here -->
+                        <TextBox Width="300" Name="tb_editorName" Background="Transparent" />
+                    </Grid>
                     <Button Width="20" Margin="10,10,10,5" Name="btn_aideEditor" Click="editorButton_Click">?</Button>
-                    <TextBox Name="tb_sagaName" Width="300" Margin="50,10,10,5"></TextBox>
-                    <Button Width="20" Margin="10,10,10,5" Name="btn_aideSaga" Click="sagaButton_Click">?</Button>
+                    <Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+                        <!-- overlay with hint text -->
+                        <TextBlock Margin="5,2" Width="300" Foreground="LightSteelBlue" Name="tbk_genreName">
+                            <TextBlock.Visibility>
+                                <MultiBinding Converter="{StaticResource TextInputToVisibilityConverter}">
+                                    <Binding ElementName="tb_genreName" Path="Text.IsEmpty" />
+                                    <Binding ElementName="tb_genreName" Path="IsFocused" />
+                                </MultiBinding>
+                            </TextBlock.Visibility>
+                        </TextBlock>
+                        <!-- enter term here -->
+                        <TextBox Width="300" Name="tb_genreName" Background="Transparent" />
+                    </Grid>
+                    <Button Width="20" Margin="10,10,10,5" Name="btn_aideGenre" Click="genreButton_Click">?</Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBox Name="tb_commBook" Height="150" Width="700" Margin="10,30,10,5"/>

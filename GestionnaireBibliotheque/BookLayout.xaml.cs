@@ -20,9 +20,6 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class BookLayout : Page
     {
-        Retour r = new Retour();
-        static Window Windows_retour = new Window();
-
         public BookLayout()
         {
             InitializeComponent();
@@ -30,6 +27,8 @@ namespace GestionnaireBibliotheque
 
         public void retour_Click(object sender, RoutedEventArgs e)
         {
+            Retour r = new Retour();
+            Window Windows_retour = new Window();
             Windows_retour.Content = r;
             Windows_retour.ShowDialog();
         }

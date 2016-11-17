@@ -29,8 +29,8 @@ namespace GestionnaireBibliotheque
                 "quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut \n" +
                 "labore et dolore magnam aliquam quaerat voluptatem.";
             tb_authorName.Text = "Nom de l'auteur";
-            tb_editorBook.Text = "Nom de l'éditeur";
-            tb_sagaName.Text = "Nom de la saga";
+            tbk_editorName.Text = "Nom de l'éditeur";
+            tbk_genreName.Text = "Genre du livre";
             tb_titleBook.Text = "Titre du livre";
 
         }
@@ -71,11 +71,11 @@ namespace GestionnaireBibliotheque
             win.ShowDialog();
         }
 
-        private void sagaButton_Click(object sender, RoutedEventArgs e)
+        private void genreButton_Click(object sender, RoutedEventArgs e)
         {
             help aide = new help();
             Window win = new Window();
-            aide.tbk_helpTitle.Text = "Saga";
+            aide.tbk_helpTitle.Text = "Genre";
             win.Content = aide;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -105,6 +105,11 @@ namespace GestionnaireBibliotheque
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
             win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             win.ShowDialog();
+        }
+
+        private void btn_Valider_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

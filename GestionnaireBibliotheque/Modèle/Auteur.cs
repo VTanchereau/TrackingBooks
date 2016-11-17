@@ -31,8 +31,8 @@ namespace GestionnaireBibliotheque.Modèle
 
         public Auteur(string nom, string prenom)
         {
-            this._nom = nom;
-            this._prenom = Prenom;
+            this.Nom = nom;
+            this.Prenom = prenom;
         }
 
     }
