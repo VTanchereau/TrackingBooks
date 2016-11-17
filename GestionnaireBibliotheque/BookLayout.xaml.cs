@@ -28,9 +28,12 @@ namespace GestionnaireBibliotheque
         public void retour_Click(object sender, RoutedEventArgs e)
         {
             Retour r = new Retour();
-            Window Windows_retour = new Window();
-            Windows_retour.Content = r;
-            Windows_retour.ShowDialog();
+            Window win = new Window();
+            win.Content = r;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
         }
 
         private void pret_Click(object sender, RoutedEventArgs e)

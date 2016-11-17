@@ -23,15 +23,15 @@ namespace GestionnaireBibliotheque
         public AddBookLayout()
         {
             InitializeComponent();
-            tb_ResumeLivre.Text = "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \n" +
+            tbk_resumeLivre.Text = "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \n" +
                 "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur \n" +
                 "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum \n" +
                 "quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut \n" +
                 "labore et dolore magnam aliquam quaerat voluptatem.";
-            tb_authorName.Text = "Nom de l'auteur";
+            tbk_authorName.Text = "Nom de l'auteur";
             tbk_editorName.Text = "Nom de l'éditeur";
             tbk_genreName.Text = "Genre du livre";
-            tb_titleBook.Text = "Titre du livre";
+            tbk_titleBook.Text = "Titre du livre";
 
         }
 
@@ -110,6 +110,11 @@ namespace GestionnaireBibliotheque
         private void btn_Valider_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void btn_aideAuthor_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

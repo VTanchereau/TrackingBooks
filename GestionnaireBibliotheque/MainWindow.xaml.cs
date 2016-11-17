@@ -24,6 +24,14 @@ namespace GestionnaireBibliotheque
         {
             this.WindowState = WindowState.Maximized;
             InitializeComponent();
+            ListeRetourAttente lra = new ListeRetourAttente();
+            Window win = new Window();
+            win.Title = "Liste des livres en attentes de retour";
+            win.Content = lra;
+            win.SizeToContent = SizeToContent.WidthAndHeight;
+            win.ResizeMode = System.Windows.ResizeMode.NoResize;
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            win.ShowDialog();
         }
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
@@ -32,6 +40,7 @@ namespace GestionnaireBibliotheque
             AddBookLayout addBookWindow = new AddBookLayout();
             Window win = new Window();
             win.Content = addBookWindow;
+            win.Title = "Ajouter un livre";
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
             win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
