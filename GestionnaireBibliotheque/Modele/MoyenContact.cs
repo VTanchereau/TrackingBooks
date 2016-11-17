@@ -33,14 +33,14 @@ namespace GestionnaireBibliotheque.Modele
             set { _valeur = value; }
         }
 
-        public int Ordre
+      /*  public int Ordre
         {
             get { return _ordre; }
             set { _ordre = value; }
-        }
+        }*/
 
         //constructeur de l'objet MoyenContact
-        public MoyenContact(string type, string valeur, int ordre, Lecteur lecteur)
+        public MoyenContact(string type, string valeur)
         {
             this.Type = type;
             this.Valeur = valeur;
