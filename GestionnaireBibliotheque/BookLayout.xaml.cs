@@ -28,7 +28,7 @@ namespace GestionnaireBibliotheque
         public void retour_Click(object sender, RoutedEventArgs e)
         {
             Retour r = new Retour();
-            static Window Windows_retour = new Window();
+            Window Windows_retour = new Window();
             Windows_retour.Content = r;
             Windows_retour.ShowDialog();
         }
