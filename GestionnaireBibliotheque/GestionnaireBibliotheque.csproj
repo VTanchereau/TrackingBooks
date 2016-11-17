@@ -70,6 +70,7 @@
     <Compile Include="Modèle\Editeur.cs" />
     <Compile Include="Modèle\Exemplaire.cs" />
     <Compile Include="Modèle\Genre.cs" />
+    <Compile Include="Modèle\Gestionnaire.cs" />
     <Compile Include="Modèle\Lecteur.cs" />
     <Compile Include="Modèle\MoyenContact.cs" />
     <Compile Include="Modèle\Oeuvre.cs" />
