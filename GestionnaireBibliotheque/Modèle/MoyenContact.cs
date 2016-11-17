@@ -8,41 +8,41 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class MoyenContact
     {
+        //variables privées
         private Lecteur _lecteur;
+        private String _type;
+        private String _valeur;
+        private int _ordre;
+
+        //variables publiques
         public Lecteur Lecteur
         {
             get { return _lecteur; }
             set { _lecteur = value; }
         }
-
-        private String _type;
         public String Type
         {
             get { return _type; }
             set { _type = value; }
         }
-
-        private String _valeur;
-
         public String Valeur
         {
             get { return _valeur; }
             set { _valeur = value; }
         }
-
-        private int _ordre;
-
         public int Ordre
         {
             get { return _ordre; }
             set { _ordre = value; }
         }
 
-        public MoyenContact(string type, string valeur, int ordre)
+        //constructeur de l'objet MoyenContact
+        public MoyenContact(string type, string valeur, int ordre, Lecteur lecteur)
         {
-            this._type = type;
-            this._valeur = valeur;
-            this._ordre = ordre;
+            this.Type = type;
+            this.Valeur = valeur;
+            this.Lecteur = Lecteur;
+            //this._ordre = ordre;
         }
     }
 }

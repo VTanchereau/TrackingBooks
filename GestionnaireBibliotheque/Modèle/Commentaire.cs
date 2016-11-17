@@ -35,6 +35,7 @@ namespace GestionnaireBibliotheque.Modèle
             this._contenu = contenu;
             this._pret = pret;
         }
+
         
     }
 }

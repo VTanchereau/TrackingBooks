@@ -30,21 +30,22 @@ namespace GestionnaireBibliotheque.Modèle
             set { _prenom = value; }
         }
 
-        //constructeur de l'objet Lecteur
-        public Lecteur(string nom, string prenom, List<MoyenContact> liste_moyenDeContact)
-        {
-            this._nom = nom;
-            this._prenom = prenom;
-            this.ListeMoyenContacts = new List<MoyenContact>();
-            this.ListeMoyenContacts = liste_moyenDeContact;
-        }
 
+        //constructeur de l'objet Lecteur
         public Lecteur(string nom, string prenom)
         {
             this._nom = nom;
             this._prenom = prenom;
-      
         }
+
+        //constructeur surchargé de l'objet Lecteur  
+        public Lecteur(string nom, string prenom, List<MoyenContact> liste_moyenDeContact)
+        {
+            this._nom = nom;
+            this._prenom = prenom;
+            this.ListeMoyenContacts = liste_moyenDeContact;
+        }
+
 
     }
 }
