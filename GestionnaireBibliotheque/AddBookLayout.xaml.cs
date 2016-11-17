@@ -21,12 +21,14 @@ namespace GestionnaireBibliotheque
     public partial class AddBookLayout : Page
     {
         private Modele.Gestionnaire _gestionnaire;
+        private Window w;
         public Modele.Gestionnaire Gestionnaire
         {
             get { return this._gestionnaire; }
             set { this._gestionnaire = value; }
         }
-        public AddBookLayout(Modele.Gestionnaire _gestionnaire)
+
+        public AddBookLayout(Modele.Gestionnaire _gestionnaire, Window win)
         {
             InitializeComponent();
             tbk_resumeLivre.Text = "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \n" +
@@ -40,6 +42,7 @@ namespace GestionnaireBibliotheque
             tbk_titleBook.Text = "Titre du livre";
             this.Gestionnaire = _gestionnaire;
             tbk_ISBNBook.Text = "Numéro ISBN du livre";
+            this.w = win;
         }
 
         private void isbnButton_Click(object sender, RoutedEventArgs e)
@@ -122,6 +125,11 @@ namespace GestionnaireBibliotheque
         private void btn_aideAuthor_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btn_Annuler_Click(object sender, RoutedEventArgs e)
+        {
+            this.w.Close();
         }
 
         private void btn_Valider_Click_1(object sender, RoutedEventArgs e)
