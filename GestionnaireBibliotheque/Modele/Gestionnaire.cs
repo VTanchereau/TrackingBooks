@@ -8,62 +8,62 @@ namespace GestionnaireBibliotheque.Modele
 {
     public class Gestionnaire
     {
-        private CustomListes.ListeExemplaires _lstExemplaires;
-        private CustomListes.ListeOeuvres _lstOeuvres;
-        private CustomListes.ListeGenres _lstGenres;
-        private CustomListes.ListeEditeurs _lstEditeurs;
-        private CustomListes.ListeAuteurs _lstAuteurs;
-        private CustomListes.ListeLecteurs _lstLecteurs;
-        private CustomListes.ListePrets _lstPrets;
+        private List<Exemplaire> _lstExemplaires;
+        private List<Oeuvre> _lstOeuvres;
+        private List<Genre> _lstGenres;
+        private List<Editeur> _lstEditeurs;
+        private List<Auteur> _lstAuteurs;
+        private List<Lecteur> _lstLecteurs;
+        private List<Pret> _lstPrets;
 
         public Gestionnaire()
         {
-            ListeExemplaires = new CustomListes.ListeExemplaires(new List<Exemplaire>());
-            ListeOeuvres = new CustomListes.ListeOeuvres(new List<Oeuvre>());
-            ListeGenres = new CustomListes.ListeGenres(new List<Genre>());
-            ListeEditeurs = new CustomListes.ListeEditeurs(new List<Editeur>());
-            ListeAuteurs = new CustomListes.ListeAuteurs(new List<Auteur>());
-            ListeLecteurs = new CustomListes.ListeLecteurs(new List<Lecteur>());
-            ListePret = new CustomListes.ListePrets(new List<Pret>());
+            ListeExemplaires = new List<Exemplaire>();
+            ListeOeuvres = new List<Oeuvre>();
+            ListeGenres = new List<Genre>();
+            ListeEditeurs = new List<Editeur>();
+            ListeAuteurs = new List<Auteur>();
+            ListeLecteurs = new List<Lecteur>();
+            ListePret = new List<Pret>();
         }
 
-        public CustomListes.ListeExemplaires ListeExemplaires
+        public List<Exemplaire> ListeExemplaires
         {
             get { return this._lstExemplaires; }
             set { this._lstExemplaires = value; }
         }
 
-        public CustomListes.ListeOeuvres ListeOeuvres
+        public List<Oeuvre> ListeOeuvres
         {
             get { return this._lstOeuvres; }
             set { this._lstOeuvres = value; }
         }
 
-        public CustomListes.ListeGenres ListeGenres
+        public List<Genre> ListeGenres
         {
             get { return this._lstGenres; }
             set { this._lstGenres = value; }
         }
 
-        public CustomListes.ListeEditeurs ListeEditeurs
+        public List<Editeur> ListeEditeurs
         {
             get { return this._lstEditeurs; }
             set { this._lstEditeurs = value; }
         }
 
-        public CustomListes.ListeAuteurs ListeAuteurs
+        public List<Auteur> ListeAuteurs
         {
             get { return this._lstAuteurs; }
             set { this._lstAuteurs = value; }
         }
 
-        public CustomListes.ListeLecteurs ListeLecteurs
+        public List<Lecteur> ListeLecteurs
         {
             get { return this._lstLecteurs; }
             set { this._lstLecteurs = value; }
         }
 
-        public CustomListes.ListePrets ListePret
+        public List<Pret> ListePret
         {
             get { return this._lstPrets; }
             set { this._lstPrets = value; }
@@ -71,8 +71,8 @@ namespace GestionnaireBibliotheque.Modele
 
         public void AddExemplaire(Exemplaire ex)
         {
-            this.ListeAuteurs.AddAll(ex.Oeuvre.LstAuteur);
-            this.ListeGenres.AddAll(ex.Oeuvre.LstGenre);
+            this.ListeAuteurs.AddRange(ex.Oeuvre.LstAuteur);
+            this.ListeGenres.AddRange(ex.Oeuvre.LstGenre);
             this.ListeOeuvres.Add(ex.Oeuvre);
             this.ListeEditeurs.Add(ex.Editeur);
             this.ListeExemplaires.Add(ex);
