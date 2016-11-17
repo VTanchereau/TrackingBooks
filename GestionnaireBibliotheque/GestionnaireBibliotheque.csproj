@@ -66,23 +66,23 @@
     <Compile Include="help.xaml.cs">
       <DependentUpon>help.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modèle\Auteur.cs" />
-    <Compile Include="Modèle\Commentaire.cs" />
-    <Compile Include="Modèle\CustomListes\ListeAuteurs.cs" />
-    <Compile Include="Modèle\CustomListes\ListeEditeurs.cs" />
-    <Compile Include="Modèle\CustomListes\ListeLecteurs.cs" />
-    <Compile Include="Modèle\CustomListes\ListePrets.cs" />
-    <Compile Include="Modèle\Editeur.cs" />
-    <Compile Include="Modèle\Exemplaire.cs" />
-    <Compile Include="Modèle\Genre.cs" />
-    <Compile Include="Modèle\Gestionnaire.cs" />
-    <Compile Include="Modèle\Lecteur.cs" />
-    <Compile Include="Modèle\CustomListes\ListeExemplaires.cs" />
-    <Compile Include="Modèle\CustomListes\ListeGenres.cs" />
-    <Compile Include="Modèle\CustomListes\ListeOeuvres.cs" />
-    <Compile Include="Modèle\MoyenContact.cs" />
-    <Compile Include="Modèle\Oeuvre.cs" />
-    <Compile Include="Modèle\Pret.cs" />
+    <Compile Include="Modele\Auteur.cs" />
+    <Compile Include="Modele\Commentaire.cs" />
+    <Compile Include="Modele\CustomListes\ListeAuteurs.cs" />
+    <Compile Include="Modele\CustomListes\ListeEditeurs.cs" />
+    <Compile Include="Modele\CustomListes\ListeLecteurs.cs" />
+    <Compile Include="Modele\CustomListes\ListePrets.cs" />
+    <Compile Include="Modele\Editeur.cs" />
+    <Compile Include="Modele\Exemplaire.cs" />
+    <Compile Include="Modele\Genre.cs" />
+    <Compile Include="Modele\Gestionnaire.cs" />
+    <Compile Include="Modele\Lecteur.cs" />
+    <Compile Include="Modele\CustomListes\ListeExemplaires.cs" />
+    <Compile Include="Modele\CustomListes\ListeGenres.cs" />
+    <Compile Include="Modele\CustomListes\ListeOeuvres.cs" />
+    <Compile Include="Modele\MoyenContact.cs" />
+    <Compile Include="Modele\Oeuvre.cs" />
+    <Compile Include="Modele\Pret.cs" />
     <Compile Include="Retour.xaml.cs">
       <DependentUpon>Retour.xaml</DependentUpon>
     </Compile>

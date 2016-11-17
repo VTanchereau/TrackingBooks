@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionnaireBibliotheque.Modèle
+namespace GestionnaireBibliotheque.Modele
 {
     class Gestionnaire
     {

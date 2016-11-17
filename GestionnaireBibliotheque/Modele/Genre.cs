@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionnaireBibliotheque.Modèle
+namespace GestionnaireBibliotheque.Modele
 {
-    class Auteur
+    class Genre
     {
         private List<Oeuvre> _listeOeuvres;
         public List<Oeuvre> ListeOeuvres
@@ -14,7 +14,7 @@ namespace GestionnaireBibliotheque.Modèle
             get { return _listeOeuvres; }
             set { _listeOeuvres = value; }
         }
-        
+
         private String _nom;
         public String Nom
         {
@@ -22,18 +22,11 @@ namespace GestionnaireBibliotheque.Modèle
             set { _nom = value; }
         }
 
-        private String _prenom;
-        public String Prenom
-        {
-            get { return _prenom; }
-            set { _prenom = value; }
-        }
-
-        public Auteur(string nom, string prenom)
+        public Genre(string nom)
         {
             this.Nom = nom;
-            this.Prenom = prenom;
         }
 
+       
     }
 }
