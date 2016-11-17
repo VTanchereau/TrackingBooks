@@ -23,11 +23,12 @@ namespace GestionnaireBibliotheque
     {
 
         private List<int> lstNumbers = new List<int>();
+        private Window win;
 
-        public Pret()
+        public Pret(Window w)
         {
             InitializeComponent();
-
+            this.win = w;
             for (int i = 0 ; i < 99; i++)
             {
                 lstNumbers.Add(i + 1);
@@ -35,6 +36,11 @@ namespace GestionnaireBibliotheque
             cb_dureePret.ItemsSource = lstNumbers;
 
             cb_dureePret.SelectedItem = 1;
+        }
+
+        private void btn_quitter_Click(object sender, RoutedEventArgs e)
+        {
+            this.win.Close();
         }
     }
 }

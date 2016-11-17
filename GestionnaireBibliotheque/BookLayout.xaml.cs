@@ -27,8 +27,8 @@ namespace GestionnaireBibliotheque
 
         public void retour_Click(object sender, RoutedEventArgs e)
         {
-            Retour r = new Retour();
             Window win = new Window();
+            Retour r = new Retour(win);
             win.Content = r;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -38,8 +38,8 @@ namespace GestionnaireBibliotheque
 
         private void pret_Click(object sender, RoutedEventArgs e)
         {
-            Pret pret = new Pret();
             Window win = new Window();
+            Pret pret = new Pret(win);
             win.Title = "Prêter un livre";
             win.Content = pret;
             win.SizeToContent = SizeToContent.WidthAndHeight;
