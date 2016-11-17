@@ -22,13 +22,14 @@ namespace GestionnaireBibliotheque
     {
         private Modele.Gestionnaire _gestionnaire;
         private Window w;
+        private MainWindow mainWindow;
         public Modele.Gestionnaire Gestionnaire
         {
             get { return this._gestionnaire; }
             set { this._gestionnaire = value; }
         }
 
-        public AddBookLayout(Modele.Gestionnaire _gestionnaire, Window win)
+        public AddBookLayout(Modele.Gestionnaire _gestionnaire, Window win, MainWindow mainWindow)
         {
             InitializeComponent();
             tbk_resumeLivre.Text = "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \n" +
@@ -43,6 +44,7 @@ namespace GestionnaireBibliotheque
             this.Gestionnaire = _gestionnaire;
             tbk_ISBNBook.Text = "Numéro ISBN du livre";
             this.w = win;
+            this.mainWindow = mainWindow;
         }
 
         private void isbnButton_Click(object sender, RoutedEventArgs e)
@@ -162,6 +164,8 @@ namespace GestionnaireBibliotheque
                 exemplaire = new Modele.Exemplaire(oeuvre);
             }
             this.Gestionnaire.AddExemplaire(exemplaire);
+            this.mainWindow.Gestionnaire = this.Gestionnaire;
+            this.w.Close();
         }
 
         private List<Modele.Auteur> getAuthors(String bookAuthor)

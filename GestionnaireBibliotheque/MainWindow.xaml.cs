@@ -45,7 +45,7 @@ namespace GestionnaireBibliotheque
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
             Window win = new Window();
-            AddBookLayout addBookWindow = new AddBookLayout(this.Gestionnaire, win);
+            AddBookLayout addBookWindow = new AddBookLayout(this.Gestionnaire, win, this);
             win.Content = addBookWindow;
             win.Title = "Ajouter un livre";
             win.SizeToContent = SizeToContent.WidthAndHeight;
