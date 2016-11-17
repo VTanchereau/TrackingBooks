@@ -71,18 +71,11 @@
     </Compile>
     <Compile Include="Modele\Auteur.cs" />
     <Compile Include="Modele\Commentaire.cs" />
-    <Compile Include="Modele\CustomListes\ListeAuteurs.cs" />
-    <Compile Include="Modele\CustomListes\ListeEditeurs.cs" />
-    <Compile Include="Modele\CustomListes\ListeLecteurs.cs" />
-    <Compile Include="Modele\CustomListes\ListePrets.cs" />
     <Compile Include="Modele\Editeur.cs" />
     <Compile Include="Modele\Exemplaire.cs" />
     <Compile Include="Modele\Genre.cs" />
     <Compile Include="Modele\Gestionnaire.cs" />
     <Compile Include="Modele\Lecteur.cs" />
-    <Compile Include="Modele\CustomListes\ListeExemplaires.cs" />
-    <Compile Include="Modele\CustomListes\ListeGenres.cs" />
-    <Compile Include="Modele\CustomListes\ListeOeuvres.cs" />
     <Compile Include="Modele\MoyenContact.cs" />
     <Compile Include="Modele\Oeuvre.cs" />
     <Compile Include="Modele\Pret.cs" />
