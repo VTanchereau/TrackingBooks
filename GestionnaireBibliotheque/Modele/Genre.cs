@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele
 {
-    class Genre
+    public class Genre
     {
         //variables privées
         private List<Oeuvre> _listeOeuvres;

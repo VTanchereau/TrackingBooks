@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele
 {
-    class Editeur
+    public class Editeur
     {
         //variables privées
         private List<Exemplaire> _listeExemplaires;
