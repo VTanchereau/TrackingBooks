@@ -68,11 +68,18 @@
     </Compile>
     <Compile Include="Modèle\Auteur.cs" />
     <Compile Include="Modèle\Commentaire.cs" />
+    <Compile Include="Modèle\CustomListes\ListeAuteurs.cs" />
+    <Compile Include="Modèle\CustomListes\ListeEditeurs.cs" />
+    <Compile Include="Modèle\CustomListes\ListeLecteurs.cs" />
+    <Compile Include="Modèle\CustomListes\ListePrets.cs" />
     <Compile Include="Modèle\Editeur.cs" />
     <Compile Include="Modèle\Exemplaire.cs" />
     <Compile Include="Modèle\Genre.cs" />
     <Compile Include="Modèle\Gestionnaire.cs" />
     <Compile Include="Modèle\Lecteur.cs" />
+    <Compile Include="Modèle\CustomListes\ListeExemplaires.cs" />
+    <Compile Include="Modèle\CustomListes\ListeGenres.cs" />
+    <Compile Include="Modèle\CustomListes\ListeOeuvres.cs" />
     <Compile Include="Modèle\MoyenContact.cs" />
     <Compile Include="Modèle\Oeuvre.cs" />
     <Compile Include="Modèle\Pret.cs" />
