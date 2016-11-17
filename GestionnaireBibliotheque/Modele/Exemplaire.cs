@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele
 {
-    class Exemplaire
+    public class Exemplaire
     {
         //variables privées
         private List<Pret> _listeDePrets;
@@ -60,23 +60,23 @@ namespace GestionnaireBibliotheque.Modele
             set { _disponibilite = value; }
         }
 
-        public Exemplaire(DateTime dateAjout, string etat, Boolean disponibilite, Editeur editeur, Oeuvre oeuvre, string photo = "default_path")
+        public Exemplaire(Oeuvre oeuvre, Editeur editeur, string photo = "default_path")
         {
-            this.DateAjout = dateAjout;
-            this.Etat = etat;
-            this.Disponibilite = disponibilite;
+            this.DateAjout = DateTime.Today;
+            this.Etat = "Bon";
+            this.Disponibilite = true; ;
             this.Editeur = editeur;
             this.Oeuvre = oeuvre;
             this.Photo = photo;
-
         }
 
-        public Exemplaire(DateTime dateAjout, string etat, Boolean disponibilite, Oeuvre oeuvre, string photo = "default_path")
+        public Exemplaire(Oeuvre oeuvre, string photo = "default_path")
         {
-            this.DateAjout = dateAjout;
-            this.Etat = etat;
-            this.Disponibilite = disponibilite;
+            this.DateAjout = DateTime.Today;
+            this.Etat = "Bon";
+            this.Disponibilite = true;
             this.Oeuvre = oeuvre;
+            this.Photo = photo;
         }
         
     }

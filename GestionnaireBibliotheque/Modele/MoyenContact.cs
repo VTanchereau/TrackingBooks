@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele
 {
-    class MoyenContact
+    public class MoyenContact
     {
         //variables privées
         private Lecteur _lecteur;

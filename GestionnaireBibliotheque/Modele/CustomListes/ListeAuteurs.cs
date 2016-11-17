@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele.CustomListes
 {
-    class ListeAuteurs
+    public class ListeAuteurs
     {
         private List<Auteur> lstAuteurs;
 
@@ -18,6 +18,13 @@ namespace GestionnaireBibliotheque.Modele.CustomListes
         public void Add(Auteur auteur)
         {
             this.lstAuteurs.Add(auteur);
+        }
+
+        public void AddAll(List<Auteur> lstAuteur)
+        {
+            foreach (Auteur auteur in lstAuteur){
+                this.lstAuteurs.Add(auteur);
+            }
         }
 
         public Auteur Get(String nom)

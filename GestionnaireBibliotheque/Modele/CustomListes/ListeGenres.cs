@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele.CustomListes
 {
-    class ListeGenres
+    public class ListeGenres
     {
         private List<Genre> lstGenres;
 
@@ -18,6 +18,14 @@ namespace GestionnaireBibliotheque.Modele.CustomListes
         public void Add(Genre genre)
         {
             this.lstGenres.Add(genre);
+        }
+
+        public void AddAll(List<Genre> lstGenre)
+        {
+            foreach (Genre auteur in lstGenre)
+            {
+                this.lstGenres.Add(auteur);
+            }
         }
 
         public Genre Get(String nom)

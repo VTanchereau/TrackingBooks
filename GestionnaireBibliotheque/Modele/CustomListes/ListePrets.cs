@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele.CustomListes
 {
-    class ListePrets
+    public class ListePrets
     {
         private List<Pret> lstPrets;
 
