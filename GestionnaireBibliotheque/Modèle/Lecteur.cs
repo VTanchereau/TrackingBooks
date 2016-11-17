@@ -8,31 +8,42 @@ namespace GestionnaireBibliotheque.Modèle
 {
     class Lecteur
     {
+        //variables privées
         private List<MoyenContact> _listeMoyenContacts;
+        private String _nom;
+        private String _prenom;
+
+        //variables publiques
         public List<MoyenContact> ListeMoyenContacts
         {
             get { return _listeMoyenContacts; }
             set { _listeMoyenContacts = value; }
         }
-
-        private String _nom;
         public String Nom
         {
             get { return _nom; }
             set { _nom = value; }
         }
-
-        private String _prenom;
         public String Prenom
         {
             get { return _prenom; }
             set { _prenom = value; }
         }
 
+        //constructeur de l'objet Lecteur
+        public Lecteur(string nom, string prenom, List<MoyenContact> liste_moyenDeContact)
+        {
+            this._nom = nom;
+            this._prenom = prenom;
+            this.ListeMoyenContacts = new List<MoyenContact>();
+            this.ListeMoyenContacts = liste_moyenDeContact;
+        }
+
         public Lecteur(string nom, string prenom)
         {
             this._nom = nom;
             this._prenom = prenom;
+      
         }
 
     }

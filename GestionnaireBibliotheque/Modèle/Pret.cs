@@ -22,8 +22,8 @@ namespace GestionnaireBibliotheque.Modèle
             set { _commentaire = value; }
         }
 
-        private Lecteur _lecteur;
-        public Lecteur Lecteur
+        private string _lecteur;
+        public string Lecteur
         {
             get { return _lecteur; }
             set { _lecteur = value; }
@@ -50,11 +50,18 @@ namespace GestionnaireBibliotheque.Modèle
             set { _dateRappel = value; }
         }
 
-        public Pret(DateTime dateDebut, DateTime dateRetour, DateTime dateRappel)
+        public Pret(DateTime dateDebut, DateTime dateRappel, string lecteur)
         {
-            this._dateDebut = dateDebut;
-            this._dateRetour = dateRetour;
-            this._dateRappel = dateRappel;
+            List<string> listeLecteurs = new List<string>();
+
+            for(int i =0; i< listeLecteurs.Count(); i++)
+            {
+                if(listeLecteurs.ind)
+            }
+            this.DateDebut = dateDebut;
+            this.DateRappel = dateRappel;
+
+
         }
 
 
