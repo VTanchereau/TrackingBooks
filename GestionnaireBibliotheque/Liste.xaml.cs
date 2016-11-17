@@ -20,9 +20,22 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class Liste : Page
     {
+        private List<String> lstTitres;
+        private List<String> lstAuteur;
+        private List<String> lstEditeur;
+        private List<String> lstGenre;
+        private List<String> lstDateAjout;
+        private Modele.CustomListes.ListeExemplaires _lstEx;
+
         public Liste()
         {
             InitializeComponent();
+
+        }
+
+        public List<Modele.Exemplaire> LstEx{
+            get{ return _lstEx;}
+            set{ _lstEx = value; }
         }
     }
 }

@@ -24,5 +24,10 @@
         <TextBlock Grid.Row="0" Grid.Column="2">Editeur :</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="3">Genre :</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="4">Date d'ajout :</TextBlock>
+        <ListView Grid.Column="0" Name="lv_listeTitre"/>
+        <ListView Grid.Column="1" Name="lv_listeAuteur"/>
+        <ListView Grid.Column="2" Name="lv_listeEditeur"/>
+        <ListView Grid.Column="3" Name="lv_listeGenre"/>
+        <ListView Grid.Column="4" Name="lv_listeDateAjout"/>
     </Grid>
 </Page>
