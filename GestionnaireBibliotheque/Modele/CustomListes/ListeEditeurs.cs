@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele.CustomListes
 {
-    class ListeEditeurs
+    public class ListeEditeurs
     {
         private List<Editeur> lstEditeurs;
 

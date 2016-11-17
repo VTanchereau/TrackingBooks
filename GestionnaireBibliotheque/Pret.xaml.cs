@@ -25,13 +25,20 @@ namespace GestionnaireBibliotheque
 
         private List<int> lstNumbers = new List<int>();
         List<Modele.MoyenContact> Liste_MoyenDeContact = new List<Modele.MoyenContact>();
+        List<string> listeMoyenDeContact = new List<string>();
 
-        public Pret()
+        private Window win;
+
+
+        public Pret(Window w)
         {
             InitializeComponent();
-
-
+            
             for (int i = 1 ; i < 99; i++)
+
+            this.win = w;
+            for (int i = 0 ; i < 99; i++)
+
             {
                 lstNumbers.Add(i);
             }
@@ -66,25 +73,29 @@ namespace GestionnaireBibliotheque
         {
             Modele.MoyenContact MoyenDeContact = new Modele.MoyenContact(tb_typeMoyenContact.Text, tb_valueMoyenContact.Text);
             Liste_MoyenDeContact.Add(MoyenDeContact);
-            lv_moyenContact.ItemsSource = Liste_MoyenDeContact;
+
+           
+           /* String moyenDeContact_affichage = tb_typeMoyenContact.Text +' '+ tb_valueMoyenContact.Text;
+            listeMoyenDeContact.Add(moyenDeContact_affichage);
+            lv_moyenContact.ItemsSource = listeMoyenDeContact;*/
         }
         //methode pour generer un faux exemplaire
         private Modele.Exemplaire GenerateExemplaire()
         {
             List<Modele.Auteur> lstAuteurs = new List<Modele.Auteur>();
             Modele.Editeur Editeur = new Modele.Editeur("nom");
-            Modele.Genre Genre = new Modele.Genre("genre");
-            Modele.Oeuvre Oeuvre = new Modele.Oeuvre("titre", "Resume", Genre, lstAuteurs);
+            List<Modele.Genre> lstGenres = new List<Modele.Genre>();
+            Modele.Oeuvre Oeuvre = new Modele.Oeuvre("titre", "Resume", lstGenres, lstAuteurs);
             Modele.Exemplaire exemplaire;
 
-            return exemplaire = new Modele.Exemplaire(DateTime.Today,"neuf",true, Editeur,Oeuvre);
+            return exemplaire = new Modele.Exemplaire( Oeuvre, Editeur);
         }
 
         //methode pour transformer la date de rappel
         private DateTime Set_dateRappel(int valeurAjouter)
         {
             DateTime dateRappel = DateTime.Today;
-            if ( cb_dureePret.Text == "jour")
+            if (cb_dureePret.Text == "jour")
             {
                 dateRappel.AddDays(valeurAjouter);
             }
@@ -97,6 +108,12 @@ namespace GestionnaireBibliotheque
                 dateRappel.AddMonths(valeurAjouter);
             }
             return dateRappel;
+        }
+
+        private void btn_quitter_Click(object sender, RoutedEventArgs e)
+        {
+            this.win.Close();
+
         }
     }
 }

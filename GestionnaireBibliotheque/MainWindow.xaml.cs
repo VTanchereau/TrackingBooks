@@ -44,8 +44,8 @@ namespace GestionnaireBibliotheque
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
-            AddBookLayout addBookWindow = new AddBookLayout(this.Gestionnaire);
             Window win = new Window();
+            AddBookLayout addBookWindow = new AddBookLayout(this.Gestionnaire, win, this);
             win.Content = addBookWindow;
             win.Title = "Ajouter un livre";
             win.SizeToContent = SizeToContent.WidthAndHeight;
@@ -56,9 +56,9 @@ namespace GestionnaireBibliotheque
 
         private void lendBook_Click(object sender, RoutedEventArgs e)
         {
-            PretGeneral p = new PretGeneral();
             Window w = new Window();
-
+            PretGeneral p = new PretGeneral(w);
+            
             w.Content = p;
             w.Title = "Prêter un livre";
             w.SizeToContent = SizeToContent.WidthAndHeight;
@@ -71,9 +71,9 @@ namespace GestionnaireBibliotheque
 
         private void getBackBook_Click(object sender, RoutedEventArgs e)
         {
-            PretGeneral p = new PretGeneral();
             Window w = new Window();
-
+            PretGeneral p = new PretGeneral(w);
+            
             w.Content = p;
             w.Title = "Retour d'un livre";
             w.SizeToContent = SizeToContent.WidthAndHeight;

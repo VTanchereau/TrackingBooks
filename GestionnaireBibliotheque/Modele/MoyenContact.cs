@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele
 {
-    class MoyenContact
+    public class MoyenContact
     {
         //variables privées
         private Lecteur _lecteur;
         private String _type;
         private String _valeur;
-        private int _ordre;
+       // private int _ordre;
 
         //variables publiques
         public Lecteur Lecteur

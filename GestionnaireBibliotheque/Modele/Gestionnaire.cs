@@ -68,5 +68,14 @@ namespace GestionnaireBibliotheque.Modele
             get { return this._lstPrets; }
             set { this._lstPrets = value; }
         }
+
+        public void AddExemplaire(Exemplaire ex)
+        {
+            this.ListeAuteurs.AddAll(ex.Oeuvre.LstAuteur);
+            this.ListeGenres.AddAll(ex.Oeuvre.LstGenre);
+            this.ListeOeuvres.Add(ex.Oeuvre);
+            this.ListeEditeurs.Add(ex.Editeur);
+            this.ListeExemplaires.Add(ex);
+        }
     }
 }

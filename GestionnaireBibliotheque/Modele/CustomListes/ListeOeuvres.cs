@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele.CustomListes
 {
-    class ListeOeuvres
+    public class ListeOeuvres
     {
         private List<Oeuvre> lstOeuvre;
 

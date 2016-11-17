@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GestionnaireBibliotheque.Modele
 {
-    class Oeuvre
+    public class Oeuvre
     {
         private List<Exemplaire> _listeExemplaires;
-        private Genre _genre;
+        private List<Genre> _lstGenre;
         private List<Auteur> _lstauteur;
         private String _titre;
         private String _resume;
@@ -22,10 +22,10 @@ namespace GestionnaireBibliotheque.Modele
             set { _listeExemplaires = value; }
         }
         
-        public Genre Genre
+        public List<Genre> LstGenre
         {
-            get { return _genre; }
-            set { _genre = value; }
+            get { return _lstGenre; }
+            set { _lstGenre = value; }
         }
         
         public List<Auteur> LstAuteur
@@ -58,7 +58,7 @@ namespace GestionnaireBibliotheque.Modele
             set { _ISBN13 = value; }
         }
 
-        public Oeuvre(string titre, string resume, int typeISBN, int numero_ISBN, Genre genre, List<Auteur> lstauteur)
+        public Oeuvre(string titre, string resume, int typeISBN, int numero_ISBN, List<Genre> lstGenre, List<Auteur> lstauteur)
         {
             this.Titre = titre;
             this.Resume = resume;
@@ -71,15 +71,15 @@ namespace GestionnaireBibliotheque.Modele
                 this.ISBN10 = numero_ISBN;
 
             }
-            this.Genre = genre;
+            this.LstGenre = lstGenre;
             this.LstAuteur = lstauteur;
         }
 
-        public Oeuvre(string titre, string resume, Genre genre, List<Auteur> lstauteur)
+        public Oeuvre(string titre, string resume, List<Genre> lstGenre, List<Auteur> lstauteur)
         {
             this.Titre = titre;
             this.Resume = resume;
-            this.Genre = genre;
+            this.LstGenre = lstGenre;
             this.LstAuteur = lstauteur;
         }
 
