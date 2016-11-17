@@ -56,9 +56,9 @@ namespace GestionnaireBibliotheque
 
         private void lendBook_Click(object sender, RoutedEventArgs e)
         {
-            PretGeneral p = new PretGeneral();
             Window w = new Window();
-
+            PretGeneral p = new PretGeneral(w);
+            
             w.Content = p;
             w.Title = "Prêter un livre";
             w.SizeToContent = SizeToContent.WidthAndHeight;
@@ -71,9 +71,9 @@ namespace GestionnaireBibliotheque
 
         private void getBackBook_Click(object sender, RoutedEventArgs e)
         {
-            PretGeneral p = new PretGeneral();
             Window w = new Window();
-
+            PretGeneral p = new PretGeneral(w);
+            
             w.Content = p;
             w.Title = "Retour d'un livre";
             w.SizeToContent = SizeToContent.WidthAndHeight;

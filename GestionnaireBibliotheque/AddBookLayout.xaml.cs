@@ -131,7 +131,9 @@ namespace GestionnaireBibliotheque
 
         private void btn_Annuler_Click(object sender, RoutedEventArgs e)
         {
+
             this.w.Close();
+
         }
 
         private void btn_Valider_Click_1(object sender, RoutedEventArgs e)

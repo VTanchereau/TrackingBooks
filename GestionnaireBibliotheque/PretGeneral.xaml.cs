@@ -20,9 +20,16 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class PretGeneral : Page
     {
-        public PretGeneral()
+        private Window win;
+        public PretGeneral(Window w)
         {
             InitializeComponent();
+            this.win = w;
+        }
+
+        private void btn_quitter_Click(object sender, RoutedEventArgs e)
+        {
+            this.win.Close();
         }
     }
 }
