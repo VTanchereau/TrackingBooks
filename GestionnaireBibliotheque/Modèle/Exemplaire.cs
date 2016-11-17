@@ -57,24 +57,43 @@ namespace GestionnaireBibliotheque.Modèle
             set { _disponibilite = value; }
         }
 
-        public Exemplaire(DateTime dateAjout, string etat, Boolean disponibilite, Editeur editeur)
+        public Exemplaire(DateTime dateAjout, string etat, Boolean disponibilite, Editeur editeur, Oeuvre oeuvre)
         {
             this._dateAjout = dateAjout;
             this._etat = etat;
             this._disponibilite = disponibilite;
             this._editeur = editeur;
+            this._oeuvre = oeuvre;
         }
 
-        public Exemplaire(DateTime dateAjout, string etat, string photo, Boolean disponibilite, Editeur editeur)
+        public Exemplaire(DateTime dateAjout, string etat, string photo, Boolean disponibilite, Editeur editeur, Oeuvre oeuvre)
         {
             this._dateAjout = dateAjout;
             this._etat = etat;
             this._disponibilite = disponibilite;
             this._photo = photo;
             this._editeur = editeur;
+            this._oeuvre = oeuvre;
         }
 
-        
+        public Exemplaire(DateTime dateAjout, string etat, Boolean disponibilite, Oeuvre oeuvre)
+        {
+            this._dateAjout = dateAjout;
+            this._etat = etat;
+            this._disponibilite = disponibilite;
+            this._oeuvre = oeuvre;
+        }
+
+        public Exemplaire(DateTime dateAjout, string etat, string photo, Boolean disponibilite, Oeuvre oeuvre)
+        {
+            this._dateAjout = dateAjout;
+            this._etat = etat;
+            this._disponibilite = disponibilite;
+            this._photo = photo;
+            this._oeuvre = oeuvre;
+        }
+
+
 
 
     }

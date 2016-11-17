@@ -22,11 +22,11 @@ namespace GestionnaireBibliotheque.Modèle
             set { _genre = value; }
         }
 
-        private Auteur _auteur;
-        public Auteur Auteur
+        private List<Auteur> _lstauteur;
+        public List<Auteur> LstAuteur
         {
-            get { return _auteur; }
-            set { _auteur = value; }
+            get { return _lstauteur; }
+            set { _lstauteur = value; }
         }
 
 
@@ -58,14 +58,14 @@ namespace GestionnaireBibliotheque.Modèle
             set { _ISBN13 = value; }
         }
         
-        public Oeuvre(string titre, string resume, int numero_ISBN10, int numero_ISBN13, Genre genre, Auteur auteur )
+        public Oeuvre(string titre, string resume, int numero_ISBN10, int numero_ISBN13, Genre genre, List<Auteur> lstauteur )
         {
-            this._titre = titre;
-            this._resume = resume;
+            this.Titre = titre;
+            this.Resume = resume;
             this.ISBN10 = numero_ISBN10;
             this.ISBN13 = numero_ISBN13;
-            this._genre = genre;
-            this._auteur = auteur;
+            this.Genre = genre;
+            this.LstAuteur = lstauteur;
         }
 
     }

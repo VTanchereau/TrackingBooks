@@ -24,7 +24,7 @@ namespace GestionnaireBibliotheque.Modèle
 
         public Editeur( string nom)
         {
-            this._nom = nom;
+            this.Nom = nom;
         }
         
     }
