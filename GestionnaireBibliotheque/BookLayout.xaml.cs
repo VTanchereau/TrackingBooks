@@ -21,12 +21,15 @@ namespace GestionnaireBibliotheque
     public partial class BookLayout : Page
     {
         private Modele.Exemplaire _exemplaire;
-        Modele.Gestionnaire gestionnaire = new Modele.Gestionnaire();
-        public BookLayout()
+       // private Modele.Gestionnaire _gestionnaire;
+        Modele.Gestionnaire _gestionnaire = new Modele.Gestionnaire();
+        public BookLayout() //Modele.Gestionnaire gestionnaire
         {
             InitializeComponent();
             // en attendant d'avoir un vrai exemplaire à envoyer sinon object null reference exception
-            this._exemplaire = gestionnaire.GenerateExemplaire();
+           // this._gestionnaire = 
+            this._exemplaire = _gestionnaire.GenerateExemplaire();
+            
             
         }
 
@@ -44,7 +47,7 @@ namespace GestionnaireBibliotheque
         private void pret_Click(object sender, RoutedEventArgs e)
         {
             Window win = new Window();
-            Pret pret = new Pret(win, this._exemplaire);
+            Pret pret = new Pret(win, this._exemplaire, _gestionnaire);
             win.Title = "Prêter un livre";
             win.Content = pret;
             win.SizeToContent = SizeToContent.WidthAndHeight;

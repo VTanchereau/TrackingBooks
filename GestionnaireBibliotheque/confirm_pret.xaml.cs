@@ -22,11 +22,13 @@ namespace GestionnaireBibliotheque
     {
         private Window _win;
         private Modele.Pret _pret;
-        public confirm_pret(Window w, Modele.Pret pret)
+        private Modele.Gestionnaire _gestionnaire;
+        public confirm_pret(Window w, Modele.Pret pret, Modele.Gestionnaire gestionnaire)
         {
             InitializeComponent();
             this._win = w;
             this._pret = pret;
+            this._gestionnaire = gestionnaire;
         }
 
         
@@ -49,8 +51,8 @@ namespace GestionnaireBibliotheque
         private void btn_annuler_Click(object sender, RoutedEventArgs e)
         {
             this._win.Close();
-            Modele.Gestionnaire gestionnaire = new Modele.Gestionnaire();
-            gestionnaire.DeletePret(_pret);
+          
+            _gestionnaire.DeletePret(_pret);
 
         }
 

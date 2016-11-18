@@ -91,13 +91,32 @@ namespace GestionnaireBibliotheque.Modele
             this.ListeLecteurs.Add(lecteur);
         }
 
+        //methode pour supprimer un pret et son lecteur 
         public void DeletePret(Pret pret)
         {
             if (ListePret.Contains(pret))
             {
                 ListePret.Remove(pret);
+                DeleteLecteur(pret.Lecteur);
             }
         }
+
+        public void DeleteLecteur(Lecteur lecteur)
+        {
+            if (ListeLecteurs.Contains(lecteur))
+            {
+                ListeLecteurs.Remove(lecteur);
+            }
+        }
+
+        public void DeleteExemplaire(Exemplaire exemplaire)
+        {
+            if (ListeExemplaires.Contains(exemplaire))
+            {
+                ListeExemplaires.Remove(exemplaire);
+            }
+        }
+        
 
         //methode pour generer un faux exemplaire
         public Modele.Exemplaire GenerateExemplaire()

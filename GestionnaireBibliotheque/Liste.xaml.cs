@@ -80,7 +80,7 @@ namespace GestionnaireBibliotheque
                     lstGenre.Add(str_genre);
                 }
             }
-            catch (NullReferenceException e) { }
+            catch (NullReferenceException e) { var result = MessageBox.Show(e.Message); } //e.message à personnaliser 
             finally
             {
                 lb_auteurName.ItemsSource = lstAuteur;
