@@ -119,11 +119,6 @@ namespace GestionnaireBibliotheque
             win.ShowDialog();
         }
 
-        private void btn_Valider_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btn_aideAuthor_Click(object sender, RoutedEventArgs e)
         {
 
@@ -138,6 +133,23 @@ namespace GestionnaireBibliotheque
 
         private void btn_Valider_Click_1(object sender, RoutedEventArgs e)
         {
+
+            String bookIsbn = tb_ISBNBook.Text;
+            if (bookIsbn != "" || bookIsbn != null)
+            {
+                this.validISBN(bookIsbn);
+            }
+            else
+            {
+                bookIsbn = "";
+                addBook(bookIsbn);
+            }
+
+            this.w.Close();
+        }
+
+        private void addBook(String isbn)
+        {
             if (tb_titleBook.Text == "" || tb_authorName.Text == "" || tb_editorName.Text == "" || tb_genreName.Text == "" || tbk_resumeLivre.Text == "")
             {
                 return;
@@ -150,7 +162,7 @@ namespace GestionnaireBibliotheque
 
             List<Modele.Auteur> lstAuteurs = getAuthors(bookAuthor);
             List<Modele.Genre> lstGenres = getGenres(bookGenres);
-            Modele.Oeuvre oeuvre = new Modele.Oeuvre(bookTitle, bookResume, lstGenres, lstAuteurs);
+            Modele.Oeuvre oeuvre = new Modele.Oeuvre(bookTitle, bookResume, isbn, lstGenres, lstAuteurs);
 
             Modele.Exemplaire exemplaire;
 
@@ -166,7 +178,6 @@ namespace GestionnaireBibliotheque
             this.Gestionnaire.AddExemplaire(exemplaire);
             this.mainWindow.Gestionnaire = this.Gestionnaire;
             this.mainWindow.UpdateListe();
-            this.w.Close();
         }
 
         private List<Modele.Auteur> getAuthors(String bookAuthor)
@@ -210,6 +221,127 @@ namespace GestionnaireBibliotheque
                 lstGenres.Add(genre);
             }
             return lstGenres;
+        }
+
+        private void validationIsbn10(int nb_char_isbn, String[] tab_char_isbn)
+        {
+            List<int> somme = new List<int>();
+            int validation_key=0;
+            int char_isbn;
+            for (int i = 0; i < nb_char_isbn-1; i++)
+            {
+                if (Int32.TryParse(tab_char_isbn[i], out char_isbn))
+                {
+                    somme.Add(char_isbn * i);
+                }
+            }
+            for (int j = 0; j<somme.Count; j = j + 2)
+            {
+                validation_key += somme[j] + somme[j + 1];
+            }
+            validation_key = validation_key % 11;
+            if (Int32.Parse(tab_char_isbn[nb_char_isbn - 1]) == validation_key)
+            {
+                String isbn = String.Join("", "", tab_char_isbn);
+                this.addBook(isbn);
+            }
+            else
+            {
+                Window w = new Window();
+                ValideIsbn page_isbn = new ValideIsbn(w);
+                w.Title = "Numéro ISBN non valide";
+                w.Content = page_isbn;
+                w.ResizeMode = System.Windows.ResizeMode.NoResize;
+                w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                w.ShowDialog();
+            }
+        }
+
+        private void validationIsbn13(int nb_char_isbn, String[] tab_char_isbn)
+        {
+            List<int> somme = new List<int>();
+            int validation_key = 0;
+            int char_isbn;
+            int groupe_chiffre = Int32.Parse(tab_char_isbn[0]) + Int32.Parse(tab_char_isbn[1]) + Int32.Parse(tab_char_isbn[2]);
+            if (groupe_chiffre == 978 || groupe_chiffre == 979)
+            {
+                for (float i = 0; i < nb_char_isbn - 1; i++)
+                {
+                    if (Int32.TryParse(tab_char_isbn[(int)i], out char_isbn))
+                    {
+                        if (Int32.Parse(tab_char_isbn[(int)i]) % 2 == 0)
+                        {
+                            somme[(int)i] = Int32.Parse(tab_char_isbn[(int)i]) * 3;
+                        }
+                        else
+                        {
+                            somme[(int)i] = Int32.Parse(tab_char_isbn[(int)i]);
+                        }
+                    }
+                }
+                for (int j = 0; j < somme.Count; j = j + 2)
+                {
+                    validation_key += somme[j] + somme[j + 1];
+                }
+                validation_key = 10 % (10 - (10 % validation_key));
+                if (Int32.Parse(tab_char_isbn[nb_char_isbn - 1]) == validation_key)
+                {
+                    String isbn = String.Join("","",tab_char_isbn);
+                    this.addBook(isbn);
+                }
+                else
+                {
+                    Window w = new Window();
+                    ValideIsbn page_isbn = new ValideIsbn(w);
+                    w.Title = "Numéro ISBN non valide";
+                    w.Content = page_isbn;
+                    w.ResizeMode = System.Windows.ResizeMode.NoResize;
+                    w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    w.ShowDialog();
+                }
+            }
+            else
+            {
+                Window w = new Window();
+                ValideIsbn page_isbn = new ValideIsbn(w);
+                w.Title = "Numéro ISBN non valide";
+                w.Content = page_isbn;
+                w.ResizeMode = System.Windows.ResizeMode.NoResize;
+                w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                w.ShowDialog();
+            }
+        }
+
+        private void validISBN(String isbn)
+        {
+            int nb_char_isbn;
+            List<int> somme = new List<int>();
+            string[] separator = new string[] { "" };
+            isbn = isbn.Replace("-", "");
+            String[] tab_char_isbn = isbn.Split(separator, StringSplitOptions.None);
+            int j = 0;
+            
+            nb_char_isbn = tab_char_isbn.Length;
+
+            if (nb_char_isbn == 10)
+            {
+                this.validationIsbn10(nb_char_isbn, tab_char_isbn);
+            }
+
+            else if (nb_char_isbn == 13)
+            {
+                this.validationIsbn13(nb_char_isbn, tab_char_isbn);
+            }
+            else
+            {
+                Window w = new Window();
+                ValideIsbn page_isbn = new ValideIsbn(w);
+                w.Title = "Numéro ISBN non valide";
+                w.Content = page_isbn;
+                w.ResizeMode = System.Windows.ResizeMode.NoResize;
+                w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                w.ShowDialog();
+            }
         }
     }
 }

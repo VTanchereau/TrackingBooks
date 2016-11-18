@@ -59,6 +59,9 @@
       <DependentUpon>ListeRetourAttente.xaml</DependentUpon>
     </Compile>
     <Compile Include="TextInputToVisibilityConverter.cs" />
+    <Compile Include="ValideIsbn.xaml.cs">
+      <DependentUpon>ValideIsbn.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddBookLayout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PretGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ValideIsbn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
