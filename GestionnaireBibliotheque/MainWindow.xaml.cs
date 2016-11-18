@@ -30,8 +30,9 @@ namespace GestionnaireBibliotheque
         public MainWindow()
         {
             this.WindowState = WindowState.Maximized;
-            this.Gestionnaire = new Modele.Gestionnaire();
             InitializeComponent();
+            this.Gestionnaire = new Modele.Gestionnaire();
+            liste.Navigate(new Liste(this.Gestionnaire));
             ListeRetourAttente lra = new ListeRetourAttente();
             Window win = new Window();
             win.Title = "Liste des livres en attentes de retour";
@@ -40,6 +41,11 @@ namespace GestionnaireBibliotheque
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
             win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             win.ShowDialog();
+        }
+
+        public void UpdateListe()
+        {
+            liste.Navigate(new Liste(this.Gestionnaire));
         }
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
@@ -82,6 +88,11 @@ namespace GestionnaireBibliotheque
             w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
             w.ShowDialog();
+        }
+
+        public void UpdateListBooks()
+        {
+
         }
     }
 }

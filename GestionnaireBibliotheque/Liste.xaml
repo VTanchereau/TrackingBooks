@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GestionnaireBibliotheque"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="Liste">
+      Title="Liste" >
 
     <Grid Name="grid_listeLivres" Margin="5,5,5,5">
         <Grid.ColumnDefinitions>
@@ -18,11 +18,17 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0">Titre du livre :</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="1">Auteur :</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="2">Editeur :</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="3">Genre :</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="4">Date d'ajout :</TextBlock>
+        <ListBox Name="lb_titleBook" Grid.Row="1" Grid.Column="0" />
+        <ListBox Name="lb_auteurName" Grid.Row="1" Grid.Column="1" />
+        <ListBox Name="lb_editorName" Grid.Row="1" Grid.Column="2" />
+        <ListBox Name="lb_genreBook" Grid.Row="1" Grid.Column="3" />
+        <ListBox Name="lb_dateAjoutBook" Grid.Row="1" Grid.Column="4" />
     </Grid>
 </Page>
