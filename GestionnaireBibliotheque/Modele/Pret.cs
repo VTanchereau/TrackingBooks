@@ -15,6 +15,7 @@ namespace GestionnaireBibliotheque.Modele
         private DateTime _dateDebut;
         private DateTime _dateRetour;
         private DateTime _dateRappel;
+      
 
         //variables publiques
         public Exemplaire Exemplaire
@@ -52,26 +53,27 @@ namespace GestionnaireBibliotheque.Modele
             get { return _dateRappel; }
             set { _dateRappel = value; }
         }
+        
+       
 
         //constructeur de l'objet Pret
         public Pret(Exemplaire exemplaire, DateTime dateDebut, DateTime dateRappel, Lecteur lecteur)
         {
-            List<Lecteur> listeLecteurs = new List<Lecteur>();
+           // List<Lecteur> listeLecteurs = new List<Lecteur>();
             this.DateDebut = dateDebut;
             this.Exemplaire = exemplaire;
             this.Lecteur = lecteur;
             this.DateRappel = dateRappel;
-           
+            
         }
 
-        private void Set_dateRetour()
+        //Methode deplacée dans l'objet exemplaire car le retour se fait à partir d'un exemplaire via son pretActif.
+       /* private void Set_RetourPret(Commentaire commentaire)
         {
             this.DateRetour = DateTime.Today;
-        }
-       /* private void format_dateRappel()
-        {
-        
+            this.Commentaire = commentaire;
         }*/
+       
 
 
     }

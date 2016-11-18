@@ -16,6 +16,7 @@ namespace GestionnaireBibliotheque.Modele
         private String _photo;
         private String _etat;
         private Boolean _disponibilite;
+        private Pret _pretActif;
 
         //variables publiques
         public List<Pret> ListeDePrets
@@ -60,6 +61,12 @@ namespace GestionnaireBibliotheque.Modele
             set { _disponibilite = value; }
         }
 
+        public Pret PretActif
+        {
+            get { return _pretActif; }
+            set { _pretActif = value; }
+        }
+
         public Exemplaire(Oeuvre oeuvre, Editeur editeur, string photo = "default_path")
         {
             this.DateAjout = DateTime.Today;
@@ -68,6 +75,7 @@ namespace GestionnaireBibliotheque.Modele
             this.Editeur = editeur;
             this.Oeuvre = oeuvre;
             this.Photo = photo;
+
         }
 
         public Exemplaire(Oeuvre oeuvre, string photo = "default_path")
@@ -77,6 +85,13 @@ namespace GestionnaireBibliotheque.Modele
             this.Disponibilite = true;
             this.Oeuvre = oeuvre;
             this.Photo = photo;
+        }
+
+        public void Set_retourExemplaire(Commentaire commentaire, string etat)
+        {
+            this._pretActif.DateRetour = DateTime.Today;
+            this._pretActif.Commentaire = commentaire;
+            this._etat = etat;
         }
         
     }

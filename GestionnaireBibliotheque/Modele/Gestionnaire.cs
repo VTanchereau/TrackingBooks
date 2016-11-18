@@ -77,5 +77,17 @@ namespace GestionnaireBibliotheque.Modele
             this.ListeEditeurs.Add(ex.Editeur);
             this.ListeExemplaires.Add(ex);
         }
+
+        public void AddPret(Pret pret)
+        {
+            this.ListeLecteurs.Add(pret.Lecteur);
+            this.ListePret.Add(pret);
+        }
+
+        public void AddLecteur(Lecteur lecteur)
+        {
+            this.ListeLecteurs.Add(lecteur);
+        }
+
     }
 }

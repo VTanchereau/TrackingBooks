@@ -26,13 +26,16 @@ namespace GestionnaireBibliotheque
         private List<int> lstNumbers = new List<int>();
         List<Modele.MoyenContact> Liste_MoyenDeContact = new List<Modele.MoyenContact>();
         List<string> listeMoyenDeContact = new List<string>();
+        Modele.Gestionnaire gestionnaire = new Modele.Gestionnaire();
 
         private Window win;
+        private Modele.Exemplaire _exemplaire;
 
 
-        public Pret(Window w)
+        public Pret(Window w, Modele.Exemplaire exemplaire)
         {
             InitializeComponent();
+            this._exemplaire = exemplaire;
             
             for (int i = 1 ; i < 99; i++)
 
@@ -61,9 +64,11 @@ namespace GestionnaireBibliotheque
             {
                 Modele.Lecteur lecteur = new Modele.Lecteur(tb_nomLecteur.Text, tb_prenomLecteur.Text, Liste_MoyenDeContact);
 
-                if (GenerateExemplaire() != null && string.IsNullOrEmpty(cb_dureePret.Text))
+                if (this._exemplaire != null && string.IsNullOrEmpty(cb_dureePret.Text))
                 {
-                    Modele.Pret Pret = new Modele.Pret(GenerateExemplaire(), DateTime.Today, Set_dateRappel(int.Parse(cb_dureePret.Text)), lecteur);
+                    Modele.Pret pret = new Modele.Pret(this._exemplaire, DateTime.Today, Set_dateRappel(int.Parse(cb_dureePret.Text)), lecteur);
+                    this._exemplaire.PretActif = pret;
+                    gestionnaire.AddPret(pret);
                 }
             }
           
@@ -80,7 +85,7 @@ namespace GestionnaireBibliotheque
             lv_moyenContact.ItemsSource = listeMoyenDeContact;*/
         }
         //methode pour generer un faux exemplaire
-        private Modele.Exemplaire GenerateExemplaire()
+       /* private Modele.Exemplaire GenerateExemplaire()
         {
             List<Modele.Auteur> lstAuteurs = new List<Modele.Auteur>();
             Modele.Editeur Editeur = new Modele.Editeur("nom");
@@ -89,7 +94,7 @@ namespace GestionnaireBibliotheque
             Modele.Exemplaire exemplaire;
 
             return exemplaire = new Modele.Exemplaire( Oeuvre, Editeur);
-        }
+        }*/
 
         //methode pour transformer la date de rappel
         private DateTime Set_dateRappel(int valeurAjouter)
