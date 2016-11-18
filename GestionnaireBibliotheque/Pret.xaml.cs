@@ -50,7 +50,7 @@ namespace GestionnaireBibliotheque
         private void btn_valider_Click(object sender, RoutedEventArgs e)
         {
             Modele.Pret pret = null;
-            if ( string.IsNullOrEmpty(tb_typeMoyenContact.Text) && string.IsNullOrEmpty(tb_valueMoyenContact.Text))
+            if ( !string.IsNullOrEmpty(tb_typeMoyenContact.Text) && !string.IsNullOrEmpty(tb_valueMoyenContact.Text))
             {
                 for (int i = 0; i < lv_moyenContact.Items.Count; i++)
                 {
@@ -58,11 +58,11 @@ namespace GestionnaireBibliotheque
                 }
             }
 
-            if (string.IsNullOrEmpty(tb_nomLecteur.Text) && string.IsNullOrEmpty(tb_prenomLecteur.Text) && Liste_MoyenDeContact !=null)
+            if (!string.IsNullOrEmpty(tb_nomLecteur.Text) && !string.IsNullOrEmpty(tb_prenomLecteur.Text) && Liste_MoyenDeContact !=null)
             {
                 Modele.Lecteur lecteur = new Modele.Lecteur(tb_nomLecteur.Text, tb_prenomLecteur.Text, Liste_MoyenDeContact);
 
-                if (this._exemplaire != null && string.IsNullOrEmpty(cb_dureePret.Text))
+                if (this._exemplaire != null && !string.IsNullOrEmpty(cb_dureePret.Text))
                 {
                     pret = new Modele.Pret(this._exemplaire, DateTime.Today, Set_dateRappel(int.Parse(cb_dureePret.Text)), lecteur);
                     this._exemplaire.PretActif = pret;
