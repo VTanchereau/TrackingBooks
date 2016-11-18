@@ -21,12 +21,12 @@ namespace GestionnaireBibliotheque
     public partial class Retour : Page
     {
         private Window win;
-        private Modele.Exemplaire exemplaire;
-        public Retour(Window w, Modele.Exemplaire ex)
+        private Modele.Exemplaire _exemplaire;
+        public Retour(Window w, Modele.Exemplaire exemplaire)
         {
             InitializeComponent();
             this.win = w;
-            this.exemplaire = ex;
+            this._exemplaire = exemplaire;
         }
 
         private void close_Click(object sender, RoutedEventArgs e)
@@ -45,8 +45,10 @@ namespace GestionnaireBibliotheque
             {
                 etat = rb_etatMauvais.Content.ToString();
             }
-            exemplaire.Etat = etat;
+            
             Modele.Commentaire commentaire = new Modele.Commentaire(tb_commBook.Text);
+            this._exemplaire.Set_retourExemplaire(commentaire, etat);
+
         }
     }
 }

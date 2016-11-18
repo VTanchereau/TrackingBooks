@@ -108,7 +108,7 @@
 
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,10,0,0">
             <Button Padding="5,0,5,0" Margin="0,0,10,0" Name="btn_quitter" Content="Annuler" Click="btn_quitter_Click"/>
-            <Button Padding="5,0,5,0" Margin="10,0,0,0" Name="btn_valider" Content="Valider"/>
+            <Button Padding="5,0,5,0" Margin="10,0,0,0" Name="btn_valider" Content="Valider" Click="btn_valider_Click"/>
         </StackPanel>
 
     </StackPanel>

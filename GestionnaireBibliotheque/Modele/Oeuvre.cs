@@ -13,8 +13,7 @@ namespace GestionnaireBibliotheque.Modele
         private List<Auteur> _lstauteur;
         private String _titre;
         private String _resume;
-        private int _ISBN10;
-        private int _ISBN13;
+        private String _isbn;
 
         public List<Exemplaire> ListeExemplaires
         {
@@ -46,31 +45,17 @@ namespace GestionnaireBibliotheque.Modele
             set { _resume = value; }
         }
 
-        public int ISBN10
+        public String Isbn
         {
-            get { return _ISBN10; }
-            set { _ISBN10 = value; }
-        }
-       
-        public int ISBN13
-        {
-            get { return _ISBN13; }
-            set { _ISBN13 = value; }
+            get { return _isbn; }
+            set { _isbn = value; }
         }
 
-        public Oeuvre(string titre, string resume, int typeISBN, int numero_ISBN, List<Genre> lstGenre, List<Auteur> lstauteur)
+        public Oeuvre(string titre, string resume, String numero_ISBN, List<Genre> lstGenre, List<Auteur> lstauteur)
         {
             this.Titre = titre;
             this.Resume = resume;
-            if (typeISBN == 13)
-            {
-                this.ISBN13 = numero_ISBN;
-            }
-            else
-            {
-                this.ISBN10 = numero_ISBN;
-
-            }
+            this.Isbn = numero_ISBN;
             this.LstGenre = lstGenre;
             this.LstAuteur = lstauteur;
         }

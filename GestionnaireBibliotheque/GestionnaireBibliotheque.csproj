@@ -63,6 +63,9 @@
       <DependentUpon>SortableListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="TextInputToVisibilityConverter.cs" />
+    <Compile Include="ValideIsbn.xaml.cs">
+      <DependentUpon>ValideIsbn.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddBookLayout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,6 +146,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ValideIsbn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pret.xaml.cs">
@@ -178,7 +185,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

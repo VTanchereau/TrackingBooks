@@ -6,17 +6,16 @@
       xmlns:local="clr-namespace:GestionnaireBibliotheque"
       mc:Ignorable="d" 
       d:DesignHeight="150" d:DesignWidth="300"
-      Title="confirm_pret">
+      Title="confirm_pret" Loaded="Page_Loaded">
 
     <StackPanel>
         <StackPanel HorizontalAlignment="center" Margin="0,10">
             <TextBlock>Le prêt du livre à bien été enregistré</TextBlock>
         </StackPanel>
-        <StackPanel Margin="10">
-            <Button Name="btn_annuler" Content="Annuler" Width="100"></Button>
-        </StackPanel>
-        <StackPanel Margin="10">
-            <ProgressBar Name="pgb_confirmPret" Height="10" Value="80"></ProgressBar>
+        <StackPanel Margin="10" >
+            <Button Name="btn_annuler" Content="Annuler" Width="100" Click="btn_annuler_Click"></Button>
+            <ProgressBar Name="pgb_confirmPret" Height="10" Maximum="100" Margin="0 20 0 0" IsIndeterminate="true" Initialized="pgb_confirmPret_Initialized"></ProgressBar>
+            <Button Name="btn_faireDisparaitre" Width="100" Margin="0 20 0 0" Background="Coral" Click="btn_faireDisparaitre_Click">Faire disparaître</Button>
         </StackPanel>
     </StackPanel>
 </Page>

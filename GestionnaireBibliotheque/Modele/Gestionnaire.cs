@@ -45,6 +45,8 @@ namespace GestionnaireBibliotheque.Modele
             set { this._lstGenres = value; }
         }
 
+       
+
         public List<Editeur> ListeEditeurs
         {
             get { return this._lstEditeurs; }
@@ -76,6 +78,37 @@ namespace GestionnaireBibliotheque.Modele
             this.ListeOeuvres.Add(ex.Oeuvre);
             this.ListeEditeurs.Add(ex.Editeur);
             this.ListeExemplaires.Add(ex);
+        }
+
+        public void AddPret(Pret pret)
+        {
+            this.ListeLecteurs.Add(pret.Lecteur);
+            this.ListePret.Add(pret);
+        }
+
+        public void AddLecteur(Lecteur lecteur)
+        {
+            this.ListeLecteurs.Add(lecteur);
+        }
+
+        public void DeletePret(Pret pret)
+        {
+            if (ListePret.Contains(pret))
+            {
+                ListePret.Remove(pret);
+            }
+        }
+
+        //methode pour generer un faux exemplaire
+        public Modele.Exemplaire GenerateExemplaire()
+        {
+            List<Modele.Auteur> lstAuteurs = new List<Modele.Auteur>();
+            Modele.Editeur Editeur = new Modele.Editeur("nom");
+            List<Modele.Genre> lstGenres = new List<Modele.Genre>();
+            Modele.Oeuvre Oeuvre = new Modele.Oeuvre("titre", "Resume", lstGenres, lstAuteurs);
+            Modele.Exemplaire exemplaire;
+
+            return exemplaire = new Modele.Exemplaire(Oeuvre, Editeur);
         }
     }
 }
