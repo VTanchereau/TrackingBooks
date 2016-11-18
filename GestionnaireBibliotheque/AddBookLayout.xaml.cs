@@ -230,10 +230,7 @@ namespace GestionnaireBibliotheque
             int char_isbn;
             for (int i = 0; i < nb_char_isbn-1; i++)
             {
-                if (Int32.TryParse(tab_char_isbn[i], out char_isbn))
-                {
-                    somme.Add(char_isbn * i);
-                }
+                somme.Add(Int32.Parse(tab_char_isbn[i]) * i);
             }
             for (int j = 0; j<somme.Count; j = j + 2)
             {
@@ -249,7 +246,7 @@ namespace GestionnaireBibliotheque
             {
                 Window w = new Window();
                 ValideIsbn page_isbn = new ValideIsbn(w);
-                w.Title = "Numéro ISBN non valide";
+                w.Title = "Clé du numéro ISBN 10 non valide";
                 w.Content = page_isbn;
                 w.ResizeMode = System.Windows.ResizeMode.NoResize;
                 w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -261,22 +258,18 @@ namespace GestionnaireBibliotheque
         {
             List<int> somme = new List<int>();
             int validation_key = 0;
-            int char_isbn;
             int groupe_chiffre = Int32.Parse(tab_char_isbn[0]) + Int32.Parse(tab_char_isbn[1]) + Int32.Parse(tab_char_isbn[2]);
             if (groupe_chiffre == 978 || groupe_chiffre == 979)
             {
                 for (float i = 0; i < nb_char_isbn - 1; i++)
                 {
-                    if (Int32.TryParse(tab_char_isbn[(int)i], out char_isbn))
+                    if (Int32.Parse(tab_char_isbn[(int)i]) % 2 == 0)
                     {
-                        if (Int32.Parse(tab_char_isbn[(int)i]) % 2 == 0)
-                        {
-                            somme[(int)i] = Int32.Parse(tab_char_isbn[(int)i]) * 3;
-                        }
-                        else
-                        {
-                            somme[(int)i] = Int32.Parse(tab_char_isbn[(int)i]);
-                        }
+                        somme[(int)i] = Int32.Parse(tab_char_isbn[(int)i]) * 3;
+                    }
+                    else
+                    {
+                        somme[(int)i] = Int32.Parse(tab_char_isbn[(int)i]);
                     }
                 }
                 for (int j = 0; j < somme.Count; j = j + 2)
@@ -293,7 +286,7 @@ namespace GestionnaireBibliotheque
                 {
                     Window w = new Window();
                     ValideIsbn page_isbn = new ValideIsbn(w);
-                    w.Title = "Numéro ISBN non valide";
+                    w.Title = "Clé du numéro ISBN 13 non valide";
                     w.Content = page_isbn;
                     w.ResizeMode = System.Windows.ResizeMode.NoResize;
                     w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -304,7 +297,7 @@ namespace GestionnaireBibliotheque
             {
                 Window w = new Window();
                 ValideIsbn page_isbn = new ValideIsbn(w);
-                w.Title = "Numéro ISBN non valide";
+                w.Title = "Groupe de chiffre 979 - 978 non valide";
                 w.Content = page_isbn;
                 w.ResizeMode = System.Windows.ResizeMode.NoResize;
                 w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -314,34 +307,40 @@ namespace GestionnaireBibliotheque
 
         private void validISBN(String isbn)
         {
-            int nb_char_isbn;
-            List<int> somme = new List<int>();
-            string[] separator = new string[] { "" };
-            isbn = isbn.Replace("-", "");
-            String[] tab_char_isbn = isbn.Split(separator, StringSplitOptions.None);
-            int j = 0;
+            try
+            {
+                isbn = isbn.Replace("-", "");
+                int nb_char_isbn;
+                string[] separator = new string[] { "" };
+                String[] tab_char_isbn = isbn.Split(separator, StringSplitOptions.None);
+
+                nb_char_isbn = tab_char_isbn[0].Length;
+
+                if (nb_char_isbn == 10)
+                {
+                    this.validationIsbn10(nb_char_isbn, tab_char_isbn);
+                }
+
+                else if (nb_char_isbn == 13)
+                {
+                    this.validationIsbn13(nb_char_isbn, tab_char_isbn);
+                }
+                else
+                {
+                    Window w = new Window();
+                    ValideIsbn page_isbn = new ValideIsbn(w);
+                    w.Title = "Numéro ISBN non valide";
+                    w.Content = page_isbn;
+                    w.ResizeMode = System.Windows.ResizeMode.NoResize;
+                    w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    w.ShowDialog();
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
             
-            nb_char_isbn = tab_char_isbn.Length;
-
-            if (nb_char_isbn == 10)
-            {
-                this.validationIsbn10(nb_char_isbn, tab_char_isbn);
-            }
-
-            else if (nb_char_isbn == 13)
-            {
-                this.validationIsbn13(nb_char_isbn, tab_char_isbn);
-            }
-            else
-            {
-                Window w = new Window();
-                ValideIsbn page_isbn = new ValideIsbn(w);
-                w.Title = "Numéro ISBN non valide";
-                w.Content = page_isbn;
-                w.ResizeMode = System.Windows.ResizeMode.NoResize;
-                w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                w.ShowDialog();
-            }
         }
     }
 }
