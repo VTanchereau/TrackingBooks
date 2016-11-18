@@ -36,12 +36,9 @@ namespace GestionnaireBibliotheque
         {
             InitializeComponent();
             this._exemplaire = exemplaire;
-            
-            for (int i = 1 ; i < 99; i++)
-
             this.win = w;
-            for (int i = 0 ; i < 99; i++)
 
+            for (int i = 1 ; i < 99; i++)
             {
                 lstNumbers.Add(i);
             }
@@ -52,7 +49,8 @@ namespace GestionnaireBibliotheque
         // methode pour ajouter un pret 
         private void btn_valider_Click(object sender, RoutedEventArgs e)
         {
-            if( string.IsNullOrEmpty(tb_typeMoyenContact.Text) && string.IsNullOrEmpty(tb_valueMoyenContact.Text))
+            Modele.Pret pret = null;
+            if ( string.IsNullOrEmpty(tb_typeMoyenContact.Text) && string.IsNullOrEmpty(tb_valueMoyenContact.Text))
             {
                 for (int i = 0; i < lv_moyenContact.Items.Count; i++)
                 {
@@ -66,12 +64,21 @@ namespace GestionnaireBibliotheque
 
                 if (this._exemplaire != null && string.IsNullOrEmpty(cb_dureePret.Text))
                 {
-                    Modele.Pret pret = new Modele.Pret(this._exemplaire, DateTime.Today, Set_dateRappel(int.Parse(cb_dureePret.Text)), lecteur);
+                    pret = new Modele.Pret(this._exemplaire, DateTime.Today, Set_dateRappel(int.Parse(cb_dureePret.Text)), lecteur);
                     this._exemplaire.PretActif = pret;
                     gestionnaire.AddPret(pret);
                 }
             }
-          
+
+            Window w = new Window();
+            confirm_pret window_confirmPret = new confirm_pret(w, pret);
+            w.Title = "Confirmation du prêt";
+            w.Content = window_confirmPret;
+            w.SizeToContent = SizeToContent.WidthAndHeight;
+            w.ResizeMode = System.Windows.ResizeMode.NoResize;
+            w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            w.ShowDialog();
+
         }
         //methode pour ajouter un moyen de contact dans la liste, 
         private void btn_addMoyenContact_Click(object sender, RoutedEventArgs e)
@@ -80,21 +87,11 @@ namespace GestionnaireBibliotheque
             Liste_MoyenDeContact.Add(MoyenDeContact);
 
            
-           /* String moyenDeContact_affichage = tb_typeMoyenContact.Text +' '+ tb_valueMoyenContact.Text;
+            String moyenDeContact_affichage = tb_typeMoyenContact.Text +' '+ tb_valueMoyenContact.Text;
             listeMoyenDeContact.Add(moyenDeContact_affichage);
-            lv_moyenContact.ItemsSource = listeMoyenDeContact;*/
+            lv_moyenContact.ItemsSource = listeMoyenDeContact;
         }
-        //methode pour generer un faux exemplaire
-       /* private Modele.Exemplaire GenerateExemplaire()
-        {
-            List<Modele.Auteur> lstAuteurs = new List<Modele.Auteur>();
-            Modele.Editeur Editeur = new Modele.Editeur("nom");
-            List<Modele.Genre> lstGenres = new List<Modele.Genre>();
-            Modele.Oeuvre Oeuvre = new Modele.Oeuvre("titre", "Resume", lstGenres, lstAuteurs);
-            Modele.Exemplaire exemplaire;
-
-            return exemplaire = new Modele.Exemplaire( Oeuvre, Editeur);
-        }*/
+        
 
         //methode pour transformer la date de rappel
         private DateTime Set_dateRappel(int valeurAjouter)
@@ -118,7 +115,8 @@ namespace GestionnaireBibliotheque
         private void btn_quitter_Click(object sender, RoutedEventArgs e)
         {
             this.win.Close();
-
         }
+
+       
     }
 }

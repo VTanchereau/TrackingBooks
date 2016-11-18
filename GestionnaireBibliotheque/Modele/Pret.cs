@@ -15,7 +15,6 @@ namespace GestionnaireBibliotheque.Modele
         private DateTime _dateDebut;
         private DateTime _dateRetour;
         private DateTime _dateRappel;
-      
 
         //variables publiques
         public Exemplaire Exemplaire
