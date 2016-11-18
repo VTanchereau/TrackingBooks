@@ -20,7 +20,8 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class BookLayout : Page
     {
-        private Modele.Exemplaire exemplaire;
+        private Modele.Exemplaire _exemplaire;
+        public Modele.Exemplaire Exemplaire { get { return _exemplaire; } set {this._exemplaire = value; } }
         public BookLayout()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace GestionnaireBibliotheque
         public void retour_Click(object sender, RoutedEventArgs e)
         {
             Window win = new Window();
-            Retour r = new Retour(win,exemplaire);
+            Retour r = new Retour(win, Exemplaire);
             win.Content = r;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -48,6 +49,31 @@ namespace GestionnaireBibliotheque
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
             win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             win.ShowDialog();
+        }
+
+        public void SetNewExemplaire(Modele.Exemplaire ex)
+        {
+            this.Exemplaire = ex;
+            this.SetInfos();
+        }
+
+        public void SetInfos()
+        {
+            tbk_titleBook.Text = this.Exemplaire.Oeuvre.Titre;
+            tbk_AuthorTitle.Text = this.Exemplaire.Oeuvre.LstAuteur[0].Nom + " " + this.Exemplaire.Oeuvre.LstAuteur[0].Prenom;
+            tbk_addedDay.Text = this.Exemplaire.DateAjout.Day.ToString();
+            tbk_addedMonth.Text = this.Exemplaire.DateAjout.Month.ToString();
+            tbk_addedyear.Text = this.Exemplaire.DateAjout.Year.ToString();
+            tbk_editeur.Text = this.Exemplaire.Editeur.Nom;
+            if (this.Exemplaire.Oeuvre.ISBN10 != null && this.Exemplaire.Oeuvre.ISBN13 == null)
+            {
+                tbk_ISBNnumber.Text = this.Exemplaire.Oeuvre.ISBN10.ToString();
+            }
+            else if(this.Exemplaire.Oeuvre.ISBN10 == null && this.Exemplaire.Oeuvre.ISBN13 != null)
+            {
+                tbk_ISBNnumber.Text = this.Exemplaire.Oeuvre.ISBN13.ToString();
+            }
+            tbk_bookResume.Text = this.Exemplaire.Oeuvre.Resume;
         }
     }
 }

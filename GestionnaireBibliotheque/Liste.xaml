@@ -8,7 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Liste" >
 
-    <ListView Margin="5,5,5,5" Name="lv_Livres">
+    <ListView Margin="5,5,5,5" Name="lv_Livres" HorizontalAlignment="Stretch" SelectionChanged="ChangedSelection">
         <ListView.View>
             <GridView>
                 <GridViewColumn Header="Titre" Width="200" DisplayMemberBinding="{Binding Titre}" />

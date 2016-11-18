@@ -18,9 +18,9 @@ using System.Windows.Shapes;
 namespace GestionnaireBibliotheque
 {
     /// <summary>
-    /// Logique d'interaction pour Liste.xaml
+    /// Interaction logic for SortableListView.xaml
     /// </summary>
-    public partial class Liste : Page
+    public partial class SortableListView : UserControl
     {
         private MainWindow window;
         private ListSortDirection _sortDirection;
@@ -52,7 +52,7 @@ namespace GestionnaireBibliotheque
             set { this._gestionnaire = value; }
         }
 
-        public Liste(Modele.Gestionnaire gestionnaire, MainWindow w)
+        public SortableListView(Modele.Gestionnaire gestionnaire, MainWindow w)
         {
             InitializeComponent();
             this.ListeLivre = new ObservableCollection<Livre>();
@@ -109,11 +109,11 @@ namespace GestionnaireBibliotheque
                 {
                     this.ListeLivre.Add(livre);
                 }
-                
+
             }
             if (this.ListeLivre != null && this.ListeLivre.Count > 0)
             {
-                  lv_Livres.ItemsSource = this.ListeLivre;
+                lv_Livres.ItemsSource = this.ListeLivre;
             }
         }
 
@@ -134,6 +134,60 @@ namespace GestionnaireBibliotheque
 
                 this.window.SetBookDetails(ex);
             }
+        }
+
+        private void SecondResultDataViewClick(object sender, RoutedEventArgs e)
+        {
+            GridViewColumnHeader column = e.OriginalSource as GridViewColumnHeader;
+            if (column == null)
+            {
+                return;
+            }
+
+            if (_sortColumn == column)
+            {
+                // Toggle sorting direction 
+                _sortDirection = _sortDirection == ListSortDirection.Ascending ?
+                                                   ListSortDirection.Descending :
+                                                   ListSortDirection.Ascending;
+            }
+            else
+            {
+                // Remove arrow from previously sorted header 
+                if (_sortColumn != null)
+                {
+                    _sortColumn.Column.HeaderTemplate = null;
+                    _sortColumn.Column.Width = _sortColumn.ActualWidth - 20;
+                }
+
+                _sortColumn = column;
+                _sortDirection = ListSortDirection.Ascending;
+                column.Column.Width = column.ActualWidth + 20;
+            }
+
+            if (_sortDirection == ListSortDirection.Ascending)
+            {
+                column.Column.HeaderTemplate =
+                                   Resources["ArrowUp"] as DataTemplate;
+            }
+            else
+            {
+                column.Column.HeaderTemplate =
+                                    Resources["ArrowDown"] as DataTemplate;
+            }
+
+            string header = string.Empty;
+
+            // if binding is used and property name doesn't match header content 
+            Binding b = _sortColumn.Column.DisplayMemberBinding as Binding;
+            if (b != null)
+            {
+                header = b.Path.Path;
+            }
+
+            ICollectionView resultDataView = CollectionViewSource.GetDefaultView(lv_Livres.ItemsSource);
+            resultDataView.SortDescriptions.Clear();
+            resultDataView.SortDescriptions.Add(new SortDescription(header, _sortDirection));
         }
 
         public class Livre

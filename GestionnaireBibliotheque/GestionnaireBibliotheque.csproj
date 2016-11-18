@@ -59,6 +59,9 @@
       <DependentUpon>ListeRetourAttente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modele\TriFusion.cs" />
+    <Compile Include="SortableListView.xaml.cs">
+      <DependentUpon>SortableListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TextInputToVisibilityConverter.cs" />
     <Page Include="AddBookLayout.xaml">
       <SubType>Designer</SubType>
@@ -133,6 +136,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PretGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SortableListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

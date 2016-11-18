@@ -10,10 +10,10 @@
 
     <DockPanel Background="#FF939393">
         <StackPanel DockPanel.Dock="Top" Background="#FF494444">
-            <TextBlock Name="tbk_titleBook" Text="Book Title" FontWeight="Bold" FontSize="20" Margin="10,5,0,0"/>
+            <TextBlock Name="tbk_titleBook" FontWeight="Bold" FontSize="20" Margin="10,5,0,0"/>
             <StackPanel Margin="10,0,0,5" Orientation="Horizontal">
                 <TextBlock Text="Ecrit par " FontWeight="Bold" FontSize="13"/>
-                <TextBlock Name="tbk_AuthorTitle" Text="Author" FontWeight="Bold" FontSize="13"/>
+                <TextBlock Name="tbk_AuthorTitle" FontWeight="Bold" FontSize="13"/>
             </StackPanel>
         </StackPanel>
 
@@ -52,7 +52,7 @@
 
         <TextBlock DockPanel.Dock="Top" Text="Résumé : " FontSize="13" Margin="10,0,0,0"/>
 
-        <TextBlock DockPanel.Dock="Top" Name="tbk_bookResume" Margin="15,5,15,5" FontStyle="Italic" TextAlignment="Left" FontSize="13" Text="COUCOU" Background="White" Padding="5,5,5,5" Foreground="#FF939393"/>
+        <TextBlock DockPanel.Dock="Top" Name="tbk_bookResume" Margin="15,5,15,5" FontStyle="Italic" TextAlignment="Left" FontSize="13" Background="White" Padding="5,5,5,5" Foreground="#FF939393"/>
 
         <TextBlock DockPanel.Dock="Top" Text="Commentaires : " FontSize="13" Margin="10,0,0,0"/>
 
