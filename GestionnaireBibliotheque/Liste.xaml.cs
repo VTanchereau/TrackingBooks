@@ -21,75 +21,81 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class Liste : Page
     {
-        private List<String> lstTitres;
-        private List<String> lstAuteur;
-        private List<String> lstEditeur;
-        private List<String> lstGenre;
-        private List<String> lstDateAjout;
-        private List<Modele.Exemplaire> _lstEx;
+        private int _widthColumn;
+        public int WidthColumn
+        {
+            get { return this._widthColumn; }
+            set { this._widthColumn = value; }
+        }
+        private List<Modele.Exemplaire> _lstExemplaires;
+        public List<Modele.Exemplaire> ListeExemplaires
+        {
+            get { return this._lstExemplaires; }
+            set { this._lstExemplaires = value; }
+        }
+
+        private List<Livre> _lstLivre;
+        public List<Livre> ListeLivre
+        {
+            get { return this._lstLivre; }
+            set { this._lstLivre = value; }
+        }
 
         public Liste(Modele.Gestionnaire gestionnaire)
         {
             InitializeComponent();
-            lstTitres = new List<String>();
-            lstAuteur = new List<String>();
-            lstEditeur = new List<String>();
-            lstDateAjout = new List<String>();
-            lstGenre = new List<String>();
-            _lstEx = new List<Modele.Exemplaire>();
+            this.ListeExemplaires = gestionnaire.ListeExemplaires;
+            WidthColumn = (int)(lv_Livres.Width);
+            SetListViewItems();
+        }
 
-            this.DataContext = gestionnaire;
-            _lstEx = (this.DataContext as Modele.Gestionnaire).ListeExemplaires;
-
-            try
+        public void SetListViewItems()
+        {
+            this.ListeLivre = new List<Livre>();
+            foreach (Modele.Exemplaire exemplaire in ListeExemplaires)
             {
-                foreach (Modele.Exemplaire exemplaire in _lstEx)
+                Livre livre = new Livre();
+
+                livre.Titre = exemplaire.Oeuvre.Titre;
+                livre.Editeur = exemplaire.Editeur.Nom;
+                livre.DateAjout = exemplaire.DateAjout.ToString();
+
+                String auteurs = "";
+                for (int i = 0; i < exemplaire.Oeuvre.LstAuteur.Count - 1; i++)
                 {
-                    String str_auteur = "";
-                    String str_genre = "";
-                    int i = 0;
-                    lstEditeur.Add(exemplaire.Editeur.Nom);
-                    lstTitres.Add(exemplaire.Oeuvre.Titre);
-                    lstDateAjout.Add(exemplaire.DateAjout.ToString());
-                    foreach (Modele.Auteur auteur in exemplaire.Oeuvre.LstAuteur)
-                    {
-                        if (i == (exemplaire.Oeuvre.LstAuteur.Count - 1))
-                        {
-                            str_auteur += auteur.Prenom + " " + auteur.Nom;
-                        }
-                        else
-                        {
-                            str_auteur += auteur.Prenom + " " + auteur.Nom + ", ";
-                        }
-                        i++;
-                    }
-                    i = 0;
-                    lstAuteur.Add(str_auteur);
-                    foreach (Modele.Genre genre in exemplaire.Oeuvre.LstGenre)
-                    {
-                        if (i == (exemplaire.Oeuvre.LstGenre.Count - 1))
-                        {
-                            str_genre += genre.Nom;
-                        }
-                        else
-                        {
-                            str_genre += genre.Nom + ", ";
-                        }
-                        i++;
-                    }
-                    lstGenre.Add(str_genre);
+                    auteurs += exemplaire.Oeuvre.LstAuteur[i].Prenom + " " + exemplaire.Oeuvre.LstAuteur[i].Nom + ", ";
                 }
+                auteurs += exemplaire.Oeuvre.LstAuteur[exemplaire.Oeuvre.LstAuteur.Count - 1].Prenom + " " + exemplaire.Oeuvre.LstAuteur[exemplaire.Oeuvre.LstAuteur.Count - 1].Nom;
+                livre.Auteurs = auteurs;
+
+                String genres = "";
+                for (int i = 0; i < exemplaire.Oeuvre.LstGenre.Count - 1; i++)
+                {
+                    genres += exemplaire.Oeuvre.LstGenre[i].Nom + ", ";
+                }
+                genres += exemplaire.Oeuvre.LstGenre[exemplaire.Oeuvre.LstGenre.Count - 1].Nom;
+                livre.Genres = genres;
+                this.ListeLivre.Add(livre);
             }
-            catch (NullReferenceException e) { }
-            finally
+            if (this.ListeLivre != null && this.ListeLivre.Count > 0)
             {
-                lb_auteurName.ItemsSource = lstAuteur;
-                lb_dateAjoutBook.ItemsSource = lstDateAjout;
-                lb_editorName.ItemsSource = lstEditeur;
-                lb_genreBook.ItemsSource = lstGenre;
-                lb_titleBook.ItemsSource = lstTitres;
+                lv_Livres.ItemsSource = this.ListeLivre;
             }
-            
+        }
+
+        public void UpdateListView(Modele.Gestionnaire gestionnaire)
+        {
+            this.ListeExemplaires = gestionnaire.ListeExemplaires;
+            SetListViewItems();
+        }
+
+        public class Livre
+        {
+            public String Titre { get; set; }
+            public String Auteurs { get; set; }
+            public String Editeur { get; set; }
+            public String Genres { get; set; }
+            public String DateAjout { get; set; }
         }
 
     }
