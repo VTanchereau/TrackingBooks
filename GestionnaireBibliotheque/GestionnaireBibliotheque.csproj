@@ -58,6 +58,7 @@
     <Compile Include="ListeRetourAttente.xaml.cs">
       <DependentUpon>ListeRetourAttente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modele\TriFusion.cs" />
     <Compile Include="TextInputToVisibilityConverter.cs" />
     <Page Include="AddBookLayout.xaml">
       <SubType>Designer</SubType>
