@@ -25,17 +25,21 @@ namespace GestionnaireBibliotheque
         private List<String> lstEditeur;
         private List<String> lstGenre;
         private List<String> lstDateAjout;
-        private Modele.CustomListes.ListeExemplaires _lstEx;
+        private List<Modele.Exemplaire> _lstEx;
 
         public Liste()
         {
             InitializeComponent();
-
+            _lstEx = (this.DataContext as Modele.Gestionnaire).ListeExemplaires;
+            foreach (Modele.Exemplaire exemplaire in _lstEx)
+            {
+                lb_auteurName.ItemsSource = exemplaire.Oeuvre.LstAuteur;
+                lb_editorName.ItemsSource = exemplaire.Editeur.Nom;
+                lb_titleBook.ItemsSource = exemplaire.Oeuvre.Titre;
+                lb_dateAjoutBook.ItemsSource = exemplaire.DateAjout.ToString();
+                lb_genreBook.ItemsSource = exemplaire.Oeuvre.LstGenre;
+            }
         }
 
-        public List<Modele.Exemplaire> LstEx{
-            get{ return _lstEx;}
-            set{ _lstEx = value; }
-        }
     }
 }
