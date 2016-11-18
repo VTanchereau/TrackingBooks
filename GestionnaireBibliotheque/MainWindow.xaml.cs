@@ -32,6 +32,7 @@ namespace GestionnaireBibliotheque
             this.WindowState = WindowState.Maximized;
             InitializeComponent();
             this.Gestionnaire = new Modele.Gestionnaire();
+            liste.Navigate(new Liste(this.Gestionnaire));
             ListeRetourAttente lra = new ListeRetourAttente();
             Window win = new Window();
             win.Title = "Liste des livres en attentes de retour";

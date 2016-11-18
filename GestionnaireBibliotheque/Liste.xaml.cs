@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,9 +27,8 @@ namespace GestionnaireBibliotheque
         private List<String> lstGenre;
         private List<String> lstDateAjout;
         private List<Modele.Exemplaire> _lstEx;
-        
 
-        public Liste()
+        public Liste(Modele.Gestionnaire gestionnaire)
         {
             InitializeComponent();
             lstTitres = new List<String>();
@@ -36,7 +36,11 @@ namespace GestionnaireBibliotheque
             lstEditeur = new List<String>();
             lstDateAjout = new List<String>();
             lstGenre = new List<String>();
-            _lstEx = DataContext as List<Modele.Exemplaire>;
+            _lstEx = new List<Modele.Exemplaire>();
+
+            this.DataContext = gestionnaire;
+            _lstEx = (this.DataContext as Modele.Gestionnaire).ListeExemplaires;
+
             try
             {
                 foreach (Modele.Exemplaire exemplaire in _lstEx)

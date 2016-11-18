@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:GestionnaireBibliotheque"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="Liste">
+      Title="Liste" >
 
     <Grid Name="grid_listeLivres" Margin="5,5,5,5">
         <Grid.ColumnDefinitions>
