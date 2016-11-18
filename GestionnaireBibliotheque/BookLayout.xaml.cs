@@ -20,17 +20,20 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class BookLayout : Page
     {
-        private Modele.Exemplaire exemplaire;
+        private Modele.Exemplaire _exemplaire;
+        Modele.Gestionnaire gestionnaire = new Modele.Gestionnaire();
         public BookLayout()
         {
             InitializeComponent();
-
+            // en attendant d'avoir un vrai exemplaire à envoyer sinon object null reference exception
+            this._exemplaire = gestionnaire.GenerateExemplaire();
+            
         }
 
         public void retour_Click(object sender, RoutedEventArgs e)
         {
             Window win = new Window();
-            Retour r = new Retour(win,exemplaire);
+            Retour r = new Retour(win,this._exemplaire);
             win.Content = r;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;
@@ -41,7 +44,7 @@ namespace GestionnaireBibliotheque
         private void pret_Click(object sender, RoutedEventArgs e)
         {
             Window win = new Window();
-            Pret pret = new Pret(win);
+            Pret pret = new Pret(win, this._exemplaire);
             win.Title = "Prêter un livre";
             win.Content = pret;
             win.SizeToContent = SizeToContent.WidthAndHeight;
