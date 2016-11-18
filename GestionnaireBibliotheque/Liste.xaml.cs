@@ -26,6 +26,7 @@ namespace GestionnaireBibliotheque
         private List<String> lstGenre;
         private List<String> lstDateAjout;
         private List<Modele.Exemplaire> _lstEx;
+        
 
         public Liste()
         {
@@ -33,11 +34,21 @@ namespace GestionnaireBibliotheque
             _lstEx = (this.DataContext as Modele.Gestionnaire).ListeExemplaires;
             foreach (Modele.Exemplaire exemplaire in _lstEx)
             {
-                lb_auteurName.ItemsSource = exemplaire.Oeuvre.LstAuteur;
-                lb_editorName.ItemsSource = exemplaire.Editeur.Nom;
-                lb_titleBook.ItemsSource = exemplaire.Oeuvre.Titre;
-                lb_dateAjoutBook.ItemsSource = exemplaire.DateAjout.ToString();
-                lb_genreBook.ItemsSource = exemplaire.Oeuvre.LstGenre;
+                String str_auteur = "";
+                String str_genre = "";
+                lstEditeur.Add(exemplaire.Editeur.Nom);
+                lstTitres.Add(exemplaire.Oeuvre.Titre);
+                lstDateAjout.Add(exemplaire.DateAjout.ToString());
+                foreach (Modele.Auteur auteur in exemplaire.Oeuvre.LstAuteur)
+                {
+                    str_auteur += auteur.Nom + ", ";
+                }
+                lstAuteur.Add(str_auteur);
+                foreach (Modele.Genre genre in exemplaire.Oeuvre.LstGenre)
+                {
+                    str_genre += genre.Nom + ", ";
+                }
+                lstEditeur.Add(str_genre);
             }
         }
 
