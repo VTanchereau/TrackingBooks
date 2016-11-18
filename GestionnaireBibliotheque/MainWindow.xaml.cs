@@ -43,6 +43,11 @@ namespace GestionnaireBibliotheque
             win.ShowDialog();
         }
 
+        public void UpdateListe()
+        {
+            liste.Navigate(new Liste(this.Gestionnaire));
+        }
+
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
             Window win = new Window();

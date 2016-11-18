@@ -47,19 +47,37 @@ namespace GestionnaireBibliotheque
                 {
                     String str_auteur = "";
                     String str_genre = "";
+                    int i = 0;
                     lstEditeur.Add(exemplaire.Editeur.Nom);
                     lstTitres.Add(exemplaire.Oeuvre.Titre);
                     lstDateAjout.Add(exemplaire.DateAjout.ToString());
                     foreach (Modele.Auteur auteur in exemplaire.Oeuvre.LstAuteur)
                     {
-                        str_auteur += auteur.Nom + ", ";
+                        if (i == (exemplaire.Oeuvre.LstAuteur.Count - 1))
+                        {
+                            str_auteur += auteur.Prenom + " " + auteur.Nom;
+                        }
+                        else
+                        {
+                            str_auteur += auteur.Prenom + " " + auteur.Nom + ", ";
+                        }
+                        i++;
                     }
+                    i = 0;
                     lstAuteur.Add(str_auteur);
                     foreach (Modele.Genre genre in exemplaire.Oeuvre.LstGenre)
                     {
-                        str_genre += genre.Nom + ", ";
+                        if (i == (exemplaire.Oeuvre.LstGenre.Count - 1))
+                        {
+                            str_genre += genre.Nom;
+                        }
+                        else
+                        {
+                            str_genre += genre.Nom + ", ";
+                        }
+                        i++;
                     }
-                    lstEditeur.Add(str_genre);
+                    lstGenre.Add(str_genre);
                 }
             }
             catch (NullReferenceException e) { }

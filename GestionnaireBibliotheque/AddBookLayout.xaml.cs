@@ -165,7 +165,7 @@ namespace GestionnaireBibliotheque
             }
             this.Gestionnaire.AddExemplaire(exemplaire);
             this.mainWindow.Gestionnaire = this.Gestionnaire;
-            this.mainWindow.UpdateListBooks();
+            this.mainWindow.UpdateListe();
             this.w.Close();
         }
 
