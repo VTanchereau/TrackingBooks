@@ -83,5 +83,10 @@ namespace GestionnaireBibliotheque
 
             w.ShowDialog();
         }
+
+        public void UpdateListBooks()
+        {
+
+        }
     }
 }

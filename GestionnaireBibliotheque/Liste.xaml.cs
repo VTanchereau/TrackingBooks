@@ -31,25 +31,43 @@ namespace GestionnaireBibliotheque
         public Liste()
         {
             InitializeComponent();
-            _lstEx = (this.DataContext as Modele.Gestionnaire).ListeExemplaires;
-            foreach (Modele.Exemplaire exemplaire in _lstEx)
+            lstTitres = new List<String>();
+            lstAuteur = new List<String>();
+            lstEditeur = new List<String>();
+            lstDateAjout = new List<String>();
+            lstGenre = new List<String>();
+            _lstEx = DataContext as List<Modele.Exemplaire>;
+            try
             {
-                String str_auteur = "";
-                String str_genre = "";
-                lstEditeur.Add(exemplaire.Editeur.Nom);
-                lstTitres.Add(exemplaire.Oeuvre.Titre);
-                lstDateAjout.Add(exemplaire.DateAjout.ToString());
-                foreach (Modele.Auteur auteur in exemplaire.Oeuvre.LstAuteur)
+                foreach (Modele.Exemplaire exemplaire in _lstEx)
                 {
-                    str_auteur += auteur.Nom + ", ";
+                    String str_auteur = "";
+                    String str_genre = "";
+                    lstEditeur.Add(exemplaire.Editeur.Nom);
+                    lstTitres.Add(exemplaire.Oeuvre.Titre);
+                    lstDateAjout.Add(exemplaire.DateAjout.ToString());
+                    foreach (Modele.Auteur auteur in exemplaire.Oeuvre.LstAuteur)
+                    {
+                        str_auteur += auteur.Nom + ", ";
+                    }
+                    lstAuteur.Add(str_auteur);
+                    foreach (Modele.Genre genre in exemplaire.Oeuvre.LstGenre)
+                    {
+                        str_genre += genre.Nom + ", ";
+                    }
+                    lstEditeur.Add(str_genre);
                 }
-                lstAuteur.Add(str_auteur);
-                foreach (Modele.Genre genre in exemplaire.Oeuvre.LstGenre)
-                {
-                    str_genre += genre.Nom + ", ";
-                }
-                lstEditeur.Add(str_genre);
             }
+            catch (NullReferenceException e) { }
+            finally
+            {
+                lb_auteurName.ItemsSource = lstAuteur;
+                lb_dateAjoutBook.ItemsSource = lstDateAjout;
+                lb_editorName.ItemsSource = lstEditeur;
+                lb_genreBook.ItemsSource = lstGenre;
+                lb_titleBook.ItemsSource = lstTitres;
+            }
+            
         }
 
     }
