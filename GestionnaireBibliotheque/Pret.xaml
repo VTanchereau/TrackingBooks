@@ -79,8 +79,8 @@
 
                         </ListView>
                         <DockPanel LastChildFill="True">
-                            <TextBox DockPanel.Dock="Left" MinWidth="80" Margin="5,5,5,5" Name="tb_moyenContact"/>
-                            <Button DockPanel.Dock="Right" Margin="5,5,5,5" Name="btn_addMoyenContact" Content="+" Width="20" Height="20" />
+                            <TextBox DockPanel.Dock="Left" MinWidth="80" Margin="5,5,5,5" Name="tb_typeMoyenContact"/>
+                            <Button DockPanel.Dock="Right" Margin="5,5,5,5" Name="btn_addMoyenContact" Content="+" Width="20" Height="20" Click="btn_addMoyenContact_Click" />
                             <TextBox Margin="5,5,5,5" Name="tb_valueMoyenContact"></TextBox>
                         </DockPanel>
 

@@ -54,31 +54,14 @@ namespace GestionnaireBibliotheque.Modele
         }
 
         //constructeur de l'objet Pret
-        public Pret(Exemplaire exemplaire, DateTime dateDebut, DateTime dateRappel, Lecteur lecteur, int valeur_dateRappel, string typeValeur_dateRappel)
+        public Pret(Exemplaire exemplaire, DateTime dateDebut, DateTime dateRappel, Lecteur lecteur)
         {
             List<Lecteur> listeLecteurs = new List<Lecteur>();
             this.DateDebut = dateDebut;
             this.Exemplaire = exemplaire;
-
-            for (int i =0; i< listeLecteurs.Count(); i++)
-            {
-                if(listeLecteurs[i] == lecteur)
-                {
-                    this.Lecteur = lecteur;
-                }
-            }
-            if(typeValeur_dateRappel == "jour")
-            {
-                this.DateRappel.AddDays(valeur_dateRappel);
-            }
-            if(typeValeur_dateRappel == "semaine")
-            {
-                this.DateRappel.AddDays(valeur_dateRappel * 7);
-            }
-            if(typeValeur_dateRappel == "mois")
-            {
-                this.DateRappel.AddMonths(valeur_dateRappel);
-            }
+            this.Lecteur = lecteur;
+            this.DateRappel = dateRappel;
+           
         }
 
         private void Set_dateRetour()

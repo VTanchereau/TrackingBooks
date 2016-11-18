@@ -20,15 +20,17 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class BookLayout : Page
     {
+        private Modele.Exemplaire exemplaire;
         public BookLayout()
         {
             InitializeComponent();
+
         }
 
         public void retour_Click(object sender, RoutedEventArgs e)
         {
             Window win = new Window();
-            Retour r = new Retour(win);
+            Retour r = new Retour(win,exemplaire);
             win.Content = r;
             win.SizeToContent = SizeToContent.WidthAndHeight;
             win.ResizeMode = System.Windows.ResizeMode.NoResize;

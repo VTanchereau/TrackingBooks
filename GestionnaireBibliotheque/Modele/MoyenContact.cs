@@ -12,7 +12,7 @@ namespace GestionnaireBibliotheque.Modele
         private Lecteur _lecteur;
         private String _type;
         private String _valeur;
-        private int _ordre;
+       // private int _ordre;
 
         //variables publiques
         public Lecteur Lecteur
@@ -33,14 +33,14 @@ namespace GestionnaireBibliotheque.Modele
             set { _valeur = value; }
         }
 
-        public int Ordre
+      /*  public int Ordre
         {
             get { return _ordre; }
             set { _ordre = value; }
-        }
+        }*/
 
         //constructeur de l'objet MoyenContact
-        public MoyenContact(string type, string valeur, int ordre, Lecteur lecteur)
+        public MoyenContact(string type, string valeur)
         {
             this.Type = type;
             this.Valeur = valeur;

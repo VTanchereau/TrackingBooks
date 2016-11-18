@@ -33,11 +33,11 @@ namespace GestionnaireBibliotheque.Modele
         }
 
         //constructeur de l'objet Commentaire
-        public Commentaire(string titre, string contenu, Pret pret)
+        public Commentaire(string contenu)
         {
-            this._titre = titre;
+           // this._titre = titre;
             this._contenu = contenu;
-            this._pret = pret;
+           // this._pret = pret;
         }
 
         
