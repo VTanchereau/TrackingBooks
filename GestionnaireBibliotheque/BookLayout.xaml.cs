@@ -68,13 +68,13 @@ namespace GestionnaireBibliotheque
             tbk_addedMonth.Text = this.Exemplaire.DateAjout.Month.ToString();
             tbk_addedyear.Text = this.Exemplaire.DateAjout.Year.ToString();
             tbk_editeur.Text = this.Exemplaire.Editeur.Nom;
-            if (this.Exemplaire.Oeuvre.ISBN10 != null && this.Exemplaire.Oeuvre.ISBN13 == null)
+            if (this.Exemplaire.Oeuvre.Isbn != null && this.Exemplaire.Oeuvre.Isbn == null)
             {
-                tbk_ISBNnumber.Text = this.Exemplaire.Oeuvre.ISBN10.ToString();
+                tbk_ISBNnumber.Text = this.Exemplaire.Oeuvre.Isbn.ToString();
             }
-            else if(this.Exemplaire.Oeuvre.ISBN10 == null && this.Exemplaire.Oeuvre.ISBN13 != null)
+            else if(this.Exemplaire.Oeuvre.Isbn == null && this.Exemplaire.Oeuvre.Isbn != null)
             {
-                tbk_ISBNnumber.Text = this.Exemplaire.Oeuvre.ISBN13.ToString();
+                tbk_ISBNnumber.Text = this.Exemplaire.Oeuvre.Isbn.ToString();
             }
             tbk_bookResume.Text = this.Exemplaire.Oeuvre.Resume;
         }
