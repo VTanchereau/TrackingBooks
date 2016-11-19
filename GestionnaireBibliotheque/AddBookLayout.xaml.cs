@@ -129,16 +129,15 @@ namespace GestionnaireBibliotheque
         private void btn_Valider_Click_1(object sender, RoutedEventArgs e)
         {
             String bookIsbn = tb_ISBNBook.Text;
-            if (bookIsbn != "" || bookIsbn != null)
+            if (bookIsbn != "" && bookIsbn != null)
             {
                 this.validISBN(bookIsbn);
             }
             else
             {
                 bookIsbn = "";
-                addBook(bookIsbn);
             }
-
+            addBook(bookIsbn);
             this.w.Close();
         }
 
