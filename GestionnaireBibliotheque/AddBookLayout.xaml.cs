@@ -131,14 +131,19 @@ namespace GestionnaireBibliotheque
             String bookIsbn = tb_ISBNBook.Text;
             if (bookIsbn != "" && bookIsbn != null)
             {
-                this.validISBN(bookIsbn);
+                if (!validISBN(bookIsbn))
+                {
+                    PopUpInvalidIsbn();
+                    return;
+                }
+                String[] tab_char_isbn = stringToCharTab(bookIsbn); ;
+                bookIsbn = String.Join("", "", tab_char_isbn);
             }
             else
             {
                 bookIsbn = "";
-                addBook(bookIsbn);
             }
-                        
+            addBook(bookIsbn);
             this.w.Close();
         }
 
@@ -160,7 +165,7 @@ namespace GestionnaireBibliotheque
 
             Modele.Exemplaire exemplaire;
 
-            if (bookEditor != "" || bookEditor != null)
+            if (bookEditor != "" && bookEditor != null)
             {
                 Modele.Editeur editeur = new Modele.Editeur(bookEditor);
                 exemplaire = new Modele.Exemplaire(oeuvre, editeur);
@@ -217,7 +222,7 @@ namespace GestionnaireBibliotheque
             return lstGenres;
         }
 
-        private void validationIsbn10(int nb_char_isbn, String[] tab_char_isbn)
+        private Boolean validationIsbn10(int nb_char_isbn, String[] tab_char_isbn)
         {
             int[] somme = new int[nb_char_isbn-1];
             int validation_key=0;
@@ -233,27 +238,19 @@ namespace GestionnaireBibliotheque
             validation_key = validation_key % 11;
             if (validation_key == 10)
             {
-                String isbn = String.Join("", "", tab_char_isbn);
-                this.addBook(isbn);
+                return true;
             }
             else if (Int32.Parse(tab_char_isbn[nb_char_isbn - 1]) == validation_key)
             {
-                String isbn = String.Join("", "", tab_char_isbn);
-                this.addBook(isbn);
+                return true;
             }
             else
             {
-                Window w = new Window();
-                ValideIsbn page_isbn = new ValideIsbn(w);
-                w.Title = "Clé du numéro ISBN 10 non valide";
-                w.Content = page_isbn;
-                w.ResizeMode = System.Windows.ResizeMode.NoResize;
-                w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                w.ShowDialog();
+                return false;
             }
         }
 
-        private void validationIsbn13(int nb_char_isbn, String[] tab_char_isbn)
+        private Boolean validationIsbn13(int nb_char_isbn, String[] tab_char_isbn)
         {
             List<int> somme = new List<int>();
             int validation_key = 0;
@@ -278,65 +275,65 @@ namespace GestionnaireBibliotheque
                 validation_key = 10 % (10 - (10 % validation_key));
                 if (Int32.Parse(tab_char_isbn[nb_char_isbn - 1]) == validation_key)
                 {
-                    String isbn = String.Join("","",tab_char_isbn);
-                    this.addBook(isbn);
+                    return true;
                 }
                 else
                 {
-                    Window w = new Window();
-                    ValideIsbn page_isbn = new ValideIsbn(w);
-                    w.Title = "Clé du numéro ISBN 13 non valide";
-                    w.Content = page_isbn;
-                    w.ResizeMode = System.Windows.ResizeMode.NoResize;
-                    w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                    w.ShowDialog();
+                    return false;
                 }
             }
             else
             {
-                Window w = new Window();
-                ValideIsbn page_isbn = new ValideIsbn(w);
-                w.Title = "Groupe de chiffre 979 - 978 non valide";
-                w.Content = page_isbn;
-                w.ResizeMode = System.Windows.ResizeMode.NoResize;
-                w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                w.ShowDialog();
+                return false;
             }
         }
 
-        private void validISBN(String isbn)
+        private Boolean validISBN(String isbn)
         {
             isbn = isbn.Replace("-", "");
             int nb_char_isbn;
+            nb_char_isbn = isbn.Length;
+            String[] tab_char_isbn = stringToCharTab(isbn);
+
+            if (nb_char_isbn == 10)
+            {
+                return validationIsbn10(nb_char_isbn, tab_char_isbn);
+            }
+            else if (nb_char_isbn == 13)
+            {
+                return validationIsbn13(nb_char_isbn, tab_char_isbn);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private String[] stringToCharTab(String value)
+        {
+            value = value.Replace("-", "");
+            int nb_char_isbn;
             String[] tab_char_isbn;
 
-            nb_char_isbn = isbn.Length;
+            nb_char_isbn = value.Length;
             tab_char_isbn = new String[nb_char_isbn];
 
             for (int i = 0; i < nb_char_isbn; i++)
             {
-                tab_char_isbn[i] = isbn.Substring(i, 1);
+                tab_char_isbn[i] = value.Substring(i, 1);
             }
+            return tab_char_isbn;
+        }
 
-            if (nb_char_isbn == 10)
-            {
-                this.validationIsbn10(nb_char_isbn, tab_char_isbn);
-            }
-
-            else if (nb_char_isbn == 13)
-            {
-                this.validationIsbn13(nb_char_isbn, tab_char_isbn);
-            }
-            else
-            {
-                Window w = new Window();
-                ValideIsbn page_isbn = new ValideIsbn(w);
-                w.Title = "Numéro ISBN non valide";
-                w.Content = page_isbn;
-                w.ResizeMode = System.Windows.ResizeMode.NoResize;
-                w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                w.ShowDialog();
-            }
+        private void PopUpInvalidIsbn()
+        {
+            Window w = new Window();
+            ValideIsbn page_isbn = new ValideIsbn(w);
+            w.Title = "Numéro ISBN non valide";
+            w.Content = page_isbn;
+            w.ResizeMode = System.Windows.ResizeMode.NoResize;
+            w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            w.ShowDialog();
         }
     }
 }
