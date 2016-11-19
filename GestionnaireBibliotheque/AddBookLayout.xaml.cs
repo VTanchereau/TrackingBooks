@@ -136,8 +136,9 @@ namespace GestionnaireBibliotheque
             else
             {
                 bookIsbn = "";
+                addBook(bookIsbn);
             }
-            addBook(bookIsbn);
+                        
             this.w.Close();
         }
 
