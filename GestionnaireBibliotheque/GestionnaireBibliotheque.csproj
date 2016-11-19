@@ -59,6 +59,9 @@
       <DependentUpon>ListeRetourAttente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modele\TriFusion.cs" />
+    <Compile Include="SortableListView.xaml.cs">
+      <DependentUpon>SortableListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TextInputToVisibilityConverter.cs" />
     <Compile Include="ValideIsbn.xaml.cs">
       <DependentUpon>ValideIsbn.xaml</DependentUpon>
@@ -101,10 +104,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Liste.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ListeRetourAttente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -119,9 +118,6 @@
     </Compile>
     <Compile Include="BookLayout.xaml.cs">
       <DependentUpon>BookLayout.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Liste.xaml.cs">
-      <DependentUpon>Liste.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -139,9 +135,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ValideIsbn.xaml">
+    <Page Include="SortableListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ValideIsbn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

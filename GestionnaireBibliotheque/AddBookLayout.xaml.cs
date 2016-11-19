@@ -32,11 +32,6 @@ namespace GestionnaireBibliotheque
         public AddBookLayout(Modele.Gestionnaire _gestionnaire, Window win, MainWindow mainWindow)
         {
             InitializeComponent();
-            tbk_resumeLivre.Text = "quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \n" +
-                "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur \n" +
-                "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum \n" +
-                "quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut \n" +
-                "labore et dolore magnam aliquam quaerat voluptatem.";
             tbk_authorName.Text = "Nom de l'auteur";
             tbk_editorName.Text = "Nom de l'éditeur";
             tbk_genreName.Text = "Genre du livre";
@@ -133,7 +128,6 @@ namespace GestionnaireBibliotheque
 
         private void btn_Valider_Click_1(object sender, RoutedEventArgs e)
         {
-
             String bookIsbn = tb_ISBNBook.Text;
             if (bookIsbn != "" || bookIsbn != null)
             {
@@ -150,7 +144,7 @@ namespace GestionnaireBibliotheque
 
         private void addBook(String isbn)
         {
-            if (tb_titleBook.Text == "" || tb_authorName.Text == "" || tb_editorName.Text == "" || tb_genreName.Text == "" || tbk_resumeLivre.Text == "")
+            if (tb_titleBook.Text == "" || tb_authorName.Text == "" || tb_editorName.Text == "" || tb_genreName.Text == "" || tb_resumeLivre.Text == "")
             {
                 return;
             }
@@ -158,7 +152,7 @@ namespace GestionnaireBibliotheque
             String bookAuthor = tb_authorName.Text;
             String bookEditor = tb_editorName.Text;
             String bookGenres = tb_genreName.Text;
-            String bookResume = tbk_resumeLivre.Text;
+            String bookResume = tb_resumeLivre.Text;
 
             List<Modele.Auteur> lstAuteurs = getAuthors(bookAuthor);
             List<Modele.Genre> lstGenres = getGenres(bookGenres);
@@ -342,7 +336,7 @@ namespace GestionnaireBibliotheque
                 w.ResizeMode = System.Windows.ResizeMode.NoResize;
                 w.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 w.ShowDialog();
-            }            
+            }
         }
     }
 }

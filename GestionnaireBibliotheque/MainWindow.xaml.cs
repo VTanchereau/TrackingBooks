@@ -20,6 +20,9 @@ namespace GestionnaireBibliotheque
     /// </summary>
     public partial class MainWindow : Window
     {
+        private SortableListView listeAffichage;
+        private BookLayout detailsBook;
+
         private Modele.Gestionnaire _Gestionnaire;
         public Modele.Gestionnaire Gestionnaire
         {
@@ -32,7 +35,10 @@ namespace GestionnaireBibliotheque
             this.WindowState = WindowState.Maximized;
             InitializeComponent();
             this.Gestionnaire = new Modele.Gestionnaire();
-            liste.Navigate(new Liste(this.Gestionnaire));
+            this.listeAffichage = new SortableListView(this.Gestionnaire, this);
+            this.detailsBook = new BookLayout();
+            liste.Content = this.listeAffichage;
+            details.Navigate(this.detailsBook);
             ListeRetourAttente lra = new ListeRetourAttente();
             Window win = new Window();
             win.Title = "Liste des livres en attentes de retour";
@@ -45,7 +51,7 @@ namespace GestionnaireBibliotheque
 
         public void UpdateListe()
         {
-            liste.Navigate(new Liste(this.Gestionnaire));
+            this.listeAffichage.UpdateListView(this.Gestionnaire);
         }
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
@@ -90,9 +96,9 @@ namespace GestionnaireBibliotheque
             w.ShowDialog();
         }
 
-        public void UpdateListBooks()
+        public void SetBookDetails(Modele.Exemplaire ex)
         {
-
+            this.detailsBook.SetNewExemplaire(ex);
         }
     }
 }
