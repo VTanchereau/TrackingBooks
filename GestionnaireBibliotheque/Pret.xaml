@@ -25,10 +25,10 @@
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
             <Rectangle DockPanel.Dock="Left" Width="70" Height="70" Fill="#FF52C0D0" Margin="0,0,5,0"/>
             <StackPanel Margin="5,0,0,0">
-                <TextBlock Name="tbk_bookTitle" Text="Titre" FontSize="13"/>
-                <TextBlock Name="tbk_bookGenre" Text="Genre" FontSize="13"/>
-                <TextBlock Name="tbk_bookAuthor" Text="Autheur" FontSize="13"/>
-                <TextBlock Name="tbk_bookCondition" Text="Etat" FontSize="13"/>
+                <TextBlock Name="tbk_bookTitle" FontSize="13"/>
+                <TextBlock Name="tbk_bookAuthor" FontSize="13"/>
+                <TextBlock Name="tbk_bookGenre" FontSize="13"/>
+                <TextBlock Name="tbk_bookCondition" FontSize="13"/>
             </StackPanel>
         </StackPanel>
         <Border Name="border1" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Padding="10" Margin="0,0,0,20">
