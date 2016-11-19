@@ -252,27 +252,27 @@ namespace GestionnaireBibliotheque
 
         private Boolean validationIsbn13(int nb_char_isbn, String[] tab_char_isbn)
         {
-            List<int> somme = new List<int>();
+            int[] somme = new int[nb_char_isbn];
             int validation_key = 0;
-            int groupe_chiffre = Int32.Parse(tab_char_isbn[0]) + Int32.Parse(tab_char_isbn[1]) + Int32.Parse(tab_char_isbn[2]);
-            if (groupe_chiffre == 978 || groupe_chiffre == 979)
+            String groupe_chiffre = tab_char_isbn[0] + tab_char_isbn[1] + tab_char_isbn[2];
+            if (groupe_chiffre == "978" || groupe_chiffre == "979")
             {
-                for (float i = 0; i < nb_char_isbn - 1; i++)
+                for (int i = 0; i < nb_char_isbn - 1; i++)
                 {
-                    if (Int32.Parse(tab_char_isbn[(int)i]) % 2 == 0)
+                    if (i % 2 != 0)
                     {
-                        somme[(int)i] = Int32.Parse(tab_char_isbn[(int)i]) * 3;
+                        somme[i] = Int32.Parse(tab_char_isbn[i]) * 3;
                     }
                     else
                     {
-                        somme[(int)i] = Int32.Parse(tab_char_isbn[(int)i]);
+                        somme[i] = Int32.Parse(tab_char_isbn[i]);
                     }
                 }
-                for (int j = 0; j < somme.Count; j = j + 2)
+                for (int j = 0; j < somme.Count(); j++)
                 {
-                    validation_key += somme[j] + somme[j + 1];
+                    validation_key += somme[j];
                 }
-                validation_key = 10 % (10 - (10 % validation_key));
+                validation_key = (10 - (validation_key % 10) % 10);
                 if (Int32.Parse(tab_char_isbn[nb_char_isbn - 1]) == validation_key)
                 {
                     return true;
