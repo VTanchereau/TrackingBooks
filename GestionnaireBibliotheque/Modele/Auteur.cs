@@ -39,5 +39,11 @@ namespace GestionnaireBibliotheque.Modele
             this.Prenom = prenom;
         }
 
+        override
+        public String ToString()
+        {
+            return this.Prenom + " " + this.Nom;
+        }
+
     }
 }

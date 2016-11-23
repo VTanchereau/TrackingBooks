@@ -38,6 +38,11 @@ namespace GestionnaireBibliotheque
             this._exemplaire = exemplaire;
             this.win = w;
 
+            tbk_bookTitle.Text = this._exemplaire.Oeuvre.Titre;
+            tbk_bookAuthor.Text = this._exemplaire.Oeuvre.LstAuteur[0].ToString();
+            tbk_bookGenre.Text = this._exemplaire.Oeuvre.LstGenre[0].Nom;
+            tbk_bookCondition.Text = this._exemplaire.Etat;
+
             for (int i = 1 ; i < 99; i++)
             {
                 lstNumbers.Add(i);
