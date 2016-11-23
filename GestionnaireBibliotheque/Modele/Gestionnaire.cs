@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace GestionnaireBibliotheque.Modele
 {
     public class Gestionnaire
     {
+        private String savedFilePath;
         private List<Exemplaire> _lstExemplaires;
         private List<Oeuvre> _lstOeuvres;
         private List<Genre> _lstGenres;
@@ -25,6 +27,7 @@ namespace GestionnaireBibliotheque.Modele
             ListeAuteurs = new List<Auteur>();
             ListeLecteurs = new List<Lecteur>();
             ListePret = new List<Pret>();
+            this.savedFilePath = "savedBib.csv";
         }
 
         public List<Exemplaire> ListeExemplaires
@@ -97,6 +100,25 @@ namespace GestionnaireBibliotheque.Modele
             {
                 ListePret.Remove(pret);
             }
+        }
+
+        public void saveBib()
+        {
+            StreamWriter writer;
+            try
+            {
+                writer = new StreamWriter(this.savedFilePath);
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+
+            foreach (Exemplaire exemplaire in this.ListeExemplaires)
+            {
+                writer.WriteLine(exemplaire.ToCSV());
+            }
+            writer.Close();
         }
 
         //methode pour generer un faux exemplaire
