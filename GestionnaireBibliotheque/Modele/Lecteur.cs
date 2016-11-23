@@ -48,6 +48,30 @@ namespace GestionnaireBibliotheque.Modele
             this.ListeMoyenContacts = liste_moyenDeContact;
         }
 
+        public String lstMoyensContactToCSV()
+        {
+            String retour = "[";
+            for (int i = 0; i < this.ListeMoyenContacts.Count - 1; i++)
+            {
+                retour += this.ListeMoyenContacts[i].ToCSV();
+                retour += ";";
+            }
+            retour += this.ListeMoyenContacts[this.ListeMoyenContacts.Count - 1].ToCSV();
+            retour += "]";
+            return retour;
+        }
 
+        public String ToCSV()
+        {
+            String retour = "{";
+            retour += this.Prenom;
+            retour += ";";
+            retour += this.Nom;
+            retour += ";";
+            retour += this.lstMoyensContactToCSV();
+            retour += ";";
+            retour += "}";
+            return retour;
+        }
     }
 }

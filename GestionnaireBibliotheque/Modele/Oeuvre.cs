@@ -68,5 +68,47 @@ namespace GestionnaireBibliotheque.Modele
             this.LstAuteur = lstauteur;
         }
 
+        public String lstAuteursToCSV()
+        {
+            String retour = "[";
+            for (int i = 0; i < this.LstAuteur.Count - 1; i++)
+            {
+                retour += this.LstAuteur[i].ToCSV();
+                retour += ";";
+            }
+            retour += this.LstAuteur[this.LstAuteur.Count - 1].ToCSV();
+            retour += "]";
+            return retour;
+        }
+
+        public String lstGenresToCSV()
+        {
+            String retour = "[";
+            for (int i = 0; i < this.LstGenre.Count - 1; i++)
+            {
+                retour += this.LstGenre[i].ToCSV();
+                retour += ";";
+            }
+            retour += this.LstGenre[this.LstGenre.Count - 1].ToCSV();
+            retour += "]";
+            return retour;
+        }
+
+        public String ToCSV()
+        {
+            String retour = "{";
+            retour += this.Titre;
+            retour += ";";
+            retour += this.Resume;
+            retour += ";";
+            retour += this.Isbn;
+            retour += ";";
+            retour += this.lstAuteursToCSV();
+            retour += ";";
+            retour += this.lstGenresToCSV();
+            retour += ";";
+            retour += "}";
+            return retour;
+        }
     }
 }

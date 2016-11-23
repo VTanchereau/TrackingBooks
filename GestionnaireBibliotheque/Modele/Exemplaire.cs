@@ -93,6 +93,35 @@ namespace GestionnaireBibliotheque.Modele
             this._pretActif.Commentaire = commentaire;
             this._etat = etat;
         }
-        
+
+        public String lstPretsToCSV()
+        {
+            String retour = "[";
+            for (int i = 0; i < this.ListeDePrets.Count - 1; i++)
+            {
+                retour += this.ListeDePrets[i].ToCSV();
+                retour += ";";
+            }
+            retour += this.ListeDePrets[this.ListeDePrets.Count - 1].ToCSV();
+            retour += "]";
+            return retour;
+        }
+
+        public String ToCSV()
+        {
+            String retour = "{";
+            retour += this.Oeuvre.ToCSV();
+            retour += ";";
+            retour += this.Editeur.ToCSV();
+            retour += ";";
+            retour += this.Photo;
+            retour += ";";
+            retour += this.DateAjout.ToString();
+            retour += ";";
+            retour += this.lstPretsToCSV();
+            retour += ";";
+            retour += "}";
+            return retour;
+        }
     }
 }

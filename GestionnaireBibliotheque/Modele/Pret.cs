@@ -67,13 +67,27 @@ namespace GestionnaireBibliotheque.Modele
         }
 
         //Methode deplacée dans l'objet exemplaire car le retour se fait à partir d'un exemplaire via son pretActif.
-       /* private void Set_RetourPret(Commentaire commentaire)
+        /* private void Set_RetourPret(Commentaire commentaire)
+         {
+             this.DateRetour = DateTime.Today;
+             this.Commentaire = commentaire;
+         }*/
+
+        public String ToCSV()
         {
-            this.DateRetour = DateTime.Today;
-            this.Commentaire = commentaire;
-        }*/
-       
-
-
+            String retour = "{";
+            retour += this.Lecteur.ToCSV();
+            retour += ";";
+            retour += this.DateDebut.ToString();
+            retour += ";";
+            retour += this.DateRetour.ToString();
+            retour += ";";
+            retour += this.DateRappel.ToString();
+            retour += ";";
+            retour += this.Commentaire.ToCSV();
+            retour += ";";
+            retour += "}";
+            return retour;
+        }
     }
 }

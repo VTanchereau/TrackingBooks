@@ -40,6 +40,14 @@ namespace GestionnaireBibliotheque.Modele
            // this._pret = pret;
         }
 
-        
+        public String ToCSV()
+        {
+            String retour = "{";
+            retour += this.Titre;
+            retour += ";";
+            retour += this.Contenu;
+            retour += "}";
+            return retour;
+        }
     }
 }

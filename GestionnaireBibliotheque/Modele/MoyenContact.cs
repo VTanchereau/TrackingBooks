@@ -47,5 +47,15 @@ namespace GestionnaireBibliotheque.Modele
             this.Lecteur = Lecteur;
             //this._ordre = ordre;
         }
+
+        public String ToCSV()
+        {
+            String retour = "{";
+            retour += this.Type;
+            retour += ";";
+            retour += this.Valeur;
+            retour += "}";
+            return retour;
+        }
     }
 }

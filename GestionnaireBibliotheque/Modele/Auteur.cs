@@ -39,5 +39,14 @@ namespace GestionnaireBibliotheque.Modele
             this.Prenom = prenom;
         }
 
+        public String ToCSV()
+        {
+            String retour = "{";
+            retour += this.Prenom;
+            retour += ";";
+            retour += this.Nom;
+            retour += "}";
+            return retour;
+        }
     }
 }
